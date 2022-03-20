@@ -13,5 +13,5 @@ Appen er ment som et alternativt så man i stedet for at skal skrive det alt sam
 **Requirements:**
 - Som bruger vil jeg kunne tilføje et kæledyr til mit system, så jeg kan holde styr på dens helbred
 - Som bruger vil jeg kunne tilføje basisvaccinationer til et kæledyr, så jeg kan holde styr på deres basisvaccinationer
-- Som bruger vil jeg kunne anføre dyrets vægt, så jeg i et vækstskema kan holde styr på dyrets vægt
+- Som bruger vil jeg kunne anføre dyrets vægt, så jeg i et vækstskema kan holde styr på dens vægt
 - Som bruger vil jeg kunne anføre alt relevant information til et sundhedseftersyn, så jeg kan holde styr på dens eftersyn
