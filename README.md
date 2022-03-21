@@ -1,4 +1,4 @@
-# Mit-Dyrs-Sundhed
+# Mit Dyrs Sundhed
 
 ## AND app project
 
