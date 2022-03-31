@@ -50,7 +50,7 @@
     <TextView
         android:id="@+id/tv_race"
         android:layout_gravity="end"
-        android:text="Race"
+        android:text="@string/race"
         android:textSize="16sp" />
 
     <EditText
@@ -151,10 +151,13 @@
     <TextView
         android:id="@+id/tv_phoneNumber"
         android:text="@string/telefon"
-        android:textSize="16sp"
-         />
+        android:textSize="16sp" />
 
-
+    <EditText
+        android:id="@+id/editText_phoneNumber"
+        android:ems="10"
+        android:inputType="phone"
+        android:textSize="16sp" />
 
 
 </GridLayout>

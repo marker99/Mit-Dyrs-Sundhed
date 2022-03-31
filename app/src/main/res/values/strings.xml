@@ -12,13 +12,18 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="tilføj_kæledyr">Tilføj Kæledyr</string>
-    <string name="dyrets_navn">Dyrets Navn</string>
+
+
+    <!--    Tilføj kæledyr-->
     <string name="signalement">Signalement</string>
-    <string name="fødselsdato">Fødselsdato</string>
-    <string name="køn">Køn</string>
-    <string name="farve">Farve</string>
-    <string name="navn">Navn</string>
-    <string name="gade">Gade</string>
-    <string name="land">Land</string>
+    <string name="dyrets_navn">Dyrets Navn:</string>
+    <string name="fødselsdato">Fødselsdato:</string>
+    <string name="race">Race:</string>
+    <string name="køn">Køn:</string>
+    <string name="farve">Farve:</string>
+    <string name="navn">Navn:</string>
+    <string name="gade">Gade:</string>
+    <string name="land">Land:</string>
     <string name="telefon">Telefon:</string>
+
 </resources>
