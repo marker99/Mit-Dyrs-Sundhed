@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.marker99.databinding.ActivityMain2Binding;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMain2Binding binding;
@@ -38,6 +38,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

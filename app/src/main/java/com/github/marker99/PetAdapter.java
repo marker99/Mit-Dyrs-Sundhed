@@ -38,7 +38,7 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.ViewHolder> {
 
         ViewHolder(View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.tv_pet_name);
+            name = itemView.findViewById(R.id.rv_tv_pet_name);
         }
     }
 
