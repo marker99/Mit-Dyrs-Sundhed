@@ -16,10 +16,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.github.marker99.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_signalement"
+        android:name="com.github.marker99.ui.signalement.SignalementFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_signalement" />
 
     <fragment
         android:id="@+id/nav_slideshow"

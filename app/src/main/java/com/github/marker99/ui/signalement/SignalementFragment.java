@@ -1,4 +1,4 @@
-package com.github.marker99.ui.gallery;
+package com.github.marker99.ui.signalement;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.github.marker99.databinding.FragmentGalleryBinding;
+import com.github.marker99.databinding.FragmentSignalementBinding;
 
-public class GalleryFragment extends Fragment {
+public class SignalementFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentSignalementBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        SignalementViewModel signalementViewModel =
+                new ViewModelProvider(this).get(SignalementViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentSignalementBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        TextView textView = binding.textviewPetName;
+        signalementViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
