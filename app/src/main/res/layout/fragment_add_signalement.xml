@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".AddSignalementFragment">
+    tools:context=".ui.signalement.AddSignalementFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/dyrets_navn"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -44,6 +44,7 @@
         android:layout_marginEnd="16dp"
         android:hint=""
         android:inputType="text"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/petName"
         app:layout_constraintTop_toBottomOf="@+id/signalement" />
@@ -53,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/fødselsdato"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -67,6 +68,7 @@
         android:layout_marginEnd="16dp"
         android:hint="day / måned / år"
         android:inputType="date"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/birthdate"
         app:layout_constraintTop_toBottomOf="@+id/editText_petName" />
@@ -77,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/race"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -91,6 +93,7 @@
         android:layout_marginEnd="16dp"
         android:hint=""
         android:inputType="text"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/race"
         app:layout_constraintTop_toBottomOf="@+id/editText_birthdate" />
@@ -101,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/køn"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -115,6 +118,7 @@
         android:layout_marginEnd="16dp"
         android:hint=""
         android:inputType="text"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gender"
         app:layout_constraintTop_toBottomOf="@+id/editText_race" />
@@ -125,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/farve"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -139,6 +143,7 @@
         android:layout_marginEnd="16dp"
         android:hint=""
         android:inputType="text"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/color"
         app:layout_constraintTop_toBottomOf="@+id/editText_gender" />
@@ -149,12 +154,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/specielle_kendetegn"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/color" />
-
 
 
     <EditText
@@ -165,8 +169,22 @@
         android:layout_marginEnd="16dp"
         android:hint=""
         android:inputType="text"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/specialCharacteristics" />
+
+    <Button
+        android:id="@+id/addSignalement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_specialCharacteristics"
+        app:layout_constraintVertical_bias="0.104" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

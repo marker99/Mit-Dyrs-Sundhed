@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/addSignalementFragment"
-        android:name="com.github.marker99.AddSignalementFragment"
+        android:name="com.github.marker99.ui.signalement.AddSignalementFragment"
         android:label="fragment_add_signalement"
         tools:layout="@layout/fragment_add_signalement" />
 </navigation>
