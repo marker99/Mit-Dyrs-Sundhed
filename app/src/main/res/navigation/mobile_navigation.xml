@@ -9,10 +9,10 @@
         android:id="@+id/nav_home"
         android:name="com.github.marker99.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_addPetInfoFragment"
-            app:destination="@id/addPetInfoFragment" />
+            app:destination="@id/addSignalementFragment" />
     </fragment>
 
     <fragment
@@ -26,9 +26,10 @@
         android:name="com.github.marker99.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
     <fragment
-        android:id="@+id/addPetInfoFragment"
-        android:name="com.github.marker99.AddPetInfoFragment"
-        android:label="fragment_add_pet_info"
-        tools:layout="@layout/fragment_add_pet_info" />
+        android:id="@+id/addSignalementFragment"
+        android:name="com.github.marker99.AddSignalementFragment"
+        android:label="fragment_add_signalement"
+        tools:layout="@layout/fragment_add_signalement" />
 </navigation>
