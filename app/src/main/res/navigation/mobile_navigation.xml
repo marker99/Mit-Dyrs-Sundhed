@@ -22,10 +22,10 @@
         tools:layout="@layout/fragment_signalement" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.github.marker99.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_healthInspection"
+        android:name="com.github.marker99.ui.health_inspection.HealthInspectionFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_health_inspection" />
 
     <fragment
         android:id="@+id/addSignalementFragment"
