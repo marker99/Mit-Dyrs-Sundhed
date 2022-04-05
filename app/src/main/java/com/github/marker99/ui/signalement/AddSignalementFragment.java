@@ -12,10 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.github.marker99.Pet;
-import com.github.marker99.R;
+import com.github.marker99.persistence.pet.Pet;
 import com.github.marker99.databinding.FragmentAddSignalementBinding;
-import com.github.marker99.databinding.FragmentHomeBinding;
 
 public class AddSignalementFragment extends Fragment {
 

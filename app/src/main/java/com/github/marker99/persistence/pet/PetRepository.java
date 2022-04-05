@@ -1,10 +1,10 @@
-package com.github.marker99.persistence;
+package com.github.marker99.persistence.pet;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.github.marker99.Pet;
+import com.github.marker99.persistence.Database;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -18,7 +18,7 @@ public class PetRepository {
     private final ExecutorService executorService;
 
     private PetRepository(Application application) {
-        PetDatabase database = PetDatabase.getInstance(application);
+        Database database = Database.getInstance(application);
         petDAO = database.petDAO();
         allPets = petDAO.getAllPets();
         executorService = Executors.newFixedThreadPool(2);

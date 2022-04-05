@@ -1,4 +1,4 @@
-package com.github.marker99;
+package com.github.marker99.persistence.pet;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

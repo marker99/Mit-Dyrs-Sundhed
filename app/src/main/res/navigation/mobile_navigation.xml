@@ -25,11 +25,20 @@
         android:id="@+id/nav_healthInspection"
         android:name="com.github.marker99.ui.health_inspection.HealthInspectionFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_health_inspection" />
+        tools:layout="@layout/fragment_health_inspection" >
+        <action
+            android:id="@+id/action_nav_healthInspection_to_addHealthInspectionFragment"
+            app:destination="@id/addHealthInspectionFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/addSignalementFragment"
         android:name="com.github.marker99.ui.signalement.AddSignalementFragment"
         android:label="fragment_add_signalement"
         tools:layout="@layout/fragment_add_signalement" />
+    <fragment
+        android:id="@+id/addHealthInspectionFragment"
+        android:name="com.github.marker99.ui.health_inspection.AddHealthInspectionFragment"
+        android:label="fragment_add_health_inspection"
+        tools:layout="@layout/fragment_add_health_inspection" />
 </navigation>

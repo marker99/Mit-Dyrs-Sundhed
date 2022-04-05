@@ -8,11 +8,11 @@
     tools:context=".ui.health_inspection.HealthInspectionFragment">
 
     <Button
+        android:id="@+id/buttonAddHealthInspection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Nyt Sundhedseftersyn"
-        android:id="@+id/buttonAddHealthInspection"/>
+        android:text="Nyt Sundhedseftersyn" />
 
 
     <androidx.recyclerview.widget.RecyclerView

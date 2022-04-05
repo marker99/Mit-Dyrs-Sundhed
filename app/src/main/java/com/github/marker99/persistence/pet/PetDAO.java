@@ -1,4 +1,4 @@
-package com.github.marker99.persistence;
+package com.github.marker99.persistence.pet;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,8 +6,6 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-
-import com.github.marker99.Pet;
 
 import java.util.List;
 
