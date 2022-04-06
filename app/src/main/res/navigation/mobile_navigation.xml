@@ -34,11 +34,11 @@
     <fragment
         android:id="@+id/addSignalementFragment"
         android:name="com.github.marker99.ui.signalement.AddSignalementFragment"
-        android:label="fragment_add_signalement"
+        android:label="Tilføj Signalement"
         tools:layout="@layout/fragment_add_signalement" />
     <fragment
         android:id="@+id/addHealthInspectionFragment"
         android:name="com.github.marker99.ui.health_inspection.AddHealthInspectionFragment"
-        android:label="fragment_add_health_inspection"
+        android:label="Nyt Sundhedstjek"
         tools:layout="@layout/fragment_add_health_inspection" />
 </navigation>

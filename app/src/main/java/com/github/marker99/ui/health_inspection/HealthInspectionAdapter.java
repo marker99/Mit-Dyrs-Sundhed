@@ -17,7 +17,8 @@ import java.util.List;
 
 public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspectionAdapter.ViewHolder> {
 
-    private List<HealthInspection> inspections;
+    private final List<HealthInspection> inspections;
+    private OnClickListener listener;
 
     public HealthInspectionAdapter(List<HealthInspection> inspections) {
         this.inspections = inspections;
@@ -53,6 +54,24 @@ public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspecti
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             item = itemView.findViewById(R.id.rv_tv_item);
+
+            itemView.setOnClickListener(view -> listener.onClick(inspections.get(getBindingAdapterPosition())));
+
+           /* itemView.setOnClickListener(view -> {
+                listener.onClick(inspections.get(getBindingAdapterPosition()));
+            });*/
+
         }
     }
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnClickListener {
+        void onClick(HealthInspection inspection);
+    }
+
+
+
 }

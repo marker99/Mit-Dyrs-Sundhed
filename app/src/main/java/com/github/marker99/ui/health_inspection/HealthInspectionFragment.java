@@ -16,7 +16,6 @@ import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HealthInspectionFragment extends Fragment {
