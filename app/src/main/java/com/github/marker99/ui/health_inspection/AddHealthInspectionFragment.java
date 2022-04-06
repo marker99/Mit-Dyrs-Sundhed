@@ -11,28 +11,41 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.github.marker99.R;
+import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
+import com.github.marker99.persistence.health_inspection.HealthInspection;
 
 public class AddHealthInspectionFragment extends Fragment {
 
-    private AddHealthInspectionViewModel mViewModel;
+    private AddHealthInspectionViewModel addHealthInspectionViewModel;
+    private FragmentAddHealthInspectionBinding binding;
 
-    public static AddHealthInspectionFragment newInstance() {
-        return new AddHealthInspectionFragment();
-    }
+    private Button addButton;
+    private EditText input_date;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_add_health_inspection, container, false);
+        addHealthInspectionViewModel = new ViewModelProvider(this).get(AddHealthInspectionViewModel.class);
+        binding = FragmentAddHealthInspectionBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        //Binding stuff to things
+        addButton = binding.addHealthInspection;
+        input_date = binding.editTextInspectionDate;
+
+        addButton.setOnClickListener(this::addNewHealthInspection);
+
+        return root;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(AddHealthInspectionViewModel.class);
-        // TODO: Use the ViewModel
+    private void addNewHealthInspection(View view) {
+        HealthInspection newInspection = new HealthInspection(
+                input_date.getText().toString());
+        addHealthInspectionViewModel.insert(newInspection);
     }
 
 }
