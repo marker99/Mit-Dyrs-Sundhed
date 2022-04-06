@@ -7,10 +7,10 @@
 
 
     <TextView
-        android:id="@+id/rv_tv_pet_name"
+        android:id="@+id/rv_tv_item"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Pet Name"
+        android:text="Name"
         android:textSize="25sp" />
 </LinearLayout>

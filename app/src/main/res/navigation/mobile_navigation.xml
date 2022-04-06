@@ -18,13 +18,13 @@
     <fragment
         android:id="@+id/nav_signalement"
         android:name="com.github.marker99.ui.signalement.SignalementFragment"
-        android:label="@string/menu_gallery"
+        android:label="Signalement"
         tools:layout="@layout/fragment_signalement" />
 
     <fragment
         android:id="@+id/nav_healthInspection"
         android:name="com.github.marker99.ui.health_inspection.HealthInspectionFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Sundhedseftersyn"
         tools:layout="@layout/fragment_health_inspection" >
         <action
             android:id="@+id/action_nav_healthInspection_to_addHealthInspectionFragment"
