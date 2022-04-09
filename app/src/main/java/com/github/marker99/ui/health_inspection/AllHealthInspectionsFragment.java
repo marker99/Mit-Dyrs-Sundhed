@@ -13,20 +13,20 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.github.marker99.R;
-import com.github.marker99.databinding.FragmentHealthInspectionBinding;
+import com.github.marker99.databinding.FragmentAllHealthInspectionsBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 
 import java.util.List;
 
-public class HealthInspectionFragment extends Fragment {
+public class AllHealthInspectionsFragment extends Fragment {
 
     private Button button;
-    private FragmentHealthInspectionBinding binding;
+    private FragmentAllHealthInspectionsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        HealthInspectionViewModel healthInspectionViewModel = new ViewModelProvider(this).get(HealthInspectionViewModel.class);
+        AllHealthInspectionsViewModel allHealthInspectionsViewModel = new ViewModelProvider(this).get(AllHealthInspectionsViewModel.class);
 
-        binding = FragmentHealthInspectionBinding.inflate(inflater, container, false);
+        binding = FragmentAllHealthInspectionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         button = binding.buttonAddHealthInspection;
@@ -37,15 +37,28 @@ public class HealthInspectionFragment extends Fragment {
 
 
         binding.rvHealthInspection.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
-        healthInspectionViewModel.getAllInspections().observe(getViewLifecycleOwner(), this::onChanged);
+        allHealthInspectionsViewModel.getAllInspections().observe(getViewLifecycleOwner(), this::onChanged);
 
         return root;
     }
 
     private void onChanged(List<HealthInspection> inspections){
         HealthInspectionAdapter adapter = new HealthInspectionAdapter(inspections);
+        adapter.setOnClickListener(this::onInspectionClicked);
         binding.rvHealthInspection.setAdapter(adapter);
     }
+
+    private void onInspectionClicked(HealthInspection healthInspection) {
+        // Navigating to a different Fragment
+        // Create a Bundle to send data
+        Bundle bundle = new Bundle();
+        // Fill bundle with Data
+        bundle.putSerializable("healthInspection", healthInspection);
+        System.out.println(bundle.getSerializable("healthInspection").toString());
+        // Navigate with the bundle attached
+        NavHostFragment.findNavController(this).navigate(R.id.action_nav_allHealthInspections_to_healthInspection, bundle);
+    }
+
 
     @Override
     public void onDestroyView() {
