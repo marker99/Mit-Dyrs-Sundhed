@@ -36,8 +36,9 @@ public class DogRepository {
             @Override
             public void onResponse(Call<DogResponse[]> call, Response<DogResponse[]> response) {
                 if (response.isSuccessful()) {
-                    searchedBreed.setValue(response.body()[0].getDog());
-                    Log.i("Retrofit", "Something went right :)");
+                    Dog doggy = response.body()[0].getDog();
+                    searchedBreed.setValue(doggy);
+                    Log.i("Retrofit", "Something went right :) \n" + doggy);
                 }
             }
 

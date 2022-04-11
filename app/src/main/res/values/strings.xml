@@ -30,5 +30,7 @@
     <string name="specielle_kendetegn">Specielle kendetegn:</string>
     <string name="sundhedseftersyn">Sundhedseftersyn</string>
     <string name="save">Save</string>
+    <string name="life_span">Life span:</string>
+    <string name="temperament">Temperament:</string>
 
 </resources>

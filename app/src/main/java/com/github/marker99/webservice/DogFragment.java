@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.github.marker99.R;
@@ -27,6 +28,9 @@ public class DogFragment extends Fragment {
 
     private Button randomButton;
     private ImageView imageView;
+    private TextView name;
+    private TextView lifespan;
+    private TextView temperament;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -41,6 +45,9 @@ public class DogFragment extends Fragment {
 
         dogViewModel.getSearchedDog().observe(getViewLifecycleOwner(), dog -> {
             Glide.with(this).load(dog.getImageURL()).into(imageView);
+            name.setText(dog.getName());
+            lifespan.setText(dog.getLifeSpan());
+            temperament.setText(dog.getTemperament());
         });
 
         randomButton.setOnClickListener(view -> {
@@ -53,6 +60,9 @@ public class DogFragment extends Fragment {
     private void bindings() {
         randomButton = binding.buttonRandom;
         imageView = binding.imageView;
+        name = binding.textviewBreedName;
+        lifespan = binding.textViewSetLifeSpan;
+        temperament = binding.textViewSetTemperament;
     }
 
 }
