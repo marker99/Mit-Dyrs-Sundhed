@@ -39,14 +39,22 @@
         android:name="com.github.marker99.ui.signalement.AddSignalementFragment"
         android:label="Tilføj Signalement"
         tools:layout="@layout/fragment_add_signalement" />
+
     <fragment
         android:id="@+id/addHealthInspectionFragment"
         android:name="com.github.marker99.ui.health_inspection.new_inspection.AddHealthInspectionFragment"
         android:label="Nyt Sundhedstjek"
         tools:layout="@layout/fragment_add_health_inspection" />
+
     <fragment
         android:id="@+id/healthInspection"
         android:name="com.github.marker99.ui.health_inspection.HealthInspection"
         android:label="fragment_health_inspection"
         tools:layout="@layout/fragment_health_inspection" />
+
+    <fragment
+        android:id="@+id/dogFragment"
+        android:name="com.github.marker99.webservice.DogFragment"
+        android:label="dog_fragment"
+        tools:layout="@layout/dog_fragment" />
 </navigation>
