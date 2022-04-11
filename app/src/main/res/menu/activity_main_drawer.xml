@@ -4,6 +4,8 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+        <!-- id must match the id from navigation/mobile_navigation -->
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
