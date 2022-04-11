@@ -1,19 +1,27 @@
 package com.github.marker99.ui.signalement;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SignalementViewModel extends ViewModel {
+import com.github.marker99.persistence.pet.Pet;
+import com.github.marker99.persistence.pet.PetRepository;
 
-    private final MutableLiveData<String> mText;
+public class SignalementViewModel extends AndroidViewModel {
 
-    public SignalementViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dum");
+    private final PetRepository petRepository;
+
+    public SignalementViewModel(@NonNull Application application) {
+        super(application);
+        petRepository = PetRepository.getInstance(application);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<Pet> getSpecificPet(){
+        return petRepository.getSpecificPet();
     }
+
 }

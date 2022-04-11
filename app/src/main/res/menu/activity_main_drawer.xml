@@ -8,20 +8,20 @@
         <!-- id must match the id from navigation/mobile_navigation -->
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_signalement"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_description"
             android:title="@string/signalement" />
         <item
             android:id="@+id/nav_allHealthInspections"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_health"
             android:title="@string/sundhedseftersyn" />
         <item
             android:id="@+id/dogFragment"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Find din nye hund" />
+            android:title="@string/find_din_nye_hund" />
 
     </group>
 </menu>

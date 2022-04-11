@@ -29,4 +29,10 @@ public interface PetDAO {
     LiveData<List<Pet>> getAllPets();
 
 
+    //rigtig grim løsning
+    @Query("SELECT * FROM pet_table WHERE id = 1")
+    LiveData<Pet> getSpecificPet();
+
+
+
 }

@@ -15,12 +15,14 @@ public class PetRepository {
     private static PetRepository instance;
     private final PetDAO petDAO;
     private final LiveData<List<Pet>> allPets;
+    private final LiveData<Pet> specificPet;
     private final ExecutorService executorService;
 
     private PetRepository(Application application) {
         Database database = Database.getInstance(application);
         petDAO = database.petDAO();
         allPets = petDAO.getAllPets();
+        specificPet = petDAO.getSpecificPet();
         executorService = Executors.newFixedThreadPool(2);
     }
 
@@ -33,6 +35,10 @@ public class PetRepository {
 
     public LiveData<List<Pet>> getAllPets() {
         return allPets;
+    }
+
+    public LiveData<Pet> getSpecificPet() {
+        return specificPet;
     }
 
     public void insert(Pet pet) {
