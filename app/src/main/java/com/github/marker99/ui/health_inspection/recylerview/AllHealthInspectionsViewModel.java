@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection;
+package com.github.marker99.ui.health_inspection.recylerview;
 
 import android.app.Application;
 

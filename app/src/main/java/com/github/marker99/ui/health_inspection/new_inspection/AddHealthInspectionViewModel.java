@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection;
+package com.github.marker99.ui.health_inspection.new_inspection;
 
 import android.app.Application;
 

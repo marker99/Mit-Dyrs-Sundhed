@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection;
+package com.github.marker99.ui.health_inspection.recylerview;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.marker99.PetAdapter;
 import com.github.marker99.R;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspectionAdapter.ViewHolder> {

@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection;
+package com.github.marker99.ui.health_inspection.new_inspection;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 

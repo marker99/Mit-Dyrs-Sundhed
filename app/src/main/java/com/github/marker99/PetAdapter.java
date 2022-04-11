@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.ViewHolder> {
 
+    //Not in use
+
+
     // Is responsible for converting your single list item layout file from XML
     // into View objects and storing them in a ViewHolder.
     @NonNull
