@@ -41,6 +41,8 @@ public class DogFragment extends Fragment {
         binding = DogFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        dogViewModel.getRandomDog();
+
         bindings();
 
         dogViewModel.getSearchedDog().observe(getViewLifecycleOwner(), dog -> {
