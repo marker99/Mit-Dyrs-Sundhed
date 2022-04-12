@@ -42,23 +42,34 @@ public class AddHealthInspectionFragment extends Fragment {
         binding = FragmentAddHealthInspectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        //FUUUUUUU
-        //appetite = (Spinner) findViewById(R.id.spinner_appetite);
-
         //Binding stuff to things
         bindings();
+
+        //Binding Data To Spinners
+        spinnerAdapter();
 
         addButton.setOnClickListener(this::addNewHealthInspection);
 
         return root;
     }
 
+    private void spinnerAdapter() {
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+                R.array.spinner_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        appetite.setAdapter(adapter);
+        drinkingHabit.setAdapter(adapter);
+    }
+
     private void addNewHealthInspection(View view) {
         Double weightD = 0.0;
         try {
             weightD = Double.parseDouble(weight.getText().toString());
+        } catch (Exception e) {
         }
-        catch (Exception e){}
         HealthInspection newInspection = new HealthInspection(
                 input_date.getText().toString(),
                 weightD,
@@ -85,14 +96,13 @@ public class AddHealthInspectionFragment extends Fragment {
                 remarks.getText().toString(),
                 temper.getText().toString(),
                 laboratoryTests.getText().toString()
-                );
+        );
         addHealthInspectionViewModel.insert(newInspection);
 
         NavHostFragment.findNavController(this).navigate(R.id.nav_allHealthInspections);
     }
 
-    private void bindings()
-    {
+    private void bindings() {
         addButton = binding.addHealthInspection;
         input_date = binding.editTextInspectionDate;
         weight = binding.editTextWeight;

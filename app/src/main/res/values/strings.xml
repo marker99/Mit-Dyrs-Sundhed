@@ -57,6 +57,7 @@
     <!-- SUNDHEDSTJEK -->
 
     <string-array name="spinner_array">
+        <item>Ingen Valgt</item>
         <item>Nedsat</item>
         <item>Normal</item>
         <item>Forøget</item>
