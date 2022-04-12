@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
@@ -23,7 +25,12 @@ public class AddHealthInspectionFragment extends Fragment {
     private FragmentAddHealthInspectionBinding binding;
 
     private Button addButton;
-    private EditText input_date;
+    private EditText input_date, weight;
+    private Spinner appetite, drinkingHabit;
+    private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
+            skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
+            milkLumps, analLumps, joint, postureMovements;
+    private EditText remarks, temper, laboratoryTests;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -33,8 +40,7 @@ public class AddHealthInspectionFragment extends Fragment {
         View root = binding.getRoot();
 
         //Binding stuff to things
-        addButton = binding.addHealthInspection;
-        input_date = binding.editTextInspectionDate;
+        bindings();
 
         addButton.setOnClickListener(this::addNewHealthInspection);
 
@@ -45,6 +51,35 @@ public class AddHealthInspectionFragment extends Fragment {
         HealthInspection newInspection = new HealthInspection(
                 input_date.getText().toString());
         addHealthInspectionViewModel.insert(newInspection);
+    }
+
+    private void bindings()
+    {
+        addButton = binding.addHealthInspection;
+        input_date = binding.editTextInspectionDate;
+        weight = binding.editTextWeight;
+
+        appetite = binding.spinnerAppetite;
+        drinkingHabit = binding.spinnerDrinkingHabits;
+
+        eyes = binding.checkboxEyes;
+        outerEar = binding.checkboxOuterEar;
+        nose = binding.checkboxNose;
+        oralCavity = binding.checkboxOralCavity;
+        navelGroin = binding.checkboxNavelGroin;
+        skin_hairLayer = binding.checkboxSkinHairLayer;
+        lymphNodes = binding.checkboxLymphNodes;
+        pawClaws = binding.checkboxPawClaws;
+        heartLungs = binding.checkboxHeartLungs;
+        sexualOrgans = binding.checkboxSexualOrgans;
+        milkLumps = binding.checkboxMilkLumps;
+        analLumps = binding.checkboxAnalLumps;
+        joint = binding.checkboxJoint;
+        postureMovements = binding.checkboxPostureMovements;
+
+        remarks = binding.editTextRemarks;
+        temper = binding.editTextRemarks;
+        laboratoryTests = binding.editTextLaboratoryTests;
     }
 
 }

@@ -226,4 +226,38 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_temper"
         android:layout_marginTop="150px"/>
 
+
+    <EditText
+        android:id="@+id/editText_remarks"
+        android:layout_width="367dp"
+        android:layout_height="31dp"
+        android:gravity="center_horizontal"
+        android:hint="Bemærkninger"
+        android:inputType="numberDecimal"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_remarks"
+        app:layout_constraintTop_toBottomOf="@+id/textView_remarks" />
+
+    <EditText
+        android:id="@+id/editText_temper"
+        android:layout_width="367dp"
+        android:layout_height="31dp"
+        android:gravity="center_horizontal"
+        android:hint="Temperament"
+        android:inputType="numberDecimal"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_temper"
+        app:layout_constraintTop_toBottomOf="@+id/textView_temper" />
+
+    <EditText
+        android:id="@+id/editText_laboratoryTests"
+        android:layout_width="367dp"
+        android:layout_height="31dp"
+        android:gravity="center_horizontal"
+        android:hint="Laboratorie tests"
+        android:inputType="numberDecimal"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_laboratoryTests"
+        app:layout_constraintTop_toBottomOf="@+id/textView_laboratoryTests" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
