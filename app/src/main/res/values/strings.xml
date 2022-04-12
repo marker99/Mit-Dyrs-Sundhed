@@ -56,5 +56,11 @@
     <string name="joint">Led</string>
     <!-- SUNDHEDSTJEK -->
 
+    <string-array name="spinner_array">
+        <item>Nedsat</item>
+        <item>Normal</item>
+        <item>Forøget</item>
+    </string-array>
+
 
 </resources>

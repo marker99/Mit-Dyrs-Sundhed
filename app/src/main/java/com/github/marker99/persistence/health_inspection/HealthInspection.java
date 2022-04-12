@@ -11,15 +11,62 @@ public class HealthInspection implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String inspectionDate; //Date objects i stedet?
-    private int weight;
+    private double weight;
     private String drinkingHabits, appetite;
     private String remarks, temper, laboratoryTests;
-    private boolean eyes, outerEar, oralCavity, navelGroin, skin_hairLayer,
+    private boolean eyes, outerEar, nose, oralCavity, navelGroin, skin_hairLayer,
             lymphNodes, pawClaws, heartLungs, sexualOrgans, milkLumps, analLumps,
-            posture_movements;
+            joint, posture_movements;
 
-    public HealthInspection(String inspectionDate) {
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public boolean isNose() {
+        return nose;
+    }
+
+    public void setNose(boolean nose) {
+        this.nose = nose;
+    }
+
+    public boolean isJoint() {
+        return joint;
+    }
+
+    public void setJoint(boolean joint) {
+        this.joint = joint;
+    }
+
+    public HealthInspection(String inspectionDate, double weight, String drinkingHabits, String appetite,
+                            boolean eyes, boolean outerEar, boolean nose,
+                            boolean oralCavity, boolean navelGroin,
+                            boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
+                            boolean heartLungs, boolean sexualOrgans, boolean milkLumps, boolean analLumps,
+                            boolean joint, boolean posture_movements,
+                            String remarks, String temper, String laboratoryTests
+                            ) {
         this.inspectionDate = inspectionDate;
+        this.weight = weight;
+        this.drinkingHabits = drinkingHabits;
+        this.appetite = appetite;
+        this.remarks = remarks;
+        this.temper = temper;
+        this.laboratoryTests = laboratoryTests;
+        this.eyes = eyes;
+        this.outerEar = outerEar;
+        this.nose = nose;
+        this.oralCavity = oralCavity;
+        this.navelGroin = navelGroin;
+        this.skin_hairLayer = skin_hairLayer;
+        this.lymphNodes = lymphNodes;
+        this.pawClaws = pawClaws;
+        this.heartLungs = heartLungs;
+        this.sexualOrgans = sexualOrgans;
+        this.milkLumps = milkLumps;
+        this.analLumps = analLumps;
+        this.joint = joint;
+        this.posture_movements = posture_movements;
     }
 
     public int getId() {
@@ -38,12 +85,8 @@ public class HealthInspection implements Serializable {
         this.inspectionDate = inspectionDate;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 
     public String getDrinkingHabits() {
