@@ -36,20 +36,11 @@ public class AddSignalementFragment extends Fragment {
         binding = FragmentAddSignalementBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // Binding stuff to things
-        addButton = binding.addSignalement;
-        input_petName = binding.editTextPetName;
-        input_birthday = binding.editTextBirthdate;
-        input_race = binding.editTextRace;
-        input_gender = binding.editTextGender;
-        input_color = binding.editTextColor;
-        input_Characteristics = binding.editTextSpecialCharacteristics;
+        bindings();
 
         // MOTHERFUCKING BUTTON
         addButton.setOnClickListener(this::addNewPet);
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_add_signalement, container, false);
         return root;
     }
 
@@ -62,6 +53,17 @@ public class AddSignalementFragment extends Fragment {
                 input_color.getText().toString(),
                 input_Characteristics.getText().toString());
         addSignalementViewModel.insert(newPet);
+    }
+
+    // Binding stuff to things
+    private void bindings() {
+        addButton = binding.addSignalement;
+        input_petName = binding.editTextPetName;
+        input_birthday = binding.editTextBirthdate;
+        input_race = binding.editTextRace;
+        input_gender = binding.editTextGender;
+        input_color = binding.editTextColor;
+        input_Characteristics = binding.editTextSpecialCharacteristics;
     }
 
 }
