@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -40,6 +41,9 @@ public class AddHealthInspectionFragment extends Fragment {
         addHealthInspectionViewModel = new ViewModelProvider(this).get(AddHealthInspectionViewModel.class);
         binding = FragmentAddHealthInspectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        //FUUUUUUU
+        //appetite = (Spinner) findViewById(R.id.spinner_appetite);
 
         //Binding stuff to things
         bindings();
