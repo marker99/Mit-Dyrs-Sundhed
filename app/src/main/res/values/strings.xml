@@ -33,4 +33,27 @@
     <string name="life_span">Life span:</string>
     <string name="temperament">Temperament:</string>
 
+    <!-- SUNDHEDSTJEK -->
+    <string name="eyes">Øjne</string>
+    <string name="outer_ear">Ydre øre</string>
+    <string name="nose">Næse</string>
+    <string name="oral_cavity">Mundhule</string>
+    <string name="navel_groin">Navle/lyske</string>
+    <string name="skin_hairLayer">Hud/hårlag</string>
+    <string name="lymphNodes">Lymfeknuder</string>
+    <string name="paw_claws">Poter/kløer</string>
+    <string name="heart_lungs">Hjerte/lunger</string>
+    <string name="sexual_organs">Kønsorganer</string>
+    <string name="milk_lumps">Mælkekirtler</string>
+    <string name="anal_lumps">Analkirtler</string>
+    <string name="posture_movements">Holdning/Bevægelser</string>
+    <string name="remarks">Bemærkninger:</string>
+    <string name="temper">Temperament:</string>
+    <string name="laboratory_tests">Laboratorieundersøgelser:</string>
+    <string name="drinking_habits">Drikkelyst</string>
+    <string name="appetite">Appetit</string>
+    <string name="joint">Led</string>
+    <!-- SUNDHEDSTJEK -->
+
+
 </resources>
