@@ -41,9 +41,10 @@ public class DogFragment extends Fragment {
         binding = DogFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        bindings();
+
         dogViewModel.getRandomDog();
 
-        bindings();
 
         dogViewModel.getSearchedDog().observe(getViewLifecycleOwner(), dog -> {
             Glide.with(this).load(dog.getImageURL()).into(imageView);

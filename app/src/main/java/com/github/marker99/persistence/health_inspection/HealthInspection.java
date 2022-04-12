@@ -1,5 +1,6 @@
 package com.github.marker99.persistence.health_inspection;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -38,14 +39,14 @@ public class HealthInspection implements Serializable {
         this.joint = joint;
     }
 
-    public HealthInspection(String inspectionDate, double weight, String drinkingHabits, String appetite,
+    public HealthInspection(@NonNull String inspectionDate, double weight, String drinkingHabits, String appetite,
                             boolean eyes, boolean outerEar, boolean nose,
                             boolean oralCavity, boolean navelGroin,
                             boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
                             boolean heartLungs, boolean sexualOrgans, boolean milkLumps, boolean analLumps,
                             boolean joint, boolean posture_movements,
                             String remarks, String temper, String laboratoryTests
-                            ) {
+    ) {
         this.inspectionDate = inspectionDate;
         this.weight = weight;
         this.drinkingHabits = drinkingHabits;
@@ -77,6 +78,7 @@ public class HealthInspection implements Serializable {
         this.id = id;
     }
 
+    @NonNull
     public String getInspectionDate() {
         return inspectionDate;
     }

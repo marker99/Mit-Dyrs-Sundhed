@@ -28,6 +28,9 @@ public interface HealthInspectionDAO {
     @Query("SELECT * FROM healthInspection_table ORDER BY inspectionDate DESC")
     LiveData<List<HealthInspection>> getAllInspections();
 
+    @Query("SELECT * FROM healthInspection_table WHERE id like :inspectionDate_id")
+    HealthInspection getInspection(int inspectionDate_id);
+
 }
 
 

@@ -31,7 +31,7 @@
             app:destination="@id/addHealthInspectionFragment" />
         <action
             android:id="@+id/action_nav_allHealthInspections_to_healthInspection"
-            app:destination="@id/healthInspection" />
+            app:destination="@id/specificHealthInspection" />
     </fragment>
 
     <fragment
@@ -47,8 +47,8 @@
         tools:layout="@layout/fragment_add_health_inspection" />
 
     <fragment
-        android:id="@+id/healthInspection"
-        android:name="com.github.marker99.ui.health_inspection.HealthInspection"
+        android:id="@+id/specificHealthInspection"
+        android:name="com.github.marker99.ui.health_inspection.SpecificHealthInspection"
         android:label="fragment_health_inspection"
         tools:layout="@layout/fragment_health_inspection" />
 

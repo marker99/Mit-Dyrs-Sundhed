@@ -53,8 +53,8 @@ public class AllHealthInspectionsFragment extends Fragment {
         // Create a Bundle to send data
         Bundle bundle = new Bundle();
         // Fill bundle with Data
-        bundle.putSerializable("healthInspection", healthInspection);
-        System.out.println(bundle.getSerializable("healthInspection").toString());
+        bundle.putSerializable("inspectionDate", healthInspection);
+        System.out.println(bundle.getSerializable("inspectionDate").toString());
         // Navigate with the bundle attached
         NavHostFragment.findNavController(this).navigate(R.id.action_nav_allHealthInspections_to_healthInspection, bundle);
     }
