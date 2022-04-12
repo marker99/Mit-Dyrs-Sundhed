@@ -3,21 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/drawable/ic_home.xml" value="0.2985" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2985" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/drawable/side_nav_bar.xml" value="0.2985" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/app_bar_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/content_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/dog_fragment.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_health_inspection.xml" value="0.5" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_signalement.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_gallery.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_slideshow.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/nav_header_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2985" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/drawable/ic_idea_background.xml" value="0.3175" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/activity_addPetInfo.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/activity_add_pet.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/activity_forside.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/activity_main2.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/add_health_inspection_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/app_bar_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/content_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/dog_fragment.xml" value="0.35778985507246375" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_health_inspection.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_pet_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_pet_infovf.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_signalement.xml" value="0.33" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_all_health_inspections.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_health_inspection.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_signalement.xml" value="0.33" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/pet_list_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/menu/main_activity.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>
