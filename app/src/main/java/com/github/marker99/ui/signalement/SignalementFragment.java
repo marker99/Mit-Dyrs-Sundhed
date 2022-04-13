@@ -32,14 +32,16 @@ public class SignalementFragment extends Fragment {
         bindings();
 
         //Filling all the textViews
-        viewModel.getSpecificPet().observe(getViewLifecycleOwner(), pet -> {
-            petName.setText(pet.getPetName());
-            birthDate.setText(pet.getBirthday());
-            race.setText(pet.getRace());
-            gender.setText(pet.getGender());
-            color.setText(pet.getColor());
-            characteristics.setText(pet.getCharacteristics());
-        });
+        if (viewModel.getSpecificPet().getValue() != null){
+            viewModel.getSpecificPet().observe(getViewLifecycleOwner(), pet -> {
+                petName.setText(pet.getPetName());
+                birthDate.setText(pet.getBirthday());
+                race.setText(pet.getRace());
+                gender.setText(pet.getGender());
+                color.setText(pet.getColor());
+                characteristics.setText(pet.getCharacteristics());
+            });
+    }
 
         return root;
     }

@@ -5,6 +5,8 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity(tableName = "healthInspection_table")
 public class HealthInspection implements Serializable {

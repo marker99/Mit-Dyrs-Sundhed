@@ -35,7 +35,7 @@ public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspecti
     // onBindViewHolder(), is responsible for setting the data from the data source on each relevant view.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.item.setText(inspections.get(position).getInspectionDate());
+        holder.item.setText(inspections.get(position).getInspectionDate().toString());
     }
 
     // Specify the length of the data in getItemCount() using your specific data type.
