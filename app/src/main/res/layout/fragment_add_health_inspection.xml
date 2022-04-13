@@ -13,12 +13,12 @@
         android:gravity="center_horizontal"
         android:hint="day / måned / år"
         android:inputType="date"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <Button
         android:id="@+id/addHealthInspection"
@@ -89,11 +89,11 @@
         android:id="@+id/checkbox_eyes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="50px"
         android:text="@string/eyes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_drinkingHabits"
-        android:layout_marginTop="50px"
-        android:layout_marginLeft="50px"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView_drinkingHabits" />
 
     <CheckBox
         android:id="@+id/checkbox_outerEar"
@@ -204,39 +204,56 @@
         android:id="@+id/textView_remarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150px"
         android:text="@string/remarks"
         app:layout_constraintStart_toStartOf="@+id/textView_drinkingHabits"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_joint"
-        android:layout_marginTop="150px"/>
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_joint" />
 
     <TextView
         android:id="@+id/textView_temper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150px"
         android:text="@string/temper"
         app:layout_constraintStart_toStartOf="@+id/textView_remarks"
-        app:layout_constraintTop_toBottomOf="@+id/textView_remarks"
-        android:layout_marginTop="150px"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView_remarks" />
 
 
     <EditText
         android:id="@+id/editText_remarks"
-        android:layout_width="367dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center_horizontal"
         android:hint="@string/remarks"
-        android:textSize="14sp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="@+id/textView_remarks"
         app:layout_constraintTop_toBottomOf="@+id/textView_remarks" />
 
     <EditText
         android:id="@+id/editText_temper"
-        android:layout_width="367dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center_horizontal"
         android:hint="@string/temper"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/textView_temper"
         app:layout_constraintTop_toBottomOf="@+id/textView_temper" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
