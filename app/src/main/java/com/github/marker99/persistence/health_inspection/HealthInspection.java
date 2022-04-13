@@ -14,7 +14,7 @@ public class HealthInspection implements Serializable {
     private String inspectionDate; //Date objects i stedet?
     private double weight;
     private String drinkingHabits, appetite;
-    private String remarks, temper, laboratoryTests;
+    private String remarks, temper;
     private boolean eyes, outerEar, nose, oralCavity, navelGroin, skin_hairLayer,
             lymphNodes, pawClaws, heartLungs, sexualOrgans, milkLumps, analLumps,
             joint, posture_movements;
@@ -45,7 +45,7 @@ public class HealthInspection implements Serializable {
                             boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
                             boolean heartLungs, boolean sexualOrgans, boolean milkLumps, boolean analLumps,
                             boolean joint, boolean posture_movements,
-                            String remarks, String temper, String laboratoryTests
+                            String remarks, String temper
     ) {
         this.inspectionDate = inspectionDate;
         this.weight = weight;
@@ -53,7 +53,6 @@ public class HealthInspection implements Serializable {
         this.appetite = appetite;
         this.remarks = remarks;
         this.temper = temper;
-        this.laboratoryTests = laboratoryTests;
         this.eyes = eyes;
         this.outerEar = outerEar;
         this.nose = nose;
@@ -217,14 +216,6 @@ public class HealthInspection implements Serializable {
 
     public void setTemper(String temper) {
         this.temper = temper;
-    }
-
-    public String getLaboratoryTests() {
-        return laboratoryTests;
-    }
-
-    public void setLaboratoryTests(String laboratoryTests) {
-        this.laboratoryTests = laboratoryTests;
     }
 
 }

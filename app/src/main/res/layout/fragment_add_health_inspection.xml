@@ -92,7 +92,8 @@
         android:text="@string/eyes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_drinkingHabits"
-        android:layout_marginTop="50px"/>
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="50px"/>
 
     <CheckBox
         android:id="@+id/checkbox_outerEar"
@@ -115,24 +116,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/oral_cavity"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_nose"
-        app:layout_constraintTop_toTopOf="@+id/checkbox_nose" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox_eyes"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_eyes" />
 
     <CheckBox
         android:id="@+id/checkbox_navelGroin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/navel_groin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_eyes" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox_oralCavity"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_oralCavity" />
 
     <CheckBox
         android:id="@+id/checkbox_skin_hairLayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/skin_hairLayer"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_navelGroin"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_outerEar" />
+        app:layout_constraintStart_toEndOf="@+id/checkbox_oralCavity"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_oralCavity" />
 
     <CheckBox
         android:id="@+id/checkbox_lymphNodes"
@@ -140,31 +141,31 @@
         android:layout_height="wrap_content"
         android:text="@string/lymphNodes"
         app:layout_constraintStart_toEndOf="@+id/checkbox_skin_hairLayer"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_nose" />
+        app:layout_constraintTop_toTopOf="@+id/checkbox_skin_hairLayer" />
 
     <CheckBox
         android:id="@+id/checkbox_pawClaws"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/paw_claws"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_lymphNodes"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_oralCavity" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox_navelGroin"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_navelGroin" />
 
     <CheckBox
         android:id="@+id/checkbox_heartLungs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/heart_lungs"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_pawClaws"
         app:layout_constraintTop_toBottomOf="@+id/checkbox_navelGroin" />
 
-        <CheckBox
+    <CheckBox
         android:id="@+id/checkbox_sexualOrgans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sexual_organs"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_heartLungs"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_skin_hairLayer" />
+        app:layout_constraintStart_toEndOf="@+id/checkbox_navelGroin"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_navelGroin" />
 
     <CheckBox
         android:id="@+id/checkbox_milkLumps"
@@ -179,8 +180,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/anal_lumps"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_milkLumps"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_pawClaws" />
+        app:layout_constraintStart_toEndOf="@+id/checkbox_postureMovements"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_postureMovements" />
 
     <!-- FIXME: Hvordan siger man led på engelsk?? -->
     <CheckBox
@@ -188,16 +189,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/joint"
-        app:layout_constraintStart_toStartOf="@+id/checkbox_sexualOrgans"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_sexualOrgans" />
+        app:layout_constraintStart_toEndOf="@+id/checkbox_heartLungs"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_heartLungs" />
 
     <CheckBox
         android:id="@+id/checkbox_postureMovements"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/posture_movements"
-        app:layout_constraintStart_toEndOf="@+id/checkbox_joint"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_milkLumps" />
+        app:layout_constraintStart_toStartOf="@+id/checkbox_pawClaws"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_pawClaws" />
 
     <TextView
         android:id="@+id/textView_remarks"
@@ -206,7 +207,7 @@
         android:text="@string/remarks"
         app:layout_constraintStart_toStartOf="@+id/textView_drinkingHabits"
         app:layout_constraintTop_toBottomOf="@+id/checkbox_joint"
-        android:layout_marginTop="50px"/>
+        android:layout_marginTop="150px"/>
 
     <TextView
         android:id="@+id/textView_temper"
@@ -215,15 +216,6 @@
         android:text="@string/temper"
         app:layout_constraintStart_toStartOf="@+id/textView_remarks"
         app:layout_constraintTop_toBottomOf="@+id/textView_remarks"
-        android:layout_marginTop="150px"/>
-
-    <TextView
-        android:id="@+id/textView_laboratoryTests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/laboratory_tests"
-        app:layout_constraintStart_toStartOf="@+id/textView_temper"
-        app:layout_constraintTop_toBottomOf="@+id/textView_temper"
         android:layout_marginTop="150px"/>
 
 
@@ -246,15 +238,5 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/textView_temper"
         app:layout_constraintTop_toBottomOf="@+id/textView_temper" />
-
-    <EditText
-        android:id="@+id/editText_laboratoryTests"
-        android:layout_width="367dp"
-        android:layout_height="50dp"
-        android:gravity="center_horizontal"
-        android:hint="@string/laboratory_tests"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/textView_laboratoryTests"
-        app:layout_constraintTop_toBottomOf="@+id/textView_laboratoryTests" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

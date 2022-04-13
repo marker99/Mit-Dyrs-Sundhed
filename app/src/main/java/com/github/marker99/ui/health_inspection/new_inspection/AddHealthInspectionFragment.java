@@ -33,7 +33,7 @@ public class AddHealthInspectionFragment extends Fragment {
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
             milkLumps, analLumps, joint, postureMovements;
-    private EditText remarks, temper, laboratoryTests;
+    private EditText remarks, temper;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -94,8 +94,7 @@ public class AddHealthInspectionFragment extends Fragment {
                 postureMovements.isChecked(),
 
                 remarks.getText().toString(),
-                temper.getText().toString(),
-                laboratoryTests.getText().toString()
+                temper.getText().toString()
         );
         addHealthInspectionViewModel.insert(newInspection);
 
@@ -127,7 +126,6 @@ public class AddHealthInspectionFragment extends Fragment {
 
         remarks = binding.editTextRemarks;
         temper = binding.editTextRemarks;
-        laboratoryTests = binding.editTextLaboratoryTests;
     }
 
 }
