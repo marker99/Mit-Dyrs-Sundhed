@@ -73,8 +73,8 @@ public class AddHealthInspectionFragment extends Fragment {
         HealthInspection newInspection = new HealthInspection(
                 input_date.getText().toString(),
                 weightD,
-                "test",
-                "test",
+                drinkingHabit.getSelectedItem().toString(),
+                appetite.getSelectedItem().toString(),
 
                 eyes.isChecked(),
                 outerEar.isChecked(),

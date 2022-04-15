@@ -49,7 +49,7 @@ public class SpecificHealthInspection extends Fragment {
     }
 
     public void populate(HealthInspection healthInspection) {
-        test.setText(healthInspection.getInspectionDate().toString());
+        test.setText(healthInspection.getInspectionDate());
     }
 
 
