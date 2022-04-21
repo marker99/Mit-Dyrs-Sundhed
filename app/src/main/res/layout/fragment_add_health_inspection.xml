@@ -40,10 +40,11 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
-        android:id="@+id/textView_weight2"
+        android:id="@+id/textView_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dato"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/editText_inspectionDate"
         app:layout_constraintStart_toStartOf="@+id/guideline5" />
 
@@ -52,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vægt (kg)"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/editText_inspectionDate" />
 
@@ -73,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50px"
         android:text="@string/appetite"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/textView_weight" />
 
@@ -82,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30px"
         android:text="@string/drinking_habits"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/textview_appetite" />
 
@@ -112,8 +116,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50px"
-        android:textSize="12sp"
         android:text="@string/eyes"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/textView_drinkingHabits" />
 
@@ -211,8 +215,9 @@
         android:id="@+id/textView_remarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/remarks"
         android:layout_marginTop="10dp"
+        android:text="@string/remarks"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/checkbox_pawClaws" />
 
@@ -231,8 +236,9 @@
         android:id="@+id/textView_temper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/temper"
         android:layout_marginTop="10dp"
+        android:text="@string/temper"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/editText_remarks" />
 

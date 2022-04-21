@@ -79,4 +79,17 @@ public class Pet {
     public void setCharacteristics(String characteristics) {
         this.characteristics = characteristics;
     }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id=" + id +
+                ", petName='" + petName + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", race='" + race + '\'' +
+                ", gender='" + gender + '\'' +
+                ", color='" + color + '\'' +
+                ", characteristics='" + characteristics + '\'' +
+                '}';
+    }
 }

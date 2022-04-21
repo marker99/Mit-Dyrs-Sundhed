@@ -50,7 +50,7 @@
         android:id="@+id/specificHealthInspection"
         android:name="com.github.marker99.ui.health_inspection.SpecificHealthInspection"
         android:label="fragment_health_inspection"
-        tools:layout="@layout/fragment_health_inspection" />
+        tools:layout="@layout/fragment_health_inspection_OLD" />
 
     <fragment
         android:id="@+id/dogFragment"

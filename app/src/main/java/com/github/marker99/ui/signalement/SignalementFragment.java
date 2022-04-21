@@ -32,7 +32,8 @@ public class SignalementFragment extends Fragment {
         bindings();
 
         //Filling all the textViews
-        if (viewModel.getSpecificPet().getValue() != null){
+        //Hvis Pet ikke er nul, så indsæt information!
+        if (viewModel.getSpecificPet() != null){
             viewModel.getSpecificPet().observe(getViewLifecycleOwner(), pet -> {
                 petName.setText(pet.getPetName());
                 birthDate.setText(pet.getBirthday());

@@ -36,7 +36,7 @@ public class AddHealthInspectionFragment extends Fragment {
     private Spinner appetite, drinkingHabit, temper;
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
-            milkLumps, analLumps, joint, postureMovements;
+            milkLumps, joint;
     private EditText remarks;
 
     @Override
