@@ -18,8 +18,8 @@ public class HealthInspection implements Serializable {
     private String drinkingHabits, appetite;
     private String remarks, temper;
     private boolean eyes, outerEar, nose, oralCavity, navelGroin, skin_hairLayer,
-            lymphNodes, pawClaws, heartLungs, sexualOrgans, milkLumps, analLumps,
-            joint, posture_movements;
+            lymphNodes, pawClaws, heartLungs, sexualOrgans, milkLumps,
+            joint;
 
     public void setWeight(double weight) {
         this.weight = weight;
@@ -45,9 +45,8 @@ public class HealthInspection implements Serializable {
                             boolean eyes, boolean outerEar, boolean nose,
                             boolean oralCavity, boolean navelGroin,
                             boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
-                            boolean heartLungs, boolean sexualOrgans, boolean milkLumps, boolean analLumps,
-                            boolean joint, boolean posture_movements,
-                            String remarks, String temper
+                            boolean heartLungs, boolean sexualOrgans, boolean milkLumps,
+                            boolean joint, String remarks, String temper
     ) {
         this.inspectionDate = inspectionDate;
         this.weight = weight;
@@ -66,9 +65,7 @@ public class HealthInspection implements Serializable {
         this.heartLungs = heartLungs;
         this.sexualOrgans = sexualOrgans;
         this.milkLumps = milkLumps;
-        this.analLumps = analLumps;
         this.joint = joint;
-        this.posture_movements = posture_movements;
     }
 
     public int getId() {
@@ -186,22 +183,6 @@ public class HealthInspection implements Serializable {
 
     public void setMilkLumps(boolean milkLumps) {
         this.milkLumps = milkLumps;
-    }
-
-    public boolean isAnalLumps() {
-        return analLumps;
-    }
-
-    public void setAnalLumps(boolean analLumps) {
-        this.analLumps = analLumps;
-    }
-
-    public boolean isPosture_movements() {
-        return posture_movements;
-    }
-
-    public void setPosture_movements(boolean posture_movements) {
-        this.posture_movements = posture_movements;
     }
 
     public String getRemarks() {

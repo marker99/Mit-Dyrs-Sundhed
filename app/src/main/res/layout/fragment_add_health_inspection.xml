@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.health_inspection.new_inspection.AddHealthInspectionFragment">
 
+    <!--
     <Button
         android:id="@+id/datePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DatePicker"
         />
+        -->
 
     <EditText
         android:id="@+id/editText_inspectionDate"
@@ -104,6 +106,7 @@
      android:scaleX="0.7"
         android:scaleY="0.7"
         -->
+
     <CheckBox
         android:id="@+id/checkbox_eyes"
         android:layout_width="wrap_content"
@@ -197,15 +200,6 @@
         app:layout_constraintTop_toBottomOf="@+id/checkbox_lymphNodes" />
 
     <CheckBox
-        android:id="@+id/checkbox_analLumps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/anal_lumps"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/checkbox_postureMovements" />
-
-    <!-- FIXME: Hvordan siger man led på engelsk?? -->
-    <CheckBox
         android:id="@+id/checkbox_joint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -213,32 +207,14 @@
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/checkbox_heartLungs" />
 
-    <CheckBox
-        android:id="@+id/checkbox_postureMovements"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/posture_movements"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_pawClaws" />
-
     <TextView
         android:id="@+id/textView_remarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150px"
         android:text="@string/remarks"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_joint" />
-
-    <TextView
-        android:id="@+id/textView_temper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150px"
-        android:text="@string/temper"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textView_remarks" />
-
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_pawClaws" />
 
     <EditText
         android:id="@+id/editText_remarks"
@@ -251,16 +227,23 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/textView_remarks" />
 
-    <EditText
-        android:id="@+id/editText_temper"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:gravity="center_horizontal"
-        android:hint="@string/temper"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+    <TextView
+        android:id="@+id/textView_temper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temper"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textView_temper" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_remarks" />
+
+    <Spinner
+        android:id="@+id/spinner_temper"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_temper"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

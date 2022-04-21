@@ -2,6 +2,7 @@ package com.github.marker99.ui.health_inspection.new_inspection;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,8 @@ import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
+import java.util.Calendar;
+
 public class AddHealthInspectionFragment extends Fragment {
 
     private AddHealthInspectionViewModel addHealthInspectionViewModel;
@@ -30,11 +33,11 @@ public class AddHealthInspectionFragment extends Fragment {
 
     private Button addButton, datePicker;
     private EditText input_date, weight;
-    private Spinner appetite, drinkingHabit;
+    private Spinner appetite, drinkingHabit, temper;
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
             milkLumps, analLumps, joint, postureMovements;
-    private EditText remarks, temper;
+    private EditText remarks;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -44,9 +47,20 @@ public class AddHealthInspectionFragment extends Fragment {
         View root = binding.getRoot();
 
         //Date picker! -- getView(), da vi er i fragment og ikke Activity.
+
+        /*
         datePicker = getView().findViewById(R.id.datePicker);
 
 
+        DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(AddHealthInspectionFragment.this,  //Your Fragment Class Name should be here, not getActivity(), or getContex().
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show(getActivity().getFragmentManager(), "DatePicker");
+
+         */
+
+        /*
         //FIXME: MaterialDatePicker - Jeg virker ikke i fragment
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
         builder.setTitleText("Select a date");
@@ -57,6 +71,8 @@ public class AddHealthInspectionFragment extends Fragment {
                 //materialDatePicker.......
             }
         });
+
+         */
 
 
         //Binding stuff to things
@@ -72,13 +88,19 @@ public class AddHealthInspectionFragment extends Fragment {
 
     private void spinnerAdapter() {
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(),
                 R.array.spinner_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        appetite.setAdapter(adapter);
-        drinkingHabit.setAdapter(adapter);
+        appetite.setAdapter(adapter1);
+        drinkingHabit.setAdapter(adapter1);
+
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getContext(),
+                R.array.spinner_temper, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        temper.setAdapter(adapter2);
+
     }
 
     private void addNewHealthInspection(View view) {
@@ -106,12 +128,10 @@ public class AddHealthInspectionFragment extends Fragment {
                 heartLungs.isChecked(),
                 sexualOrgans.isChecked(),
                 milkLumps.isChecked(),
-                analLumps.isChecked(),
                 joint.isChecked(),
-                postureMovements.isChecked(),
 
                 remarks.getText().toString(),
-                temper.getText().toString()
+                temper.getSelectedItem().toString()
         );
         addHealthInspectionViewModel.insert(newInspection);
 
@@ -138,12 +158,10 @@ public class AddHealthInspectionFragment extends Fragment {
         heartLungs = binding.checkboxHeartLungs;
         sexualOrgans = binding.checkboxSexualOrgans;
         milkLumps = binding.checkboxMilkLumps;
-        analLumps = binding.checkboxAnalLumps;
         joint = binding.checkboxJoint;
-        postureMovements = binding.checkboxPostureMovements;
 
         remarks = binding.editTextRemarks;
-        temper = binding.editTextRemarks;
+        temper = binding.spinnerTemper;
     }
 
 }

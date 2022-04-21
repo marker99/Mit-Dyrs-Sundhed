@@ -63,5 +63,28 @@
         <item>Forøget</item>
     </string-array>
 
+    <string-array name="spinner_temper">
+        <item>Playful</item>
+        <item>Loyal</item>
+        <item>Independent</item>
+        <item>Intelligent</item>
+        <item>Happy</item>
+        <item>Vocal</item>
+        <item>Trainable</item>
+        <item>Good-natured</item>
+        <item>Devoted</item>
+        <item>Lively</item>
+        <item>Brave</item>
+        <item>Charming</item>
+        <item>Fearless</item>
+        <item>Keen</item>
+        <item>Alert</item>
+        <item>Confident</item>
+        <item>Faithful</item>
+        <item>Tenacious</item>
+        <item>Energetic</item>
+        <item>Responsive</item>
+    </string-array>
+
 
 </resources>
