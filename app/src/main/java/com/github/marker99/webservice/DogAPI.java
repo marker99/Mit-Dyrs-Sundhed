@@ -4,6 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface DogAPI {
 
@@ -16,7 +17,11 @@ public interface DogAPI {
     @GET("v1/breeds")
     Call<DogResponse[]> getAllBreeds();
 
-    @GET("v1/breeds/search?q={breed}")
-    Call<DogResponse[]> getBreed(@Path("breed") String breed);
+    //TODO: I cant figure this out
+    @GET("v1/breeds/search")
+    Call<DogResponse[]> getBreed(@Query("q") String breedName);
 
+
+    //https://api.thedogapi.com/v1/breeds/search?q=affen
+    //?q={breed}
 }

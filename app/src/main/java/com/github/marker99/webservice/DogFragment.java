@@ -32,6 +32,10 @@ public class DogFragment extends Fragment {
     private TextView lifespan;
     private TextView temperament;
 
+    private EditText editText;
+    private Button searchButton;
+
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -53,6 +57,10 @@ public class DogFragment extends Fragment {
             temperament.setText(dog.getTemperament());
         });
 
+        searchButton.setOnClickListener(view -> {
+            dogViewModel.searchForBreed(editText.getText().toString());
+        });
+
         randomButton.setOnClickListener(view -> {
             dogViewModel.getRandomDog();
         });
@@ -61,6 +69,9 @@ public class DogFragment extends Fragment {
     }
 
     private void bindings() {
+        editText = binding.editText;
+        searchButton = binding.button;
+
         randomButton = binding.buttonRandom;
         imageView = binding.imageView;
         name = binding.textviewBreedName;

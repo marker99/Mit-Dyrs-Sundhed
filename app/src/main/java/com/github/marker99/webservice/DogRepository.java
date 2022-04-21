@@ -28,6 +28,26 @@ public class DogRepository {
         return searchedBreed;
     }
 
+    public void searchForBreed(String breedName){
+        DogAPI dogAPI = ServiceGenerator.getDogAPI();
+        Call<DogResponse[]> call = dogAPI.getBreed(breedName);
+        call.enqueue(new Callback<DogResponse[]>() {
+            @Override
+            public void onResponse(Call<DogResponse[]> call, Response<DogResponse[]> response) {
+                if (response.isSuccessful()) {
+                    Dog doggy = response.body()[0].getBreed();
+                    searchedBreed.setValue(doggy);
+                    Log.i("Retrofit", "Something went right :) \n" + doggy);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DogResponse[]> call, Throwable t) {
+                Log.i("Retrofit", "Something went wrong :(");
+                Log.i("Retrofit", t.getMessage());
+            }
+        });
+    }
 
     public void getRandomDog() {
         DogAPI dogAPI = ServiceGenerator.getDogAPI();
