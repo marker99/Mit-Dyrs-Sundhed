@@ -6,8 +6,11 @@
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_health_inspection.xml" value="0.536" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_signalement.xml" value="0.4" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.246" />
-        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/dog_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/Frederik/AndroidStudioProjects/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_health_inspection.xml" value="0.12817028985507245" />
+        <entry key="..\:/Users/N_i_v/Desktop/Android/app/src/main/res/layout/fragment_add_health_inspection.xml" value="0.33" />
+        <entry key="..\:/Users/N_i_v/Desktop/Android/app/src/main/res/layout/fragment_all_health_inspections.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/N_i_v/Desktop/Android/app/src/main/res/layout/fragment_health_inspection.xml" value="0.5" />
+        <entry key="..\:/Users/N_i_v/Desktop/Android/app/src/main/res/layout/fragment_home.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/N_i_v/Desktop/Android/app/src/main/res/layout/fragment_signalement.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/drawable/ic_home.xml" value="0.2985" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2985" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/drawable/side_nav_bar.xml" value="0.2985" />
@@ -17,7 +20,7 @@
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/app_bar_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/content_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/dog_fragment.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_health_inspection.xml" value="0.5" />
+        <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_health_inspection.xml" value="0.33" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_add_signalement.xml" value="0.358695652173913" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_all_health_inspections.xml" value="0.358695652173913" />
         <entry key="..\:/Users/N_i_v/OneDrive - ViaUC/VIA - Software Engineer/4. Semester/AND/Mit-Dyrs-Sundhed/app/src/main/res/layout/fragment_gallery.xml" value="0.358695652173913" />
