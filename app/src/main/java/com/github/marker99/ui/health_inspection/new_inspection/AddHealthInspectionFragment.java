@@ -21,13 +21,14 @@ import android.widget.Spinner;
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 public class AddHealthInspectionFragment extends Fragment {
 
     private AddHealthInspectionViewModel addHealthInspectionViewModel;
     private FragmentAddHealthInspectionBinding binding;
 
-    private Button addButton;
+    private Button addButton, datePicker;
     private EditText input_date, weight;
     private Spinner appetite, drinkingHabit;
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
@@ -41,6 +42,22 @@ public class AddHealthInspectionFragment extends Fragment {
         addHealthInspectionViewModel = new ViewModelProvider(this).get(AddHealthInspectionViewModel.class);
         binding = FragmentAddHealthInspectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        //Date picker! -- getView(), da vi er i fragment og ikke Activity.
+        datePicker = getView().findViewById(R.id.datePicker);
+
+
+        //FIXME: MaterialDatePicker - Jeg virker ikke i fragment
+        MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
+        builder.setTitleText("Select a date");
+        datePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Virker kun i Activities.. Skal lige have fundet en løsning
+                //materialDatePicker.......
+            }
+        });
+
 
         //Binding stuff to things
         bindings();
@@ -102,6 +119,7 @@ public class AddHealthInspectionFragment extends Fragment {
     }
 
     private void bindings() {
+
         addButton = binding.addHealthInspection;
         input_date = binding.editTextInspectionDate;
         weight = binding.editTextWeight;
