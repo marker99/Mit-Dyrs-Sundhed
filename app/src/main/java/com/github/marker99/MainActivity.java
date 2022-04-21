@@ -42,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
         // Adding new elements to drawer
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        //FIXME: Marker, jeg ved hvorfor disse skal eller eventuelt ikke skal stå her nu! (Spørg mig!)
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_signalement, R.id.nav_allHealthInspections)
+                R.id.nav_home, R.id.nav_signalement, R.id.nav_allHealthInspections, R.id.dogFragment)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
