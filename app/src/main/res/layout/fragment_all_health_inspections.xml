@@ -22,7 +22,6 @@
         android:text="@string/sundhedstjek_rv"
         android:textSize="24sp" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_healthInspection"
         android:layout_width="match_parent"

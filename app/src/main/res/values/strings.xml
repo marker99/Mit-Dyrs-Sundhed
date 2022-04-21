@@ -55,7 +55,7 @@
     <string name="appetite">Appetit</string>
     <string name="joint">Led</string>
     <string name="nyt_sundhedseftersyn">Nyt Sundhedseftersyn</string>
-    <string name="sundhedstjek_rv">Læge og Sunhedstjek Dato:</string>
+    <string name="sundhedstjek_rv">Læge og dato:</string>
     <!-- SUNDHEDSTJEK -->
 
     <string-array name="spinner_array">

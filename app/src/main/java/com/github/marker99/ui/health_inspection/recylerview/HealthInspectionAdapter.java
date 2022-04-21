@@ -1,6 +1,5 @@
 package com.github.marker99.ui.health_inspection.recylerview;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +36,7 @@ public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspecti
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.item.setText(inspections.get(position).getInspectionDate());
+        holder.doctor.setText(inspections.get(position).getDoctor());
         //holder.itemView.setBackgroundColor(Color.rgb(1,128, 108));
     }
 
@@ -50,10 +50,12 @@ public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspecti
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView item;
+        private final TextView doctor;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            item = itemView.findViewById(R.id.rv_tv_item);
+            item = itemView.findViewById(R.id.rv_tv_date);
+            doctor = itemView.findViewById(R.id.rv_tv_doctor);
 
             itemView.setOnClickListener(view -> listener.onClick(inspections.get(getBindingAdapterPosition())));
 
