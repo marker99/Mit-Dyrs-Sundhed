@@ -12,7 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Nyt Sundhedseftersyn" />
+        android:background="@drawable/rounded_corner_view"
+        android:text="@string/nyt_sundhedseftersyn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/sundhedstjek_rv"
+        android:textSize="24sp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
