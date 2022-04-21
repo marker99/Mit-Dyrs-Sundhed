@@ -14,7 +14,12 @@ public class DogViewModel extends ViewModel {
         return dogRepository.getSearchedBreed();
     }
 
-    public void getRandomDog(){
+    public void getRandomDog() {
         dogRepository.getRandomDog();
     }
+
+    public void searchForBreed(String s) {
+        dogRepository.searchForBreed(s);
+    }
+
 }
