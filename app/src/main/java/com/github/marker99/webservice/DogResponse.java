@@ -21,14 +21,6 @@ public class DogResponse {
         return newDog;
     }
 
-    public Dog getBreed(){
-        Dog newBreed = new Dog(id,url);
-        newBreed.setName(breeds[0].name);
-        newBreed.setLifeSpan(breeds[0].life_span);
-        newBreed.setTemperament(breeds[0].temperament);
-        return newBreed;
-    }
-
     private class Breeds {
         private String name;
         private String life_span;

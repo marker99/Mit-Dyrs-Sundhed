@@ -24,7 +24,7 @@ public interface DogAPI {
     Call<DogResponse[]> getAllBreeds();
 
     //TODO: I cant figure this out
-    @GET("v1/breeds/search")
+    @GET("v1/breeds/search?")
     Call<DogResponse[]> getBreed(@Query("q") String breedName);
 
 
