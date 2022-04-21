@@ -22,7 +22,7 @@ import com.github.marker99.persistence.health_inspection.HealthInspection;
 
 public class SpecificHealthInspection extends Fragment {
 
-    private TextView input_date, weight, appetite, drinkingHabit, temper, remarks;
+    private TextView input_date, doctor, weight, appetite, drinkingHabit, temper, remarks;
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
             milkLumps, joint;
@@ -59,6 +59,7 @@ public class SpecificHealthInspection extends Fragment {
 
     public void bindings() {
         input_date = binding.textViewInspectionDateData;
+        doctor = binding.textViewDoctorData;
         weight = binding.textViewWeightData;
         appetite = binding.textviewAppetiteData;
         drinkingHabit = binding.textViewDrinkingHabitsData;
@@ -81,6 +82,7 @@ public class SpecificHealthInspection extends Fragment {
 
     public void populate(HealthInspection healthInspection) {
         input_date.setText(healthInspection.getInspectionDate());
+        doctor.setText(healthInspection.getDoctor());
         weight.setText(String.valueOf(healthInspection.getWeight()));
         appetite.setText(healthInspection.getAppetite());
         drinkingHabit.setText(healthInspection.getDrinkingHabits());

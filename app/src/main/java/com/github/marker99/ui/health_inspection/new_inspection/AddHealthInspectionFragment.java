@@ -32,7 +32,7 @@ public class AddHealthInspectionFragment extends Fragment {
     private FragmentAddHealthInspectionBinding binding;
 
     private Button addButton, datePicker;
-    private EditText input_date, weight;
+    private EditText input_date, weight, doctor;
     private Spinner appetite, drinkingHabit, temper;
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
@@ -111,6 +111,7 @@ public class AddHealthInspectionFragment extends Fragment {
         }
         HealthInspection newInspection = new HealthInspection(
                 input_date.getText().toString(),
+                doctor.getText().toString(),
                 weightD,
                 drinkingHabit.getSelectedItem().toString(),
                 appetite.getSelectedItem().toString(),
@@ -142,6 +143,7 @@ public class AddHealthInspectionFragment extends Fragment {
 
         addButton = binding.addHealthInspection;
         input_date = binding.editTextInspectionDate;
+        doctor = binding.editTextDoctor;
         weight = binding.editTextWeight;
 
         appetite = binding.spinnerAppetite;

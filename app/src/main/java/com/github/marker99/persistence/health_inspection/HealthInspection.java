@@ -15,11 +15,39 @@ public class HealthInspection implements Serializable {
     private int id;
     private String inspectionDate; //Date objects i stedet?
     private double weight;
-    private String drinkingHabits, appetite;
+    private String doctor, drinkingHabits, appetite;
     private String remarks, temper;
     private boolean eyes, outerEar, nose, oralCavity, navelGroin, skin_hairLayer,
             lymphNodes, pawClaws, heartLungs, sexualOrgans, milkLumps,
             joint;
+
+    public HealthInspection(@NonNull String inspectionDate, String doctor, double weight, String drinkingHabits, String appetite,
+                            boolean eyes, boolean outerEar, boolean nose,
+                            boolean oralCavity, boolean navelGroin,
+                            boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
+                            boolean heartLungs, boolean sexualOrgans, boolean milkLumps,
+                            boolean joint, String remarks, String temper
+    ) {
+        this.inspectionDate = inspectionDate;
+        this.doctor = doctor;
+        this.weight = weight;
+        this.drinkingHabits = drinkingHabits;
+        this.appetite = appetite;
+        this.remarks = remarks;
+        this.temper = temper;
+        this.eyes = eyes;
+        this.outerEar = outerEar;
+        this.nose = nose;
+        this.oralCavity = oralCavity;
+        this.navelGroin = navelGroin;
+        this.skin_hairLayer = skin_hairLayer;
+        this.lymphNodes = lymphNodes;
+        this.pawClaws = pawClaws;
+        this.heartLungs = heartLungs;
+        this.sexualOrgans = sexualOrgans;
+        this.milkLumps = milkLumps;
+        this.joint = joint;
+    }
 
     public void setWeight(double weight) {
         this.weight = weight;
@@ -41,31 +69,12 @@ public class HealthInspection implements Serializable {
         this.joint = joint;
     }
 
-    public HealthInspection(@NonNull String inspectionDate, double weight, String drinkingHabits, String appetite,
-                            boolean eyes, boolean outerEar, boolean nose,
-                            boolean oralCavity, boolean navelGroin,
-                            boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
-                            boolean heartLungs, boolean sexualOrgans, boolean milkLumps,
-                            boolean joint, String remarks, String temper
-    ) {
-        this.inspectionDate = inspectionDate;
-        this.weight = weight;
-        this.drinkingHabits = drinkingHabits;
-        this.appetite = appetite;
-        this.remarks = remarks;
-        this.temper = temper;
-        this.eyes = eyes;
-        this.outerEar = outerEar;
-        this.nose = nose;
-        this.oralCavity = oralCavity;
-        this.navelGroin = navelGroin;
-        this.skin_hairLayer = skin_hairLayer;
-        this.lymphNodes = lymphNodes;
-        this.pawClaws = pawClaws;
-        this.heartLungs = heartLungs;
-        this.sexualOrgans = sexualOrgans;
-        this.milkLumps = milkLumps;
-        this.joint = joint;
+    public String getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
     }
 
     public int getId() {
