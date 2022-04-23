@@ -21,13 +21,14 @@ public class HealthInspection implements Serializable {
             lymphNodes, pawClaws, heartLungs, sexualOrgans, milkLumps,
             joint;
 
+    private long petId;
+
     public HealthInspection(@NonNull String inspectionDate, String doctor, double weight, String drinkingHabits, String appetite,
                             boolean eyes, boolean outerEar, boolean nose,
                             boolean oralCavity, boolean navelGroin,
                             boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
                             boolean heartLungs, boolean sexualOrgans, boolean milkLumps,
-                            boolean joint, String remarks, String temper
-    ) {
+                            boolean joint, String remarks, String temper, long petId) {
         this.inspectionDate = inspectionDate;
         this.doctor = doctor;
         this.weight = weight;
@@ -47,6 +48,16 @@ public class HealthInspection implements Serializable {
         this.sexualOrgans = sexualOrgans;
         this.milkLumps = milkLumps;
         this.joint = joint;
+
+        this.petId = petId;
+    }
+
+    public long getPetId() {
+        return petId;
+    }
+
+    public void setPetId(long petId) {
+        this.petId = petId;
     }
 
     public void setWeight(double weight) {

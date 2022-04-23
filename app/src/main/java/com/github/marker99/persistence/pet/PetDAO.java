@@ -5,7 +5,10 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
+
+import com.github.marker99.persistence.PetWithHealthInspection;
 
 import java.util.List;
 
@@ -33,6 +36,15 @@ public interface PetDAO {
     @Query("SELECT * FROM pet_table WHERE id = 1")
     LiveData<Pet> getSpecificPet();
 
+
+    /*
+     a method to the DAO class that returns all instances of the data class that pairs the parent entity
+     and the child entity. This method requires Room to run two queries,
+     so add the @Transaction annotation to this method to ensure that the whole operation is performed atomically
+     */
+    @Transaction
+    @Query("SELECT * FROM pet_table")
+    LiveData<List<PetWithHealthInspection>> getPetsAndHealthInspections();
 
 
 }
