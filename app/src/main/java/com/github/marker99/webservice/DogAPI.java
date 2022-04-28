@@ -19,13 +19,20 @@ public interface DogAPI {
     @GET("v1/images/search")
     Call<DogResponse[]> getRandomDog();
 
-
+    //Not in use yet
     @GET("v1/breeds")
     Call<DogResponse[]> getAllBreeds();
 
+
     //TODO: I cant figure this out
-    @GET("v1/breeds/search?")
-    Call<DogResponse[]> getBreed(@Query("q") String breedName);
+    @GET("v1/breeds/search")
+    Call<DogResponse[]> getBreed(@Query("name") String breedName);
+
+    // Det her virker måske
+    // @GET("v1/breeds/search")
+    // Call<DogResponse[]> getBreed(@Query("name") String breedName);
+
+    //https://api.thedogapi.com/v1/breeds/search?name=affen
 
 
     //https://api.thedogapi.com/v1/breeds/search?q=affen
