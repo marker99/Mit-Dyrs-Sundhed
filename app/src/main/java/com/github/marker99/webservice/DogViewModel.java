@@ -11,11 +11,11 @@ public class DogViewModel extends ViewModel {
     }
 
     public LiveData<Dog> getSearchedDog() {
-        return dogRepository.getSearchedBreed();
+        return dogRepository.getRandomDog();
     }
 
     public void getRandomDog() {
-        dogRepository.getRandomDog();
+        dogRepository.findRandomDog();
     }
 
     public void searchForBreed(String s) {

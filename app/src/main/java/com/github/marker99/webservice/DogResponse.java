@@ -3,16 +3,16 @@ package com.github.marker99.webservice;
 public class DogResponse {
 
     private String id;
-    private String url;
+    private String imageUrl;
 
-    private Breeds[] breeds;
+    private Breed[] breeds;
 
     public Dog getDog() {
-        Dog newDog = new Dog(id, url);
-        if (breeds.length != 0) {
-            newDog.setName(breeds[0].name);
-            newDog.setLifeSpan(breeds[0].life_span);
-            newDog.setTemperament(breeds[0].temperament);
+        Dog newDog = new Dog(id, imageUrl);
+        if (breeds != null && breeds.length != 0) {
+            newDog.setName(breeds[0].getName());
+            newDog.setLifeSpan(breeds[0].getLifeSpan());
+            newDog.setTemperament(breeds[0].getTemperament());
         } else {
             newDog.setName("Breed Unknown");
             newDog.setLifeSpan("Unknown");
@@ -21,10 +21,5 @@ public class DogResponse {
         return newDog;
     }
 
-    private class Breeds {
-        private String name;
-        private String life_span;
-        private String temperament;
-    }
 
 }
