@@ -1,5 +1,6 @@
 package com.github.marker99.ui.health_inspection.new_inspection;
 
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.DatePickerDialog;
@@ -19,6 +20,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.github.marker99.MainActivity;
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
@@ -48,9 +50,9 @@ public class AddHealthInspectionFragment extends Fragment {
 
         //Date picker! -- getView(), da vi er i fragment og ikke Activity.
 
-        /*
-        datePicker = getView().findViewById(R.id.datePicker);
 
+        datePicker = binding.datePicker;
+/*
 
         DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(AddHealthInspectionFragment.this,  //Your Fragment Class Name should be here, not getActivity(), or getContex().
                 now.get(Calendar.YEAR),
@@ -60,19 +62,20 @@ public class AddHealthInspectionFragment extends Fragment {
 
          */
 
-        /*
+
         //FIXME: MaterialDatePicker - Jeg virker ikke i fragment
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
         builder.setTitleText("Select a date");
+        builder.setSelection(MaterialDatePicker.todayInUtcMilliseconds());
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Virker kun i Activities.. Skal lige have fundet en løsning
-                //materialDatePicker.......
-            }
+                //builder.build().show();
+                //
+                }
         });
 
-         */
 
 
         //Binding stuff to things

@@ -4,22 +4,22 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 public class DogViewModel extends ViewModel {
-    DogRepository dogRepository;
+    DogRepositoryImpl dogRepositoryImpl;
 
     public DogViewModel() {
-        dogRepository = DogRepository.getInstance();
+        dogRepositoryImpl = DogRepositoryImpl.getInstance();
     }
 
     public LiveData<Dog> getSearchedDog() {
-        return dogRepository.getRandomDog();
+        return dogRepositoryImpl.getRandomDog();
     }
 
     public void getRandomDog() {
-        dogRepository.findRandomDog();
+        dogRepositoryImpl.findRandomDog();
     }
 
     public void searchForBreed(String s) {
-        dogRepository.searchForBreed(s);
+        dogRepositoryImpl.searchForBreed(s);
     }
 
 }
