@@ -28,7 +28,7 @@ public class HealthInspection implements Serializable {
                             boolean oralCavity, boolean navelGroin,
                             boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
                             boolean heartLungs, boolean sexualOrgans, boolean milkLumps,
-                            boolean joint, String remarks, String temper, long petId) {
+                            boolean joint, String remarks, String temper) {
         this.inspectionDate = inspectionDate;
         this.doctor = doctor;
         this.weight = weight;
