@@ -9,7 +9,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DogRepositoryImpl implements DogRepository{
+public class DogRepositoryImpl implements DogRepository {
     private static DogRepositoryImpl instance;
     private final MutableLiveData<Dog> getRandomDog;
     private final MutableLiveData<Breed> getSpecificBreed;
@@ -30,11 +30,11 @@ public class DogRepositoryImpl implements DogRepository{
         return getRandomDog;
     }
 
-    public LiveData<Breed> getSpecificBreed(){
+    public LiveData<Breed> getSpecificBreed() {
         return getSpecificBreed;
     }
 
-    public void searchForBreed(String breedName){
+    public void searchForBreed(String breedName) {
         DogAPI dogAPI = ServiceGenerator.getDogAPI();
         Log.i("searchForBreed", breedName);
         Call<Breed[]> call = dogAPI.getBreed(breedName);

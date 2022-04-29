@@ -1,13 +1,16 @@
 package com.github.marker99;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.github.marker99.login_firebase.ui.SignInActivity;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    private MainActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +56,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        checkIfSignedIn();
 
         //MaterialDatePicker.Builder.datePicker();
-        MaterialDatePicker.Builder.datePicker().build().sh
+        //MaterialDatePicker.Builder.datePicker().build().sh
     }
 
     @Override
@@ -69,4 +76,25 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    private void checkIfSignedIn() {
+        viewModel.getCurrentUser().observe(this, user -> {
+            if (user != null) {
+                /*String message = "Welcome " + user.getDisplayName();
+                welcomeMessage.setText(message);*/
+            } else
+                startLoginActivity();
+        });
+    }
+
+    private void startLoginActivity() {
+        startActivity(new Intent(this, SignInActivity.class));
+        finish();
+    }
+
+    public void signOut(View view) {
+        viewModel.signOut();
+    }
+
+
 }

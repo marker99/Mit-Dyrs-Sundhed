@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "699871143080",
+    "project_id": "mit-dyrs-sundhed",
+    "storage_bucket": "mit-dyrs-sundhed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699871143080:android:26a463478155b5f5d6ce9d",
+        "android_client_info": {
+          "package_name": "com.github.marker99"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699871143080-sj6757h28ppmeghhoc64mt94dkqe8qnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMAp5fziWTbetz0a5uTETZKOezw_uc2VY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699871143080-sj6757h28ppmeghhoc64mt94dkqe8qnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
