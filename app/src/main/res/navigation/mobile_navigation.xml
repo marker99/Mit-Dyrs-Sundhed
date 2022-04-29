@@ -57,4 +57,9 @@
         android:name="com.github.marker99.webservice.DogFragment"
         android:label="dog_fragment"
         tools:layout="@layout/dog_fragment" />
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.github.marker99.ui.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/settings_fragment" />
 </navigation>
