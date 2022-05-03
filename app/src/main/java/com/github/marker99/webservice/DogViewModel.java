@@ -10,11 +10,15 @@ public class DogViewModel extends ViewModel {
         dogRepositoryImpl = DogRepositoryImpl.getInstance();
     }
 
-    public LiveData<Dog> getSearchedDog() {
+    public LiveData<Dog> getRandomDog() {
         return dogRepositoryImpl.getRandomDog();
     }
 
-    public void getRandomDog() {
+    public LiveData<Breed> getSpecificBreed(){
+        return dogRepositoryImpl.getSpecificBreed();
+    }
+
+    public void findRandomDog() {
         dogRepositoryImpl.findRandomDog();
     }
 

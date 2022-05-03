@@ -47,14 +47,21 @@ public class DogFragment extends Fragment {
 
         bindings();
 
-        dogViewModel.getRandomDog();
+        dogViewModel.findRandomDog();
 
 
-        dogViewModel.getSearchedDog().observe(getViewLifecycleOwner(), dog -> {
+        dogViewModel.getRandomDog().observe(getViewLifecycleOwner(), dog -> {
             Glide.with(this).load(dog.getImageURL()).into(imageView);
             name.setText(dog.getName());
             lifespan.setText(dog.getLifeSpan());
             temperament.setText(dog.getTemperament());
+        });
+        dogViewModel.getSpecificBreed().observe(getViewLifecycleOwner(), breed -> {
+            //Glide.with(this).load(dog.getImageURL()).into(imageView);
+            imageView.setImageResource(R.mipmap.ic_app_icon);
+            name.setText(breed.getName());
+            lifespan.setText(breed.getLifeSpan());
+            temperament.setText(breed.getTemperament());
         });
 
         searchButton.setOnClickListener(view -> {
@@ -62,7 +69,7 @@ public class DogFragment extends Fragment {
         });
 
         randomButton.setOnClickListener(view -> {
-            dogViewModel.getRandomDog();
+            dogViewModel.findRandomDog();
         });
 
         return root;

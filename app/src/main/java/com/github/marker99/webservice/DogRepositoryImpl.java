@@ -44,14 +44,14 @@ public class DogRepositoryImpl implements DogRepository {
                 if (response.isSuccessful()) {
                     Breed breed = response.body()[0];
                     getSpecificBreed.postValue(breed);
-                    Log.i("searchForBreed", "Something went right :) \n" + breed);
+                    Log.i("Retrofit - searchForBreed", "Something went right :) \n" + breed);
                 }
             }
 
             @Override
             public void onFailure(Call<Breed[]> call, Throwable t) {
-                Log.i("searchForBreed", "Something went wrong :(");
-                Log.i("searchForBreed", t.getMessage());
+                Log.i("Retrofit - searchForBreed", "Something went wrong :(");
+                Log.i("Retrofit - searchForBreed", t.getMessage());
             }
         });
     }
