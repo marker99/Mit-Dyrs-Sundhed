@@ -42,6 +42,9 @@ public interface PetDAO {
      and the child entity. This method requires Room to run two queries,
      so add the @Transaction annotation to this method to ensure that the whole operation is performed atomically
      */
+    //TODO: Spørg Kasper om dette, hvordan vil vi mappe pets og health inspections? (Man kunne have gemt det petid man har valgt,
+    // og bare lave health inspections på det, samt trække op fra health inspections på dette Pet)
+    // - Dette vil dog ikke rigtigt gøre brug af dette under?
     @Transaction
     @Query("SELECT * FROM pet_table")
     LiveData<List<PetWithHealthInspection>> getPetsAndHealthInspections();
