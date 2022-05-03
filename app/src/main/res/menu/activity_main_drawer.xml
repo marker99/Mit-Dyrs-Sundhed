@@ -22,6 +22,10 @@
             android:id="@+id/dogFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/find_din_nye_hund" />
+        <item
+            android:id="@+id/growthTrackFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/v_kstskema" />
 
     </group>
 </menu>

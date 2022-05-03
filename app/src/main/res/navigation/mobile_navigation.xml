@@ -62,4 +62,9 @@
         android:name="com.github.marker99.ui.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/growthTrackFragment"
+        android:name="com.github.marker99.ui.growth_track.GrowthTrackFragment"
+        android:label="Growth Track"
+        tools:layout="@layout/fragment_growth_track" />
 </navigation>
