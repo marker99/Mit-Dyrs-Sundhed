@@ -32,17 +32,18 @@ public class SignalementFragment extends Fragment {
         bindings();
 
         //Filling all the textViews
-        //Hvis Pet ikke er nul, så indsæt information!
-        if (viewModel.getSpecificPet() != null){
-            viewModel.getSpecificPet().observe(getViewLifecycleOwner(), pet -> {
+        viewModel.getSpecificPet().observe(getViewLifecycleOwner(), pet -> {
+            //Tjekker om der er et pet i databasen, hvis der er tilføj data fra det!
+            if (pet != null) {
                 petName.setText(pet.getPetName());
                 birthDate.setText(pet.getBirthday());
                 race.setText(pet.getRace());
                 gender.setText(pet.getGender());
                 color.setText(pet.getColor());
                 characteristics.setText(pet.getCharacteristics());
-            });
-    }
+            }
+        });
+
 
         return root;
     }
