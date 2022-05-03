@@ -5,8 +5,8 @@ public class Dog {
     private final String id;
     private final String imageURL;
     private String name;
-    private String lifeSpan;
-    private String Temperament;
+    private String life_span;
+    private String temperament;
 
     public Dog(String id, String imageURL) {
         this.id = id;
@@ -27,19 +27,19 @@ public class Dog {
     }
 
     public String getLifeSpan() {
-        return lifeSpan;
+        return life_span;
     }
 
     public void setLifeSpan(String lifeSpan) {
-        this.lifeSpan = lifeSpan;
+        this.life_span = lifeSpan;
     }
 
     public String getTemperament() {
-        return Temperament;
+        return temperament;
     }
 
     public void setTemperament(String temperament) {
-        Temperament = temperament;
+        this.temperament = temperament;
     }
 
     @Override

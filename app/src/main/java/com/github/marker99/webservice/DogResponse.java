@@ -3,12 +3,12 @@ package com.github.marker99.webservice;
 public class DogResponse {
 
     private String id;
-    private String imageUrl;
+    private String url;
 
     private Breed[] breeds;
 
     public Dog getDog() {
-        Dog newDog = new Dog(id, imageUrl);
+        Dog newDog = new Dog(id, url);
         if (breeds != null && breeds.length != 0) {
             newDog.setName(breeds[0].getName());
             newDog.setLifeSpan(breeds[0].getLifeSpan());
