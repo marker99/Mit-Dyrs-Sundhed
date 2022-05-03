@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.github.marker99.login_firebase.ui.SignInActivity;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     NavController navController;
 
+    //DrawerInfo
+    private TextView textView_dogNameDrawer, textView_dogInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         //Use the Toolbar as your ActionBar
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -67,8 +72,21 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         checkIfSignedIn();
 
+        //TODO: Dette virker ikke lige nu, få hjælp af Kasper evt?
+        // bindings();
+        //textView_dogInfo.setText("dogInfo");
+        //textView_dogNameDrawer.setText("dogNameDrawer");
+
         //MaterialDatePicker.Builder.datePicker();
         //MaterialDatePicker.Builder.datePicker().build().sh
+    }
+
+    private void bindings() {
+        //FIXME: Spørg kasper on navigationDrawer, hvordan vi får hevet data op til det!
+        textView_dogInfo = findViewById(R.id.textView_dogInfo);
+        textView_dogNameDrawer = findViewById(R.id.textView_dogNameDrawer);
+
+
     }
 
     @Override
