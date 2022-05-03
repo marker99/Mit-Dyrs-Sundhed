@@ -12,11 +12,11 @@ import retrofit2.Response;
 public class DogRepositoryImpl implements DogRepository {
     private static DogRepositoryImpl instance;
     private final MutableLiveData<Dog> getRandomDog;
-    private final MutableLiveData<Breed> getSpecificBreed;
+    private DogAPI dogAPI;
 
     public DogRepositoryImpl() {
         getRandomDog = new MutableLiveData<>();
-        getSpecificBreed = new MutableLiveData<>();
+        dogAPI = ServiceGenerator.getDogAPI();
     }
 
     public static synchronized DogRepositoryImpl getInstance() {
@@ -30,12 +30,8 @@ public class DogRepositoryImpl implements DogRepository {
         return getRandomDog;
     }
 
-    public LiveData<Breed> getSpecificBreed() {
-        return getSpecificBreed;
-    }
-
     public void searchForBreed(String breedName) {
-        DogAPI dogAPI = ServiceGenerator.getDogAPI();
+        dogAPI = ServiceGenerator.getDogAPI();
         Log.i("searchForBreed", breedName);
         Call<Breed[]> call = dogAPI.getBreed(breedName);
         call.enqueue(new Callback<Breed[]>() {
@@ -43,8 +39,9 @@ public class DogRepositoryImpl implements DogRepository {
             public void onResponse(Call<Breed[]> call, Response<Breed[]> response) {
                 if (response.isSuccessful()) {
                     Breed breed = response.body()[0];
-                    getSpecificBreed.postValue(breed);
-                    Log.i("Retrofit - searchForBreed", "Something went right :) \n" + breed);
+
+                    //Setting picture and converting to Dog!
+                    setBreedPicture(breed);
                 }
             }
 
@@ -56,8 +53,32 @@ public class DogRepositoryImpl implements DogRepository {
         });
     }
 
+    private void setBreedPicture(Breed breed) {
+        //Bruges til at lave breed om til en Dog, ved at tilføje Image
+        Call<DogImage> call = dogAPI.getDogImage(breed.getBreedUrl());
+        call.enqueue(new Callback<DogImage>() {
+            @Override
+            public void onResponse(Call<DogImage> call, Response<DogImage> response) {
+                if (response.isSuccessful()) {
+                    DogImage image = response.body();
+                    Dog dog = new Dog(image.getId(), image.getUrl());
+                    dog.setLifeSpan(breed.getLifeSpan());
+                    dog.setName(breed.getName());
+                    dog.setTemperament(breed.getTemperament());
+                    getRandomDog.postValue(dog);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DogImage> call, Throwable t) {
+                Log.i("Retrofit - setBreedPicture", "FAILURE :(\n" + t.getMessage());
+            }
+        });
+
+    }
+
     public void findRandomDog() {
-        DogAPI dogAPI = ServiceGenerator.getDogAPI();
+        dogAPI = ServiceGenerator.getDogAPI();
         Call<DogResponse[]> call = dogAPI.getRandomDog();
         call.enqueue(new Callback<DogResponse[]>() {
             @Override

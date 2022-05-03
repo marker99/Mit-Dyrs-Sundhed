@@ -56,6 +56,8 @@ public class DogFragment extends Fragment {
             lifespan.setText(dog.getLifeSpan());
             temperament.setText(dog.getTemperament());
         });
+
+        /*
         dogViewModel.getSpecificBreed().observe(getViewLifecycleOwner(), breed -> {
             //Glide.with(this).load(dog.getImageURL()).into(imageView);
             imageView.setImageResource(R.mipmap.ic_app_icon);
@@ -63,6 +65,8 @@ public class DogFragment extends Fragment {
             lifespan.setText(breed.getLifeSpan());
             temperament.setText(breed.getTemperament());
         });
+
+         */
 
         searchButton.setOnClickListener(view -> {
             dogViewModel.searchForBreed(editText.getText().toString());

@@ -2,6 +2,7 @@ package com.github.marker99.webservice;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface DogAPI {
@@ -25,6 +26,9 @@ public interface DogAPI {
     //TODO: I cant figure this out
     @GET("v1/breeds/search")
     Call<Breed[]> getBreed(@Query("name") String breedName);
+
+    @GET("v1/images/{image}")
+    Call<DogImage> getDogImage(@Path("image") String image);
 
     // Det her virker måske
     // @GET("v1/breeds/search")

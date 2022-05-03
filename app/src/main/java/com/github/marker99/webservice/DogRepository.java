@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData;
 public interface DogRepository {
     LiveData<Dog> getRandomDog();
 
-    LiveData<Breed> getSpecificBreed();
+    //LiveData<Breed> getSpecificBreed();
 
     void searchForBreed(String breedName);
 

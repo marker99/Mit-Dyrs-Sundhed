@@ -14,9 +14,10 @@ public class DogViewModel extends ViewModel {
         return dogRepositoryImpl.getRandomDog();
     }
 
+    /*
     public LiveData<Breed> getSpecificBreed(){
         return dogRepositoryImpl.getSpecificBreed();
-    }
+    }*/
 
     public void findRandomDog() {
         dogRepositoryImpl.findRandomDog();
