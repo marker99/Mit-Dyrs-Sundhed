@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
         checkIfSignedIn();
 
         //TODO: Dette virker ikke lige nu, få hjælp af Kasper evt?
-        // bindings();
-        //textView_dogInfo.setText("dogInfo");
-        //textView_dogNameDrawer.setText("dogNameDrawer");
+        bindings();
+        textView_dogInfo.setText("dogInfo");
+        textView_dogNameDrawer.setText("dogNameDrawer");
 
         //MaterialDatePicker.Builder.datePicker();
         //MaterialDatePicker.Builder.datePicker().build().sh

@@ -11,7 +11,7 @@ public interface DogAPI {
     //ID VIRKER HVER GANG!!
     //https://api.thedogapi.com/v1/images/search?breed_id=1
 
-    //TODO: Why is this not needed - Because website doesn't want you to use API key! ;)
+    //TODO: Why is this not needed - Because website doesn't want you to use API key! ;) (Måske dette kunne være nyttigt i nogle af de andre cases, hvis vi vil lave andre kald?)
     //@Headers({"x-api-key: " + "a91299bb-d87d-4eee-8617-b51535425ae8"})
     @GET("v1/images/search")
     Call<DogResponse[]> getRandomDog();

@@ -27,7 +27,7 @@ public interface PetDAO {
     @Query("DELETE FROM pet_table")
     void deleteAllPets();
 
-    //TODO: Maybe change or make new method to only take a specific pet
+    //TODO: Denne metode giver nu en liste i Home, der skal bruges til at søge efter et specifikt pet! (Den grimme løsning under!)
     @Query("SELECT * FROM pet_table ORDER BY petName DESC")
     LiveData<List<Pet>> getAllPets();
 

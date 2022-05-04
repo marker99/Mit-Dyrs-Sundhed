@@ -9,8 +9,6 @@
     android:paddingHorizontal="8dp"
     android:paddingVertical="4dp">
 
-
-    <!-- FIXME: Dette er ikke pet_list_item, men health_inspection_list_item-->
     <TextView
         android:id="@+id/rv_tv_doctor"
         android:layout_width="0dp"

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.marker99.R;
 import com.github.marker99.persistence.pet.Pet;
-import com.github.marker99.ui.health_inspection.recylerview.HealthInspectionAdapter;
 
 import java.util.List;
 
@@ -28,8 +27,7 @@ public class HomePetsAdapter extends RecyclerView.Adapter<HomePetsAdapter.ViewHo
     @Override
     public HomePetsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        //FIXME: Skal laves til pet_list_item, og den i HealthInspectionAdapter skal ændres
-        View view = inflater.inflate(R.layout.pet_real_list_item, parent, false);
+        View view = inflater.inflate(R.layout.list_item_pet, parent, false);
         return new ViewHolder(view);
     }
 

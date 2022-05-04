@@ -28,8 +28,7 @@ public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspecti
     @Override
     public HealthInspectionAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        //FIXME: Skal ændres til health_inspection_list_item (+ fragment)
-        View view = inflater.inflate(R.layout.pet_list_item, parent, false);
+        View view = inflater.inflate(R.layout.list_item_health_inspection, parent, false);
         return new ViewHolder(view);
     }
 
