@@ -16,7 +16,7 @@ public interface DogAPI {
     @GET("v1/images/search")
     Call<DogResponse[]> getRandomDog();
 
-    //Not in use yet
+    //TODO: Not in use yet - For a spinner perhaps! (172 hunde i API'en)
     @GET("v1/breeds")
     Call<DogResponse[]> getAllBreeds();
 

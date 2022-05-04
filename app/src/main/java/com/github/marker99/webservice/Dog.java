@@ -2,6 +2,7 @@ package com.github.marker99.webservice;
 
 public class Dog {
 
+    //TODO: Hygge projekt? - weight --> metric, height --> metric og "breed_group"
     private final String id;
     private final String imageURL;
     private String name;
