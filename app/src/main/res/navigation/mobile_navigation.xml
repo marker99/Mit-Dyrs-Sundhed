@@ -21,13 +21,13 @@
     <fragment
         android:id="@+id/nav_signalement"
         android:name="com.github.marker99.ui.signalement.view.SignalementFragment"
-        android:label="Signalement"
+        android:label="@string/description"
         tools:layout="@layout/fragment_signalement" />
 
     <fragment
         android:id="@+id/nav_allHealthInspections"
         android:name="com.github.marker99.ui.health_inspection.recylerview.AllHealthInspectionsFragment"
-        android:label="Sundhedseftersyn"
+        android:label="@string/all_health_inspections"
         tools:layout="@layout/fragment_all_health_inspections" >
         <action
             android:id="@+id/action_nav_healthInspection_to_addHealthInspectionFragment"
@@ -37,38 +37,39 @@
             app:destination="@id/specificHealthInspection" />
     </fragment>
 
+    <!-- FIXME: tilføj signalement på englesk? String Resoruce-->
     <fragment
         android:id="@+id/addSignalementFragment"
         android:name="com.github.marker99.ui.signalement.add.AddSignalementFragment"
-        android:label="Tilføj Signalement"
+        android:label="@string/add_description"
         tools:layout="@layout/fragment_add_signalement" />
 
     <fragment
         android:id="@+id/addHealthInspectionFragment"
         android:name="com.github.marker99.ui.health_inspection.new_inspection.AddHealthInspectionFragment"
-        android:label="Nyt Sundhedstjek"
+        android:label="@string/new_health_inspection"
         tools:layout="@layout/fragment_add_health_inspection" />
 
     <!-- FIXME: OLD hvorfor? - Preview virker ikke-->
     <fragment
         android:id="@+id/specificHealthInspection"
         android:name="com.github.marker99.ui.health_inspection.specific_inspection.SpecificHealthInspection"
-        android:label="fragment_health_inspection"
+        android:label="@string/health_inspection"
         tools:layout="@layout/fragment_health_inspection_OLD" />
 
     <fragment
         android:id="@+id/dogFragment"
         android:name="com.github.marker99.ui.find_your_dog.DogFragment"
-        android:label="dog_fragment"
-        tools:layout="@layout/fragment_find_your_dog" />
+        android:label="Find your new dog"
+        tools:layout="@layout/fragment_find_your_new_dog" />
     <fragment
         android:id="@+id/settings_dest"
         android:name="com.github.marker99.ui.settings.SettingsFragment"
-        android:label="Settings"
+        android:label="@string/settings"
         tools:layout="@layout/settings_fragment" />
     <fragment
         android:id="@+id/growthTrackFragment"
         android:name="com.github.marker99.ui.growth_track.GrowthTrackFragment"
-        android:label="Growth Track"
+        android:label="@string/growth_track"
         tools:layout="@layout/fragment_growth_track" />
 </navigation>

@@ -17,11 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.marker99.databinding.FragmentFindYourDogBinding;
+import com.github.marker99.databinding.FragmentFindYourNewDogBinding;
 
 public class DogFragment extends Fragment {
 
-    private FragmentFindYourDogBinding binding;
+    private FragmentFindYourNewDogBinding binding;
     private DogViewModelImpl dogViewModelImpl;
 
     private Button randomButton;
@@ -40,7 +40,7 @@ public class DogFragment extends Fragment {
 
         dogViewModelImpl = new ViewModelProvider(this).get(DogViewModelImpl.class);
 
-        binding = FragmentFindYourDogBinding.inflate(inflater, container, false);
+        binding = FragmentFindYourNewDogBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         bindings();

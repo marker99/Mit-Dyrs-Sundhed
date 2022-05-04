@@ -57,6 +57,13 @@
     <string name="nyt_sundhedseftersyn">Nyt Sundhedseftersyn</string>
     <string name="sundhedstjek_rv">Læge og dato:</string>
     <string name="v_kstskema">Vækstskema</string>
+    <string name="health_inspection">Sundhedstjek</string>
+    <string name="settings">Indstillinger</string>
+    <string name="growth_track">Vækst Skema</string>
+    <string name="new_health_inspection">Nyt Sundhedstjek</string>
+    <string name="all_health_inspections">Alle Sundhedseftersyn</string>
+    <string name="description">Signalement</string>
+    <string name="add_description">Tilføj Signalement</string>
     <!-- SUNDHEDSTJEK -->
 
     <string-array name="spinner_array">

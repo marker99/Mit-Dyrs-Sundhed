@@ -32,22 +32,32 @@ public class DogRepositoryImpl implements DogRepository {
 
     public void searchForBreed(String breedName) {
         dogAPI = ServiceGenerator.getDogAPI();
-        Log.i("Retrofit", "Start (searchForBreed) - Breed: " +  breedName);
+        Log.i("Retrofit", "Start (searchForBreed) - Breed: " + breedName);
+
         Call<Breed[]> call = dogAPI.getBreed(breedName);
         call.enqueue(new Callback<Breed[]>() {
             @Override
             public void onResponse(Call<Breed[]> call, Response<Breed[]> response) {
                 if (response.isSuccessful()) {
-                    Breed breed = response.body()[0];
+                    {
+                        //Nullpointer, hvis breed ikke findes via API, derfor TRY CATCH!
+                        try{
+                            Breed breed = response.body()[0];
+                            //Setting picture and converting to Dog!
+                            setBreedPicture(breed);
+                        }catch (Exception e)
+                        {
+                            //FIXME: Måske display error message til bruger om at breed ikke findes?
+                            Log.i("Retrofit", "FAILURE searchForBreed - Hvorfor crasher jeg? " + e.getMessage());
+                        }
 
-                    //Setting picture and converting to Dog!
-                    setBreedPicture(breed);
+                    }
                 }
             }
             @Override
             public void onFailure(Call<Breed[]> call, Throwable t) {
                 Log.i("Retrofit", "FAILURE (searchForBreed)"
-                        +"\nError Message: " + t.getMessage());
+                        + "\nError Message: " + t.getMessage());
             }
         });
     }
@@ -71,7 +81,7 @@ public class DogRepositoryImpl implements DogRepository {
             @Override
             public void onFailure(Call<DogImage> call, Throwable t) {
                 Log.i("Retrofit", "FAILURE (setBreedPicture)"
-                        +"\nError Message: " + t.getMessage());
+                        + "\nError Message: " + t.getMessage());
             }
         });
 
@@ -85,15 +95,20 @@ public class DogRepositoryImpl implements DogRepository {
             public void onResponse(Call<DogResponse[]> call, Response<DogResponse[]> response) {
                 if (response.isSuccessful()) {
                     Dog doggy = response.body()[0].getDog();
-                    getRandomDog.postValue(doggy);
-                    Log.i("Retrofit", "SUCCESS\n" + doggy);
+                    //To combat all the unknown dogs in the wild API (Dogs with images and id only)
+                    if (response.body()[0].getDog().getName().equals("Breed Unknown")) {
+                        findRandomDog();
+                    } else {
+                        getRandomDog.postValue(doggy);
+                        Log.i("Retrofit", "SUCCESS\n" + doggy);
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<DogResponse[]> call, Throwable t) {
                 Log.i("Retrofit", "FAILURE (findRandomDog)"
-                        +"\nError Message: " + t.getMessage());
+                        + "\nError Message: " + t.getMessage());
             }
         });
     }
