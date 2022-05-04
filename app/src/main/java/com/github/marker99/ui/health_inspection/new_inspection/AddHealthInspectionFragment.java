@@ -48,10 +48,18 @@ public class AddHealthInspectionFragment extends Fragment {
         binding = FragmentAddHealthInspectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
+        //Binding stuff to things
+        bindings();
+
+        //Binding Data To Spinners
+        spinnerAdapter();
+
+        addButton.setOnClickListener(this::addNewHealthInspection);
+
+
         //Date picker! -- getView(), da vi er i fragment og ikke Activity.
-
-
-        datePicker = binding.datePicker;
+        datePicker = binding.datePicker; //FIXME: Skal i bindings, når den virker!
 /*
 
         DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(AddHealthInspectionFragment.this,  //Your Fragment Class Name should be here, not getActivity(), or getContex().
@@ -73,23 +81,16 @@ public class AddHealthInspectionFragment extends Fragment {
                 //Virker kun i Activities.. Skal lige have fundet en løsning
                 //builder.build().show();
                 //
-                }
+            }
         });
 
-
-
-        //Binding stuff to things
-        bindings();
-
-        //Binding Data To Spinners
-        spinnerAdapter();
-
-        addButton.setOnClickListener(this::addNewHealthInspection);
 
         return root;
     }
 
     private void spinnerAdapter() {
+        //FIXME: er der en smartere måde at lave en spinner?
+
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(),
                 R.array.spinner_array, android.R.layout.simple_spinner_item);

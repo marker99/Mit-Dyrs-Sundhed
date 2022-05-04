@@ -20,6 +20,7 @@ import java.util.List;
 
 public class AllHealthInspectionsFragment extends Fragment {
 
+    //FIXME: mere beskrivende navn!
     private Button button;
     private FragmentAllHealthInspectionsBinding binding;
 
@@ -29,17 +30,23 @@ public class AllHealthInspectionsFragment extends Fragment {
         binding = FragmentAllHealthInspectionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        button = binding.buttonAddHealthInspection;
-
-        button.setOnClickListener(view -> {
-            NavHostFragment.findNavController(this).navigate(R.id.action_nav_healthInspection_to_addHealthInspectionFragment);
-        });
-
+        bindings();
+        onClickListeners();
 
         binding.rvHealthInspection.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
         allHealthInspectionsViewModel.getAllInspections().observe(getViewLifecycleOwner(), this::onChanged);
 
         return root;
+    }
+
+    private void onClickListeners() {
+        button.setOnClickListener(view -> {
+            NavHostFragment.findNavController(this).navigate(R.id.action_nav_healthInspection_to_addHealthInspectionFragment);
+        });
+    }
+
+    private void bindings() {
+        button = binding.buttonAddHealthInspection;
     }
 
     private void onChanged(List<HealthInspection> inspections){

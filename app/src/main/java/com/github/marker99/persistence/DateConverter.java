@@ -7,6 +7,7 @@ import java.util.Date;
 //Hugget fra https://developer.android.com/training/data-storage/room/referencing-data
 
 public class DateConverter {
+    //FIXME: Bruges dette? - Skal dette bruges? (Måske til HealthInspections, hvis vi skal sortere på dato)
     @TypeConverter
     public static Date fromTimestamp(Long value) {
         return value == null ? null : new Date(value);

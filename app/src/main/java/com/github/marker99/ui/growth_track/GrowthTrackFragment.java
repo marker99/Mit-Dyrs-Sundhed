@@ -29,9 +29,6 @@ public class GrowthTrackFragment extends Fragment {
         View root = binding.getRoot();
 
 
-
-
-
         return root;
     }
 

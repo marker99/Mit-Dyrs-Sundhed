@@ -20,12 +20,8 @@ import com.github.marker99.databinding.FragmentAddSignalementBinding;
 public class AddSignalementFragment extends Fragment {
 
     private Button addButton;
-    private EditText input_petName;
-    private EditText input_birthday;
-    private EditText input_race;
-    private EditText input_gender;
-    private EditText input_color;
-    private EditText input_Characteristics;
+    private EditText input_petName, input_birthday, input_race;
+    private EditText input_gender, input_color, input_Characteristics;
 
     private FragmentAddSignalementBinding binding;
     private AddSignalementViewModel addSignalementViewModel;
@@ -40,7 +36,7 @@ public class AddSignalementFragment extends Fragment {
 
         bindings();
 
-        // MOTHERFUCKING BUTTON
+        // Button on click listener
         addButton.setOnClickListener(this::addNewPet);
 
         return root;

@@ -32,7 +32,7 @@ public class DogRepositoryImpl implements DogRepository {
 
     public void searchForBreed(String breedName) {
         dogAPI = ServiceGenerator.getDogAPI();
-        Log.i("searchForBreed", breedName);
+        Log.i("Retrofit", "Start (searchForBreed) - Breed: " +  breedName);
         Call<Breed[]> call = dogAPI.getBreed(breedName);
         call.enqueue(new Callback<Breed[]>() {
             @Override
@@ -44,11 +44,10 @@ public class DogRepositoryImpl implements DogRepository {
                     setBreedPicture(breed);
                 }
             }
-
             @Override
             public void onFailure(Call<Breed[]> call, Throwable t) {
-                Log.i("Retrofit - searchForBreed", "Something went wrong :(");
-                Log.i("Retrofit - searchForBreed", t.getMessage());
+                Log.i("Retrofit", "FAILURE (searchForBreed)"
+                        +"\nError Message: " + t.getMessage());
             }
         });
     }
@@ -71,7 +70,8 @@ public class DogRepositoryImpl implements DogRepository {
 
             @Override
             public void onFailure(Call<DogImage> call, Throwable t) {
-                Log.i("Retrofit - setBreedPicture", "FAILURE :(\n" + t.getMessage());
+                Log.i("Retrofit", "FAILURE (setBreedPicture)"
+                        +"\nError Message: " + t.getMessage());
             }
         });
 
@@ -86,14 +86,14 @@ public class DogRepositoryImpl implements DogRepository {
                 if (response.isSuccessful()) {
                     Dog doggy = response.body()[0].getDog();
                     getRandomDog.postValue(doggy);
-                    Log.i("Retrofit", "Something went right :) \n" + doggy);
+                    Log.i("Retrofit", "SUCCESS\n" + doggy);
                 }
             }
 
             @Override
             public void onFailure(Call<DogResponse[]> call, Throwable t) {
-                Log.i("Retrofit", "Something went wrong :(");
-                Log.i("Retrofit", t.getMessage());
+                Log.i("Retrofit", "FAILURE (findRandomDog)"
+                        +"\nError Message: " + t.getMessage());
             }
         });
     }

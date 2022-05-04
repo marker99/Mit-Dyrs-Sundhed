@@ -14,12 +14,7 @@ import com.github.marker99.databinding.FragmentSignalementBinding;
 
 public class SignalementFragment extends Fragment {
 
-    private TextView petName;
-    private TextView birthDate;
-    private TextView race;
-    private TextView gender;
-    private TextView color;
-    private TextView characteristics;
+    private TextView petName, birthDate, race, gender, color, characteristics;
 
     private FragmentSignalementBinding binding;
 

@@ -37,13 +37,15 @@ public class HomeFragment extends Fragment {
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         //Add new pet button
+        onClickListeners();
+
+        return root;
+    }
+
+    private void onClickListeners() {
         button.setOnClickListener(view -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_addPetInfoFragment);
         });
-
-
-
-        return root;
     }
 
     @Override

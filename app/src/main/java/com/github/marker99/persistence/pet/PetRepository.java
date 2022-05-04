@@ -33,6 +33,7 @@ public class PetRepository {
         return instance;
     }
 
+    //TODO: getAllPets skal smides i et recyclerView, som vi kan bruge til at vælge et pet!
     public LiveData<List<Pet>> getAllPets() {
         return allPets;
     }
@@ -45,6 +46,7 @@ public class PetRepository {
         executorService.execute(() -> petDAO.insert(pet));
     }
 
+    //TODO: Måske bare Delete Specific Pet?
     public void deleteAllPets() {
         executorService.execute(petDAO::deleteAllPets);
     }

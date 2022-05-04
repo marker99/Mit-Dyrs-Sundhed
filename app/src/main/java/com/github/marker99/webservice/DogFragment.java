@@ -17,22 +17,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.marker99.R;
 import com.github.marker99.databinding.DogFragmentBinding;
 
 public class DogFragment extends Fragment {
 
     private DogFragmentBinding binding;
-
-    DogViewModel dogViewModel;
+    private DogViewModelImpl dogViewModelImpl;
 
     private Button randomButton;
     private ImageView imageView;
-    private TextView name;
-    private TextView lifespan;
-    private TextView temperament;
 
-    private EditText editText;
+    //Dog Data
+    private TextView name, lifespan, temperament;
+
+    private EditText breedNameSearch;
     private Button searchButton;
 
 
@@ -40,47 +38,44 @@ public class DogFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        dogViewModel = new ViewModelProvider(this).get(DogViewModel.class);
+        dogViewModelImpl = new ViewModelProvider(this).get(DogViewModelImpl.class);
 
         binding = DogFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         bindings();
 
-        dogViewModel.findRandomDog();
+        //Get a random dog when opening the view
+        dogViewModelImpl.findRandomDog();
+
+        observers();
+        onClickListeners();
 
 
-        dogViewModel.getRandomDog().observe(getViewLifecycleOwner(), dog -> {
+        return root;
+    }
+
+    private void onClickListeners() {
+        searchButton.setOnClickListener(view -> {
+            dogViewModelImpl.searchForBreed(breedNameSearch.getText().toString());
+        });
+
+        randomButton.setOnClickListener(view -> {
+            dogViewModelImpl.findRandomDog();
+        });
+    }
+
+    private void observers() {
+        dogViewModelImpl.getRandomDog().observe(getViewLifecycleOwner(), dog -> {
             Glide.with(this).load(dog.getImageURL()).into(imageView);
             name.setText(dog.getName());
             lifespan.setText(dog.getLifeSpan());
             temperament.setText(dog.getTemperament());
         });
-
-        /*
-        dogViewModel.getSpecificBreed().observe(getViewLifecycleOwner(), breed -> {
-            //Glide.with(this).load(dog.getImageURL()).into(imageView);
-            imageView.setImageResource(R.mipmap.ic_app_icon);
-            name.setText(breed.getName());
-            lifespan.setText(breed.getLifeSpan());
-            temperament.setText(breed.getTemperament());
-        });
-
-         */
-
-        searchButton.setOnClickListener(view -> {
-            dogViewModel.searchForBreed(editText.getText().toString());
-        });
-
-        randomButton.setOnClickListener(view -> {
-            dogViewModel.findRandomDog();
-        });
-
-        return root;
     }
 
     private void bindings() {
-        editText = binding.editText;
+        breedNameSearch = binding.editTextBreedNameSearch;
         searchButton = binding.button;
 
         randomButton = binding.buttonRandom;

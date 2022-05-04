@@ -11,6 +11,7 @@ import java.util.List;
 // https://developer.android.com/training/data-storage/room/relationships
 
 public class PetWithHealthInspection {
+    //TODO: Dette virker ikke endnu!
     @Embedded
     public Pet pet;
     @Relation(

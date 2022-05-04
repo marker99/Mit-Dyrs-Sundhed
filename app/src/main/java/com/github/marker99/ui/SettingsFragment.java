@@ -36,12 +36,15 @@ public class SettingsFragment extends Fragment {
 
         bindings();
         checkIfSignedIn();
+        onClickListeners();
 
+        return root;
+    }
+
+    private void onClickListeners() {
         signOutButton.setOnClickListener(view -> {
             settingsViewModel.signOut();
         });
-
-        return root;
     }
 
     private void checkIfSignedIn() {

@@ -7,8 +7,6 @@ import retrofit2.http.Query;
 
 public interface DogAPI {
     //API - https://docs.thedogapi.com/api-reference/breeds/breeds-search
-    //til makker
-    // https://api.thedogapi.com/v1/images/search?breed_name=Affenpinscher
 
     //ID VIRKER HVER GANG!!
     //https://api.thedogapi.com/v1/images/search?breed_id=1
@@ -22,21 +20,11 @@ public interface DogAPI {
     @GET("v1/breeds")
     Call<DogResponse[]> getAllBreeds();
 
-
-    //TODO: I cant figure this out
+    //Bruges til at søge på specifik hund
     @GET("v1/breeds/search")
     Call<Breed[]> getBreed(@Query("name") String breedName);
 
+    //Bruges til at finde billede på querying ovenover!
     @GET("v1/images/{image}")
     Call<DogImage> getDogImage(@Path("image") String image);
-
-    // Det her virker måske
-    // @GET("v1/breeds/search")
-    // Call<DogResponse[]> getBreed(@Query("name") String breedName);
-
-    //https://api.thedogapi.com/v1/breeds/search?name=affen
-
-
-    //https://api.thedogapi.com/v1/breeds/search?q=affen
-    //?q={breed}
 }
