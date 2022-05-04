@@ -2,6 +2,7 @@ package com.github.marker99;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -47,14 +48,8 @@ public class MainActivity extends AppCompatActivity {
         //Use the Toolbar as your ActionBar
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        //Floating Action Button /FAB
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Does nothing yet", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        onClickListeners();
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
@@ -75,20 +70,31 @@ public class MainActivity extends AppCompatActivity {
         checkIfSignedIn();
 
         //TODO: Dette virker ikke lige nu, få hjælp af Kasper evt?
-        bindings();
-        textView_dogInfo.setText("dogInfo");
-        textView_dogNameDrawer.setText("dogNameDrawer");
+        //bindings();
+        //textView_dogInfo.setText("dogInfo");
+        //textView_dogNameDrawer.setText("dogNameDrawer");
 
         //MaterialDatePicker.Builder.datePicker();
         //MaterialDatePicker.Builder.datePicker().build().sh
     }
 
+    private void onClickListeners() {
+        //Floating Action Button /FAB
+        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Does nothing yet", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
     private void bindings() {
-        //FIXME: Spørg kasper on navigationDrawer, hvordan vi får hevet data op til det!
+        //FIXME: Spørg kasper on navigationDrawer, hvordan vi får hevet data op til det! (nav_header_main.xml)
+        Log.i("TestMig", "dogInfo før: " + textView_dogInfo);
         textView_dogInfo = findViewById(R.id.textView_dogInfo);
+        Log.i("TestMig", "dogInfo efter: " + textView_dogInfo);
         textView_dogNameDrawer = findViewById(R.id.textView_dogNameDrawer);
-
-
     }
 
     @Override
