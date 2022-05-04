@@ -9,22 +9,24 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.github.marker99.login_firebase.data.UserRepository;
+import com.github.marker99.persistence.pet.Pet;
+import com.github.marker99.persistence.pet.PetRepository;
+
+import java.util.List;
 
 public class HomeViewModel extends AndroidViewModel {
 
-    private final MutableLiveData<String> mText;
-
+    private final PetRepository repository;
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
-
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        repository = PetRepository.getInstance(application);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<Pet>> getAllPets(){
+        return repository.getAllPets();
     }
+
 
 
 }

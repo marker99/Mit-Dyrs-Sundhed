@@ -10,10 +10,13 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
+
+        <!-- FIXME: Tænmker denne skal fjernes, da vi kan navigerer igennem Home nu!
         <item
             android:id="@+id/nav_signalement"
             android:icon="@drawable/ic_description"
             android:title="@string/signalement" />
+            -->
         <item
             android:id="@+id/nav_allHealthInspections"
             android:icon="@drawable/ic_baseline_health"

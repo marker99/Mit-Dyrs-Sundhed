@@ -20,8 +20,7 @@ import java.util.List;
 
 public class AllHealthInspectionsFragment extends Fragment {
 
-    //FIXME: mere beskrivende navn!
-    private Button button;
+    private Button button_addHealthInspection;
     private FragmentAllHealthInspectionsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,13 +39,13 @@ public class AllHealthInspectionsFragment extends Fragment {
     }
 
     private void onClickListeners() {
-        button.setOnClickListener(view -> {
+        button_addHealthInspection.setOnClickListener(view -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_nav_healthInspection_to_addHealthInspectionFragment);
         });
     }
 
     private void bindings() {
-        button = binding.buttonAddHealthInspection;
+        button_addHealthInspection = binding.buttonAddHealthInspection;
     }
 
     private void onChanged(List<HealthInspection> inspections){

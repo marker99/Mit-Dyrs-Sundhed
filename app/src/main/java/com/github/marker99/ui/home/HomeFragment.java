@@ -5,20 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentHomeBinding;
+import com.github.marker99.persistence.pet.Pet;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private Button button;
-
+    private Button button_addPet;
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,23 +31,43 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-
-        //alternative to findViewById
-        button = binding.buttonAddPetInfo;
-
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-        //Add new pet button
+        bindings();
         onClickListeners();
+
+        binding.rvAllPets.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
+        homeViewModel.getAllPets().observe(getViewLifecycleOwner(), this::onChanged);
+
 
         return root;
     }
 
     private void onClickListeners() {
-        button.setOnClickListener(view -> {
+        //Add new pet button
+        button_addPet.setOnClickListener(view -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_addPetInfoFragment);
         });
+    }
+
+    private void bindings() {
+        //Alternative to findViewById in fragments!
+        button_addPet = binding.buttonAddPetInfo;
+    }
+
+    private void onChanged(List<Pet> pets) {
+        HomePetsAdapter adapter = new HomePetsAdapter(pets);
+        adapter.setOnClickListener(this::onPetClicked);
+        binding.rvAllPets.setAdapter(adapter);
+    }
+
+    private void onPetClicked(Pet pet) {
+        // Navigating to a different Fragment
+        // Create a Bundle to send data
+        Bundle bundle = new Bundle();
+        // Fill bundle with Data
+        bundle.putSerializable("petName", pet);
+        System.out.println(bundle.getSerializable("petName").toString());
+        // Navigate with the bundle attached
+        NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_petSignalement, bundle);
     }
 
     @Override

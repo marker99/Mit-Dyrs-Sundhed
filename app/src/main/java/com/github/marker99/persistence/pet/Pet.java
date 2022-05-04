@@ -3,8 +3,10 @@ package com.github.marker99.persistence.pet;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "pet_table")
-public class Pet {
+public class Pet implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;

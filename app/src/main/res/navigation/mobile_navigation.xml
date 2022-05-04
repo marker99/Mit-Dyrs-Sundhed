@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_addPetInfoFragment"
             app:destination="@id/addSignalementFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_petSignalement"
+            app:destination="@id/nav_signalement" />
     </fragment>
 
     <fragment
@@ -46,6 +49,7 @@
         android:label="Nyt Sundhedstjek"
         tools:layout="@layout/fragment_add_health_inspection" />
 
+    <!-- FIXME: OLD hvorfor? - Preview virker ikke-->
     <fragment
         android:id="@+id/specificHealthInspection"
         android:name="com.github.marker99.ui.health_inspection.SpecificHealthInspection"
