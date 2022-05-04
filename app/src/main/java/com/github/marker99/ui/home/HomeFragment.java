@@ -25,8 +25,8 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        HomeViewModelImpl homeViewModelImpl =
+                new ViewModelProvider(this).get(HomeViewModelImpl.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment {
         onClickListeners();
 
         binding.rvAllPets.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
-        homeViewModel.getAllPets().observe(getViewLifecycleOwner(), this::onChanged);
+        homeViewModelImpl.getAllPets().observe(getViewLifecycleOwner(), this::onChanged);
 
 
         return root;

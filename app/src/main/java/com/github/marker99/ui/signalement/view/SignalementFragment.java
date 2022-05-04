@@ -1,4 +1,4 @@
-package com.github.marker99.ui.signalement;
+package com.github.marker99.ui.signalement.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,7 +19,7 @@ public class SignalementFragment extends Fragment {
     private FragmentSignalementBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        SignalementViewModel viewModel = new ViewModelProvider(this).get(SignalementViewModel.class);
+        SignalementViewModelImpl viewModel = new ViewModelProvider(this).get(SignalementViewModelImpl.class);
 
         binding = FragmentSignalementBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

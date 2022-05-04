@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/nav_signalement"
-        android:name="com.github.marker99.ui.signalement.SignalementFragment"
+        android:name="com.github.marker99.ui.signalement.view.SignalementFragment"
         android:label="Signalement"
         tools:layout="@layout/fragment_signalement" />
 
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/addSignalementFragment"
-        android:name="com.github.marker99.ui.signalement.AddSignalementFragment"
+        android:name="com.github.marker99.ui.signalement.add.AddSignalementFragment"
         android:label="Tilføj Signalement"
         tools:layout="@layout/fragment_add_signalement" />
 
@@ -52,18 +52,18 @@
     <!-- FIXME: OLD hvorfor? - Preview virker ikke-->
     <fragment
         android:id="@+id/specificHealthInspection"
-        android:name="com.github.marker99.ui.health_inspection.SpecificHealthInspection"
+        android:name="com.github.marker99.ui.health_inspection.specific_inspection.SpecificHealthInspection"
         android:label="fragment_health_inspection"
         tools:layout="@layout/fragment_health_inspection_OLD" />
 
     <fragment
         android:id="@+id/dogFragment"
-        android:name="com.github.marker99.webservice.DogFragment"
+        android:name="com.github.marker99.ui.find_your_dog.DogFragment"
         android:label="dog_fragment"
-        tools:layout="@layout/dog_fragment" />
+        tools:layout="@layout/fragment_find_your_dog" />
     <fragment
         android:id="@+id/settings_dest"
-        android:name="com.github.marker99.ui.SettingsFragment"
+        android:name="com.github.marker99.ui.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/settings_fragment" />
     <fragment

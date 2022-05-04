@@ -1,9 +1,7 @@
 package com.github.marker99.ui.health_inspection.new_inspection;
 
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,17 +18,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.github.marker99.MainActivity;
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
-import java.util.Calendar;
-
 public class AddHealthInspectionFragment extends Fragment {
 
-    private AddHealthInspectionViewModel addHealthInspectionViewModel;
+    private AddHealthInspectionViewModelImpl addHealthInspectionViewModelImpl;
     private FragmentAddHealthInspectionBinding binding;
 
     private Button addButton, datePicker;
@@ -44,7 +39,7 @@ public class AddHealthInspectionFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        addHealthInspectionViewModel = new ViewModelProvider(this).get(AddHealthInspectionViewModel.class);
+        addHealthInspectionViewModelImpl = new ViewModelProvider(this).get(AddHealthInspectionViewModelImpl.class);
         binding = FragmentAddHealthInspectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -138,7 +133,7 @@ public class AddHealthInspectionFragment extends Fragment {
                 remarks.getText().toString(),
                 temper.getSelectedItem().toString()
         );
-        addHealthInspectionViewModel.insert(newInspection);
+        addHealthInspectionViewModelImpl.insert(newInspection);
 
         NavHostFragment.findNavController(this).navigate(R.id.nav_allHealthInspections);
     }

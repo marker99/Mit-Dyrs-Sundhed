@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import com.github.marker99.login_firebase.ui.SignInActivity;
-import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
-    private MainActivityViewModel viewModel;
+    private MainActivityViewModelImpl viewModel;
 
     NavController navController;
 
@@ -48,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
         //Use the Toolbar as your ActionBar
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        onClickListeners();
-
+        //Floating Action Button /FAB
+        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Does nothing yet", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
@@ -66,27 +71,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModelImpl.class);
         checkIfSignedIn();
 
         //TODO: Dette virker ikke lige nu, få hjælp af Kasper evt?
-        //bindings();
+        bindings();
         //textView_dogInfo.setText("dogInfo");
         //textView_dogNameDrawer.setText("dogNameDrawer");
 
         //MaterialDatePicker.Builder.datePicker();
         //MaterialDatePicker.Builder.datePicker().build().sh
-    }
-
-    private void onClickListeners() {
-        //Floating Action Button /FAB
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Does nothing yet", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     private void bindings() {
@@ -95,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         textView_dogInfo = findViewById(R.id.textView_dogInfo);
         Log.i("TestMig", "dogInfo efter: " + textView_dogInfo);
         textView_dogNameDrawer = findViewById(R.id.textView_dogNameDrawer);
+
+
     }
 
     @Override

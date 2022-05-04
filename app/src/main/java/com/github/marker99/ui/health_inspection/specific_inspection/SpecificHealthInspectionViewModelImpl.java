@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection;
+package com.github.marker99.ui.health_inspection.specific_inspection;
 
 import android.app.Application;
 
@@ -7,12 +7,13 @@ import androidx.lifecycle.AndroidViewModel;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 import com.github.marker99.persistence.health_inspection.HealthInspectionRepository;
 
-public class SpecificHealthInspectionViewModel extends AndroidViewModel {
+public class SpecificHealthInspectionViewModelImpl extends AndroidViewModel implements SpecificHealthInspectionViewModel {
 
+    //FIXME: Repository bliver aldrig brugt!
     private final HealthInspectionRepository repository;
     private HealthInspection inspection;
 
-    public SpecificHealthInspectionViewModel(Application application) {
+    public SpecificHealthInspectionViewModelImpl(Application application) {
         super(application);
         repository = HealthInspectionRepository.getInstance(application);
     }
@@ -21,6 +22,7 @@ public class SpecificHealthInspectionViewModel extends AndroidViewModel {
         this.inspection = inspection;
     }
 
+    //FIXME: Bliver ikke brugt?
     public HealthInspection getInspection(){
         return inspection;
     }

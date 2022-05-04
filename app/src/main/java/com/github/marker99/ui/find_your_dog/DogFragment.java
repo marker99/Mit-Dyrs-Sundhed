@@ -1,4 +1,4 @@
-package com.github.marker99.webservice;
+package com.github.marker99.ui.find_your_dog;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -17,11 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.marker99.databinding.DogFragmentBinding;
+import com.github.marker99.databinding.FragmentFindYourDogBinding;
 
 public class DogFragment extends Fragment {
 
-    private DogFragmentBinding binding;
+    private FragmentFindYourDogBinding binding;
     private DogViewModelImpl dogViewModelImpl;
 
     private Button randomButton;
@@ -40,7 +40,7 @@ public class DogFragment extends Fragment {
 
         dogViewModelImpl = new ViewModelProvider(this).get(DogViewModelImpl.class);
 
-        binding = DogFragmentBinding.inflate(inflater, container, false);
+        binding = FragmentFindYourDogBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         bindings();

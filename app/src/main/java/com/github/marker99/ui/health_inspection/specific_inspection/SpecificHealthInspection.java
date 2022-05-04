@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection;
+package com.github.marker99.ui.health_inspection.specific_inspection;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -11,10 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.github.marker99.databinding.FragmentHealthInspectionBinding;
@@ -27,13 +24,13 @@ public class SpecificHealthInspection extends Fragment {
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
             milkLumps, joint;
 
-    private SpecificHealthInspectionViewModel viewModel;
+    private SpecificHealthInspectionViewModelImpl viewModel;
     private FragmentHealthInspectionBinding binding;
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(this).get(SpecificHealthInspectionViewModel.class);
+        viewModel = new ViewModelProvider(this).get(SpecificHealthInspectionViewModelImpl.class);
 
         binding = FragmentHealthInspectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

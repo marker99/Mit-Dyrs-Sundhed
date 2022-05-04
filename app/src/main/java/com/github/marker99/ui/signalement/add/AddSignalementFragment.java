@@ -1,4 +1,4 @@
-package com.github.marker99.ui.signalement;
+package com.github.marker99.ui.signalement.add;
 
 import android.os.Bundle;
 
@@ -24,13 +24,13 @@ public class AddSignalementFragment extends Fragment {
     private EditText input_gender, input_color, input_Characteristics;
 
     private FragmentAddSignalementBinding binding;
-    private AddSignalementViewModel addSignalementViewModel;
+    private AddSignalementViewModelImpl addSignalementViewModelImpl;
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        addSignalementViewModel = new ViewModelProvider(this).get(AddSignalementViewModel.class);
+        addSignalementViewModelImpl = new ViewModelProvider(this).get(AddSignalementViewModelImpl.class);
         binding = FragmentAddSignalementBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -50,7 +50,7 @@ public class AddSignalementFragment extends Fragment {
                 input_gender.getText().toString(),
                 input_color.getText().toString(),
                 input_Characteristics.getText().toString());
-        addSignalementViewModel.insert(newPet);
+        addSignalementViewModelImpl.insert(newPet);
         NavHostFragment.findNavController(this).navigate(R.id.nav_home);
     }
 

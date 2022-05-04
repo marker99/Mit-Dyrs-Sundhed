@@ -1,4 +1,4 @@
-package com.github.marker99.ui;
+package com.github.marker99.ui.settings;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -23,13 +23,13 @@ public class SettingsFragment extends Fragment {
     private TextView userIdText;
 
     private SettingsFragmentBinding binding;
-    private SettingsViewModel settingsViewModel;
+    private SettingsViewModelImpl settingsViewModelImpl;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
+        settingsViewModelImpl = new ViewModelProvider(this).get(SettingsViewModelImpl.class);
 
         binding = SettingsFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -43,12 +43,12 @@ public class SettingsFragment extends Fragment {
 
     private void onClickListeners() {
         signOutButton.setOnClickListener(view -> {
-            settingsViewModel.signOut();
+            settingsViewModelImpl.signOut();
         });
     }
 
     private void checkIfSignedIn() {
-        settingsViewModel.getCurrentUser().observe(getViewLifecycleOwner(), user -> {
+        settingsViewModelImpl.getCurrentUser().observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
                 String message = "User: " + user.getDisplayName();
                 userIdText.setText(message);

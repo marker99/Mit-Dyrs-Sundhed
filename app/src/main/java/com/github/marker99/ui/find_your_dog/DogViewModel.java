@@ -1,6 +1,8 @@
-package com.github.marker99.webservice;
+package com.github.marker99.ui.find_your_dog;
 
 import androidx.lifecycle.LiveData;
+
+import com.github.marker99.webservice.Dog;
 
 public interface DogViewModel {
     LiveData<Dog> getRandomDog();

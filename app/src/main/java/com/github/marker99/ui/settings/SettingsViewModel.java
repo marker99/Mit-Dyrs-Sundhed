@@ -1,11 +1,10 @@
-package com.github.marker99;
+package com.github.marker99.ui.settings;
 
 import androidx.lifecycle.LiveData;
 
 import com.google.firebase.auth.FirebaseUser;
 
-public interface MainActivityViewModel {
+public interface SettingsViewModel {
     LiveData<FirebaseUser> getCurrentUser();
-    //Fixme: Signout her bliver vidst aldrig brugt?
     void signOut();
 }

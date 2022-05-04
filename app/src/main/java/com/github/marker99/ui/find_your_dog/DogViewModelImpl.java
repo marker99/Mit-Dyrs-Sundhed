@@ -1,9 +1,12 @@
-package com.github.marker99.webservice;
+package com.github.marker99.ui.find_your_dog;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DogViewModelImpl extends ViewModel {
+import com.github.marker99.webservice.Dog;
+import com.github.marker99.webservice.DogRepositoryImpl;
+
+public class DogViewModelImpl extends ViewModel implements DogViewModel {
     DogRepositoryImpl dogRepositoryImpl;
 
     public DogViewModelImpl() {

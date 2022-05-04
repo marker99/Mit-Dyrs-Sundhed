@@ -1,4 +1,4 @@
-package com.github.marker99.ui.signalement;
+package com.github.marker99.ui.signalement.add;
 
 import android.app.Application;
 
@@ -8,11 +8,11 @@ import com.github.marker99.persistence.pet.Pet;
 import com.github.marker99.persistence.pet.PetRepository;
 
 
-public class AddSignalementViewModel extends AndroidViewModel {
+public class AddSignalementViewModelImpl extends AndroidViewModel implements AddSignalementViewModel{
 
     private final PetRepository repository;
 
-    public AddSignalementViewModel(@NonNull Application application) {
+    public AddSignalementViewModelImpl(@NonNull Application application) {
         super(application);
         repository = PetRepository.getInstance(application);
     }

@@ -24,7 +24,7 @@ public class AllHealthInspectionsFragment extends Fragment {
     private FragmentAllHealthInspectionsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        AllHealthInspectionsViewModel allHealthInspectionsViewModel = new ViewModelProvider(this).get(AllHealthInspectionsViewModel.class);
+        AllHealthInspectionsViewModelImpl allHealthInspectionsViewModelImpl = new ViewModelProvider(this).get(AllHealthInspectionsViewModelImpl.class);
 
         binding = FragmentAllHealthInspectionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -33,7 +33,7 @@ public class AllHealthInspectionsFragment extends Fragment {
         onClickListeners();
 
         binding.rvHealthInspection.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
-        allHealthInspectionsViewModel.getAllInspections().observe(getViewLifecycleOwner(), this::onChanged);
+        allHealthInspectionsViewModelImpl.getAllInspections().observe(getViewLifecycleOwner(), this::onChanged);
 
         return root;
     }
