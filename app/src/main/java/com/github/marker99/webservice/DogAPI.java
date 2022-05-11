@@ -2,6 +2,7 @@ package com.github.marker99.webservice;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -12,7 +13,8 @@ public interface DogAPI {
     //https://api.thedogapi.com/v1/images/search?breed_id=1
 
     //TODO: Why is this not needed - Because website doesn't want you to use API key! ;) (Måske dette kunne være nyttigt i nogle af de andre cases, hvis vi vil lave andre kald?)
-    //@Headers({"x-api-key: " + "a91299bb-d87d-4eee-8617-b51535425ae8"})
+    @Headers({"x-api-key: " + "a91299bb-d87d-4eee-8617-b51535425ae8"})
+
     @GET("v1/images/search")
     Call<DogResponse[]> getRandomDog();
 

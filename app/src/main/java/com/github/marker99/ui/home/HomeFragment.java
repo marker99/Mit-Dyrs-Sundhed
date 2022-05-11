@@ -1,6 +1,7 @@
 package com.github.marker99.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,9 @@ public class HomeFragment extends Fragment {
         Bundle bundle = new Bundle();
         // Fill bundle with Data
         bundle.putSerializable("petName", pet);
-        System.out.println(bundle.getSerializable("petName").toString());
+        bundle.putSerializable("petId", pet.getId());
+        Log.i("petInfo", "PetName: " + bundle.getSerializable("petName").toString());
+        Log.i("petInfo", "PetId: " + bundle.getSerializable("petId").toString());
         // Navigate with the bundle attached
         NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_petSignalement, bundle);
     }
