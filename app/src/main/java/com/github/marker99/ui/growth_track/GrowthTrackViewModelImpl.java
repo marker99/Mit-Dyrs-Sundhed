@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+
 import com.github.marker99.persistence.pet.PetRepository;
 
 public class GrowthTrackViewModelImpl extends AndroidViewModel implements GrowthTrackViewModel {

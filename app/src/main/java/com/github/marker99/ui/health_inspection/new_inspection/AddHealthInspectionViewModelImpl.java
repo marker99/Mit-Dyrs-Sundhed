@@ -4,7 +4,6 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModel;
 
 import com.github.marker99.persistence.health_inspection.HealthInspection;
 import com.github.marker99.persistence.health_inspection.HealthInspectionRepository;

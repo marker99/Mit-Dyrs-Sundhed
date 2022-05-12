@@ -4,7 +4,6 @@ import android.content.Context;
 
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
 import com.github.marker99.persistence.health_inspection.HealthInspection;
