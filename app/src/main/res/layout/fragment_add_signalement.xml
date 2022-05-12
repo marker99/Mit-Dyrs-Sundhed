@@ -51,14 +51,13 @@
         app:layout_constraintStart_toEndOf="@+id/petName"
         app:layout_constraintTop_toBottomOf="@+id/signalement" />
 
-    <TextView
-        android:id="@+id/birthdate"
+    <Button
+        android:id="@+id/button_birthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/fødselsdato"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/petName" />
 
@@ -72,7 +71,7 @@
         android:inputType="date"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/birthdate"
+        app:layout_constraintStart_toEndOf="@+id/button_birthday"
         app:layout_constraintTop_toBottomOf="@+id/editText_petName" />
 
 
@@ -85,7 +84,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/birthdate" />
+        app:layout_constraintTop_toBottomOf="@+id/button_birthday" />
 
     <EditText
         android:id="@+id/editText_race"

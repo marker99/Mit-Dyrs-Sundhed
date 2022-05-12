@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/nav_allHealthInspections"
-        android:name="com.github.marker99.ui.health_inspection.recylerview.AllHealthInspectionsFragment"
+        android:name="com.github.marker99.ui.health_inspection.all_inspections_rv.AllHealthInspectionsFragment"
         android:label="@string/all_health_inspections"
         tools:layout="@layout/fragment_all_health_inspections" >
         <action

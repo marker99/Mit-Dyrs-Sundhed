@@ -22,7 +22,7 @@ public interface PetDAO {
     @Delete
     void delete(Pet pet);
 
-    //Denne metode giver nu en liste i Home, der skal bruges til at søge efter et specifikt pet!
+    //Denne metode giver nu en liste i Home, der bruges til at få fat i et bestemt "Pet"!
     @Query("SELECT * FROM pet_table ORDER BY petName DESC")
     LiveData<List<Pet>> getAllPets();
 

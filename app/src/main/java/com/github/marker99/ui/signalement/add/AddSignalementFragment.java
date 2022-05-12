@@ -14,17 +14,22 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddSignalementBinding;
+import com.github.marker99.persistence.DateHandler;
 import com.github.marker99.persistence.pet.Pet;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 public class AddSignalementFragment extends Fragment {
 
-    private Button addButton;
+    private Button addButton, button_birthday;
     private EditText input_petName, input_birthday, input_race;
     private EditText input_gender, input_color, input_Characteristics;
 
     private FragmentAddSignalementBinding binding;
     private AddSignalementViewModelImpl addSignalementViewModelImpl;
 
+    //MaterialDatePicker
+    private MaterialDatePicker materialDatePicker;
+    private long dateChosen;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -33,18 +38,36 @@ public class AddSignalementFragment extends Fragment {
         binding = FragmentAddSignalementBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        //get Material Date Picker from DateConverter!
+        materialDatePicker = DateHandler.getMaterialDatePicker();
         bindings();
 
+        onClickListeners();
+
+        return root;
+    }
+
+    private void onClickListeners() {
         // Button on click listener
         addButton.setOnClickListener(this::addNewPet);
 
-        return root;
+        //MaterialDatePicker Listener
+        button_birthday.setOnClickListener(view -> {
+            //When clicked, the MaterialDatePicker shows up!
+            materialDatePicker.show(getActivity().getSupportFragmentManager(), "test");
+
+            //When accepting chosen date, display in view!
+            materialDatePicker.addOnPositiveButtonClickListener(selection -> {
+                dateChosen = (Long) selection;
+                input_birthday.setText(DateHandler.fromLongToString((Long) selection));
+            });
+        });
     }
 
     private void addNewPet(View view) {
         Pet newPet = new Pet(
                 input_petName.getText().toString(),
-                input_birthday.getText().toString(),
+                dateChosen,
                 input_race.getText().toString(),
                 input_gender.getText().toString(),
                 input_color.getText().toString(),
@@ -55,6 +78,7 @@ public class AddSignalementFragment extends Fragment {
 
     // Binding stuff to things
     private void bindings() {
+        button_birthday = binding.buttonBirthday;
         addButton = binding.addSignalement;
         input_petName = binding.editTextPetName;
         input_birthday = binding.editTextBirthdate;

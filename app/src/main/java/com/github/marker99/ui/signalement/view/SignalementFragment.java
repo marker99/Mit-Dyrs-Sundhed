@@ -34,7 +34,7 @@ public class SignalementFragment extends Fragment {
             //Tjekker om der er et pet i databasen, hvis der er tilføj data fra det!
             if (pet != null) {
                 petName.setText(pet.getPetName());
-                birthDate.setText(pet.getBirthday());
+                birthDate.setText(pet.getBirthdayStringFormat());
                 race.setText(pet.getRace());
                 gender.setText(pet.getGender());
                 color.setText(pet.getColor());

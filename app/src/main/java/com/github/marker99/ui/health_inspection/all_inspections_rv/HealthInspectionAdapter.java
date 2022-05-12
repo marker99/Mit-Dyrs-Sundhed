@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection.recylerview;
+package com.github.marker99.ui.health_inspection.all_inspections_rv;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +35,8 @@ public class HealthInspectionAdapter extends RecyclerView.Adapter<HealthInspecti
     // onBindViewHolder(), is responsible for setting the data from the data source on each relevant view.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.item.setText(inspections.get(position).getInspectionDate());
+        //Converting from longToString
+        holder.item.setText(inspections.get(position).getInspectionDateStringFormat());
         holder.doctor.setText(inspections.get(position).getDoctor());
         //holder.itemView.setBackgroundColor(Color.rgb(1,128, 108));
     }

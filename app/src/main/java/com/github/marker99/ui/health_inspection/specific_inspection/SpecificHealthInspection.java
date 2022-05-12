@@ -68,7 +68,7 @@ public class SpecificHealthInspection extends Fragment {
     }
 
     public void populate(HealthInspection healthInspection) {
-        input_date.setText(healthInspection.getInspectionDate());
+        input_date.setText(healthInspection.getInspectionDateStringFormat());
         doctor.setText(healthInspection.getDoctor());
         weight.setText(String.valueOf(healthInspection.getWeight()));
         appetite.setText(healthInspection.getAppetite());

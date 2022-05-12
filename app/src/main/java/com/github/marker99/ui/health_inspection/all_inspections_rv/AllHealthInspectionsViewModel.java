@@ -1,4 +1,4 @@
-package com.github.marker99.ui.health_inspection.recylerview;
+package com.github.marker99.ui.health_inspection.all_inspections_rv;
 
 import androidx.lifecycle.LiveData;
 

@@ -11,8 +11,8 @@ import com.github.marker99.persistence.health_inspection.HealthInspectionDAO;
 import com.github.marker99.persistence.pet.Pet;
 import com.github.marker99.persistence.pet.PetDAO;
 
-@androidx.room.Database(entities = {Pet.class, HealthInspection.class}, version = 5)
-@TypeConverters({DateConverter.class})
+@androidx.room.Database(entities = {Pet.class, HealthInspection.class}, version = 7)
+@TypeConverters({DateHandler.class})
 public abstract class Database extends RoomDatabase {
 
     private static Database instance;

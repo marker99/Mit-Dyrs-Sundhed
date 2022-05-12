@@ -20,10 +20,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
-import com.github.marker99.persistence.DateConverter;
+import com.github.marker99.persistence.DateHandler;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
-import com.google.android.material.datepicker.CalendarConstraints;
-import com.google.android.material.datepicker.DateValidatorPointBackward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
 public class AddHealthInspectionFragment extends Fragment {
@@ -40,7 +38,8 @@ public class AddHealthInspectionFragment extends Fragment {
     private EditText remarks;
 
     //DATEPICKER
-    MaterialDatePicker materialDatePicker;
+    private MaterialDatePicker materialDatePicker;
+    private long dateChosen;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -59,7 +58,7 @@ public class AddHealthInspectionFragment extends Fragment {
         addButton.setOnClickListener(this::addNewHealthInspection);
 
         //SetUpMaterialDatePicker
-        setUpDatePicker();
+        materialDatePicker = DateHandler.getMaterialDatePicker();
 
         //SetUpClickListener to MaterialDatePicker!
         setOnClickListeners();
@@ -69,40 +68,16 @@ public class AddHealthInspectionFragment extends Fragment {
 
     private void setOnClickListeners() {
         //OnClicker, so MaterialDatePicker pops up!
-        datePicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        datePicker.setOnClickListener(view ->  {
                 //When clicked, the MaterialDatePicker shows up!
                 materialDatePicker.show(getActivity().getSupportFragmentManager(), "test");
 
                 //When accepting chosen date, display in view!
                 materialDatePicker.addOnPositiveButtonClickListener(selection -> {
-                    input_date.setText(DateConverter.fromLongToString((Long) selection));
-                });
-            }
+                    dateChosen = (Long) selection;
+                    input_date.setText(DateHandler.fromLongToString((Long) selection));
+            });
         });
-    }
-
-    private void setUpDatePicker() {
-        //Material Design
-        //https://material.io/components/date-pickers/android#using-date-pickers
-
-        //Setting calenderConstraints, so you can scroll to month after current!
-        CalendarConstraints.Builder calenderConstraint = new CalendarConstraints.Builder();
-        calenderConstraint.setEnd(MaterialDatePicker.todayInUtcMilliseconds());
-
-        //Setting calenderConstraint validator, so a date beyond current date cannot be chosen!
-        CalendarConstraints.DateValidator dateValidatorMax = DateValidatorPointBackward.before(MaterialDatePicker.todayInUtcMilliseconds());
-        calenderConstraint.setValidator(dateValidatorMax);
-
-        //Creating materialDatePicker
-        materialDatePicker =
-                MaterialDatePicker.Builder.datePicker()
-                        .setTitleText("Select date")
-                        .setCalendarConstraints(calenderConstraint.build())
-                        .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
-                        .setInputMode(MaterialDatePicker.INPUT_MODE_TEXT)
-                        .build();
     }
 
     private void spinnerAdapter() {
@@ -127,13 +102,15 @@ public class AddHealthInspectionFragment extends Fragment {
     private void addNewHealthInspection(View view) {
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         int petId = prefs.getInt("petId", 0);
+
+        //Try, to not crash
         Double weightD = 0.0;
         try {
             weightD = Double.parseDouble(weight.getText().toString());
         } catch (Exception e) {
         }
         HealthInspection newInspection = new HealthInspection(
-                input_date.getText().toString(),
+                dateChosen,
                 doctor.getText().toString(),
                 weightD,
                 drinkingHabit.getSelectedItem().toString(),

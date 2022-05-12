@@ -3,6 +3,8 @@ package com.github.marker99.persistence.pet;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.github.marker99.persistence.DateHandler;
+
 import java.io.Serializable;
 
 @Entity(tableName = "pet_table")
@@ -11,13 +13,13 @@ public class Pet implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String petName;
-    private String birthday;
+    private long birthday;
     private String race;
     private String gender;
     private String color;
     private String characteristics;
 
-    public Pet(String petName, String birthday, String race, String gender, String color, String characteristics) {
+    public Pet(String petName, long birthday, String race, String gender, String color, String characteristics) {
         this.petName = petName;
         this.birthday = birthday;
         this.race = race;
@@ -42,11 +44,15 @@ public class Pet implements Serializable {
         this.petName = petName;
     }
 
-    public String getBirthday() {
+    public String getBirthdayStringFormat() {
+        return DateHandler.fromLongToString(birthday);
+    }
+
+    public long getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(long birthday) {
         this.birthday = birthday;
     }
 

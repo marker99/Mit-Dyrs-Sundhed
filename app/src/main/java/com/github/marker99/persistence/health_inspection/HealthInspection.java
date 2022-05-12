@@ -1,8 +1,9 @@
 package com.github.marker99.persistence.health_inspection;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.github.marker99.persistence.DateHandler;
 
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ public class HealthInspection implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String inspectionDate; //Date objects i stedet?
+    private long inspectionDate; //Date objects i stedet?
     private double weight;
     private String doctor, drinkingHabits, appetite;
     private String remarks, temper;
@@ -21,7 +22,7 @@ public class HealthInspection implements Serializable {
 
     private int petId;
 
-    public HealthInspection(@NonNull String inspectionDate, String doctor, double weight, String drinkingHabits, String appetite,
+    public HealthInspection(long inspectionDate, String doctor, double weight, String drinkingHabits, String appetite,
                             boolean eyes, boolean outerEar, boolean nose,
                             boolean oralCavity, boolean navelGroin,
                             boolean skin_hairLayer, boolean lymphNodes, boolean pawClaws,
@@ -94,12 +95,15 @@ public class HealthInspection implements Serializable {
         this.id = id;
     }
 
-    @NonNull
-    public String getInspectionDate() {
+    public long getInspectionDate() {
         return inspectionDate;
     }
 
-    public void setInspectionDate(String inspectionDate) {
+    public String getInspectionDateStringFormat() {
+        return DateHandler.fromLongToString(inspectionDate);
+    }
+
+    public void setInspectionDate(long inspectionDate) {
         this.inspectionDate = inspectionDate;
     }
 
