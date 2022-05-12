@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
         //R.id.nav_signalement er fjernet fra listen!
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_allHealthInspections, R.id.dogFragment, R.id.settings_dest, R.id.growthTrackFragment)
+                R.id.nav_home, R.id.nav_allHealthInspections, R.id.dogFragment, R.id.settings_dest, R.id.growthTrackFragment
+        , R.id.nav_signalement)
                 .setOpenableLayout(drawer)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -74,23 +75,18 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(MainActivityViewModelImpl.class);
         checkIfSignedIn();
 
-        //TODO: Dette virker ikke lige nu, få hjælp af Kasper evt?
         bindings();
-        //textView_dogInfo.setText("dogInfo");
-        //textView_dogNameDrawer.setText("dogNameDrawer");
+        textView_dogInfo.setText("dogInfo");
+        textView_dogNameDrawer.setText("dogNameDrawer");
 
         //MaterialDatePicker.Builder.datePicker();
         //MaterialDatePicker.Builder.datePicker().build().sh
     }
 
     private void bindings() {
-        //FIXME: Spørg kasper on navigationDrawer, hvordan vi får hevet data op til det! (nav_header_main.xml)
-        Log.i("TestMig", "dogInfo før: " + textView_dogInfo);
-        textView_dogInfo = findViewById(R.id.textView_dogInfo);
-        Log.i("TestMig", "dogInfo efter: " + textView_dogInfo);
-        textView_dogNameDrawer = findViewById(R.id.textView_dogNameDrawer);
-
-
+        //Den skal være binding.navView, for at den ved det er fra navView
+        textView_dogInfo = binding.navView.getHeaderView(0).findViewById(R.id.textView_dogInfo);
+        textView_dogNameDrawer = binding.navView.getHeaderView(0).findViewById(R.id.textView_dogNameDrawer);
     }
 
     @Override

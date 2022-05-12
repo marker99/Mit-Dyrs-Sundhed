@@ -1,8 +1,11 @@
 package com.github.marker99.ui.home;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +37,11 @@ public class HomePetsAdapter extends RecyclerView.Adapter<HomePetsAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull HomePetsAdapter.ViewHolder holder, int position) {
         holder.petName.setText(pets.get(position).getPetName());
+        int petId = holder.itemView.getContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE).getInt("petId", 0);
+        if(pets.get(position).getId() == petId)
+        {
+            holder.selected.setChecked(true);
+        }
     }
 
     @Override
@@ -43,10 +51,12 @@ public class HomePetsAdapter extends RecyclerView.Adapter<HomePetsAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView petName;
+        private final CheckBox selected;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             petName = itemView.findViewById(R.id.rv_tv_petName);
+            selected = itemView.findViewById(R.id.rv_checkbox_selected);
 
             itemView.setOnClickListener(view -> listener.onClick(pets.get(getBindingAdapterPosition())));
         }
@@ -54,10 +64,13 @@ public class HomePetsAdapter extends RecyclerView.Adapter<HomePetsAdapter.ViewHo
 
     public void setOnClickListener(HomePetsAdapter.OnClickListener listener) {
         this.listener = listener;
+
+        //Clean all checkboxes
+
+        //Set selected pet checkbox
     }
 
     public interface OnClickListener {
-        //FIXME: GetSpecificPet skal nu bruge det id fra pettet valgt herunder i stedet for kun at få fat i nr. 1!
         void onClick(Pet pet);
     }
 }

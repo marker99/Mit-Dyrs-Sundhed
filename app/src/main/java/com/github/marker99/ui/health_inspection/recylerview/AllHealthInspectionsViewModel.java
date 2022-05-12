@@ -8,8 +8,5 @@ import java.util.List;
 
 public interface AllHealthInspectionsViewModel {
     LiveData<List<HealthInspection>> getAllInspections();
-    LiveData<List<HealthInspection>> getAllInspectionsWithPetId();
-
-    void findAllInspectionsWithPetId(int petId);
-
+    LiveData<List<HealthInspection>> getAllInspectionsWithPetId(int petId);
 }

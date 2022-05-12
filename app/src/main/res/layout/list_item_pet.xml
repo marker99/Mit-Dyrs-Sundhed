@@ -11,10 +11,19 @@
 
     <TextView
         android:id="@+id/rv_tv_petName"
-        android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:layout_width="0dp"
         android:gravity="center"
         android:text="Pet Name"
+        android:layout_weight="9"
         android:textColor="@color/white"
         android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/rv_checkbox_selected"
+        android:layout_width="0dp"
+        android:enabled="false"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
 </LinearLayout>

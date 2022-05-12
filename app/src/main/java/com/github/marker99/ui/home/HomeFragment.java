@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,7 +27,6 @@ public class HomeFragment extends Fragment {
 
     private Button button_addPet;
     private FragmentHomeBinding binding;
-    private int petId;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -65,7 +65,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void onPetClicked(Pet pet) {
-        // Navigating to a different Fragment
         // Create a Bundle to send data
         Bundle bundle = new Bundle();
         // Fill bundle with Data
@@ -77,21 +76,6 @@ public class HomeFragment extends Fragment {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("petId", pet.getId());
         editor.apply();
-
-        //FIXME: TEST ENVIRONMENT! - Er det fint dette gøres her?!
-        petId = prefs.getInt("petId", 0);
-        setDataViews();
-
-        // Navigate with the bundle attached
-        NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_petSignalement, bundle);
-    }
-
-    private void setDataViews() {
-        //Showing health inspections from specific pet on AllHealthInspection recycle view!
-        AllHealthInspectionsViewModelImpl allHealthInspectionsViewModelImpl = new ViewModelProvider(this).get(AllHealthInspectionsViewModelImpl.class);
-        allHealthInspectionsViewModelImpl.findAllInspectionsWithPetId(petId);
-
-        //TODO: Growth Track, når vi får grafen til at virke
     }
 
     @Override
