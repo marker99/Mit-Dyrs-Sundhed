@@ -11,8 +11,6 @@ import java.util.TimeZone;
 //Hugget fra https://developer.android.com/training/data-storage/room/referencing-data
 
 public class DateConverter {
-    //FIXME: Bruges dette? - Skal dette bruges? (Måske til HealthInspections, hvis vi skal sortere på dato)
-
     public static Date fromSecondsToDate(long ms){
         return new Date(ms);
     }
@@ -24,6 +22,7 @@ public class DateConverter {
         return dateFormat.format(date);
     }
 
+    //TODO: Skal bruges til at sorterer i recycleview!
     public static String fromStringToLong(String date){
         return null;
     }

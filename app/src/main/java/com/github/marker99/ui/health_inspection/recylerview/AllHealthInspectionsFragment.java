@@ -34,6 +34,7 @@ public class AllHealthInspectionsFragment extends Fragment {
         bindings();
         onClickListeners();
 
+        //FIXME: Måske flyttes til repository eller viewmodel?
         SharedPreferences preferences = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         int petId = preferences.getInt("petId", -1);
 

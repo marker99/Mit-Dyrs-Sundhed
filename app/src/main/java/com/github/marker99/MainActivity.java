@@ -1,6 +1,8 @@
 package com.github.marker99;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -81,8 +84,15 @@ public class MainActivity extends AppCompatActivity {
         textView_dogInfo = binding.navView.getHeaderView(0).findViewById(R.id.textView_dogInfo);
         textView_dogNameDrawer = binding.navView.getHeaderView(0).findViewById(R.id.textView_dogNameDrawer);
 
-        textView_dogInfo.setText("dogInfo");
-        textView_dogNameDrawer.setText("dogNameDrawer");
+        //FIXME: BAD SOLUTION, doesn't work live! :( --> FUCKA DIZ
+        SharedPreferences preferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        String petName = preferences.getString("petName", "No Pet Selected");
+
+        viewModel.getCurrentUser().observe(this, user->{
+            textView_dogNameDrawer.setText(user.getDisplayName());
+        });
+
+        textView_dogInfo.setText(petName);
     }
 
     @Override

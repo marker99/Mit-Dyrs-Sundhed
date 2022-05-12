@@ -42,10 +42,4 @@ public class PetRepository {
     public void insert(Pet pet) {
         executorService.execute(() -> petDAO.insert(pet));
     }
-
-    //TODO: Måske bare Delete ET Specific Pet i stedet??
-    public void deleteAllPets() {
-        executorService.execute(petDAO::deleteAllPets);
-    }
-
 }

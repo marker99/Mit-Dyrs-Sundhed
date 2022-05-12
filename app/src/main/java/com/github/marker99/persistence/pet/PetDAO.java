@@ -18,19 +18,15 @@ public interface PetDAO {
     @Update
     void update(Pet pet);
 
+
+    //TODO: FUTURE
     @Delete
     void delete(Pet pet);
 
-    //TODO: Er denne relevant? - Måske bare brug delete ovenover?
-    @Query("DELETE FROM pet_table")
-    void deleteAllPets();
-
-    //TODO: Denne metode giver nu en liste i Home, der skal bruges til at søge efter et specifikt pet! (Den grimme løsning under!)
+    //Denne metode giver nu en liste i Home, der skal bruges til at søge efter et specifikt pet!
     @Query("SELECT * FROM pet_table ORDER BY petName DESC")
     LiveData<List<Pet>> getAllPets();
 
-
-    //TODO: Fixet, dog skal det lige ordnes gennem hele system! (Har lavet petId = 1)  i repository!
     @Query("SELECT * FROM pet_table WHERE id = :petId")
     LiveData<Pet> getSpecificPet(int petId);
 

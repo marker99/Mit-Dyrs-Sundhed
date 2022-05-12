@@ -67,6 +67,7 @@ public class HomeFragment extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("petId", pet.getId());
+        editor.putString("petName", pet.getPetName());
         editor.apply();
 
         //Snackbar to display which pet is selected!
