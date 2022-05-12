@@ -33,8 +33,8 @@ public interface PetDAO {
 
 
     //TODO: rigtig grim løsning - ændre på et tidspunkt
-    @Query("SELECT * FROM pet_table WHERE id = 1")
-    LiveData<Pet> getSpecificPet();
+    @Query("SELECT * FROM pet_table WHERE id = :petId")
+    LiveData<Pet> getSpecificPet(int petId);
 
 
     /*

@@ -1,6 +1,9 @@
 package com.github.marker99.ui.health_inspection.recylerview;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +36,17 @@ public class AllHealthInspectionsFragment extends Fragment {
         onClickListeners();
 
         binding.rvHealthInspection.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
-        allHealthInspectionsViewModelImpl.getAllInspections().observe(getViewLifecycleOwner(), this::onChanged);
+
+        //Trying to make only specific petIds healthinspections
+        SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        int petId = prefs.getInt("petId", 2);
+        Log.i("PetInfo", "PetId - AllHealthInspectionsFragment: " + petId);
+        allHealthInspectionsViewModelImpl.findAllInspectionsWithPetId(petId);
+
+        allHealthInspectionsViewModelImpl.getAllInspectionsWithPetId().observe(getViewLifecycleOwner(), this::onChanged);
+
+
+
 
         return root;
     }

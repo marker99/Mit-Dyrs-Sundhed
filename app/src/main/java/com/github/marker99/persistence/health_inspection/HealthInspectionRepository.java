@@ -15,12 +15,15 @@ public class HealthInspectionRepository {
     private static HealthInspectionRepository instance;
     private final HealthInspectionDAO inspectionDAO;
     private final LiveData<List<HealthInspection>> allInspections;
+    private LiveData<List<HealthInspection>> allInspectionsPetId;
     private final ExecutorService executorService;
 
     public HealthInspectionRepository(Application application) {
         Database database = Database.getInstance(application);
         inspectionDAO = database.inspectionDAO();
         allInspections = inspectionDAO.getAllInspections();
+        //Uhm, dette skal ikke være her! :(
+        allInspectionsPetId = inspectionDAO.getAllInspections();
         executorService = Executors.newFixedThreadPool(2);
     }
 
@@ -32,6 +35,14 @@ public class HealthInspectionRepository {
 
     public LiveData<List<HealthInspection>> getAllInspections() {
         return allInspections;
+    }
+
+    public LiveData<List<HealthInspection>> getAllInspectionsWithPetId(){
+        return allInspectionsPetId;
+    }
+
+    public void findAllInspectionsWithPetId(int petId){
+        executorService.execute(() -> allInspectionsPetId = inspectionDAO.getAllInspectionsWithPetId(petId));
     }
 
     public void insert(HealthInspection healthInspection) {

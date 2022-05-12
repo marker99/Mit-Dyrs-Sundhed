@@ -1,5 +1,7 @@
 package com.github.marker99.ui.home;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -66,9 +68,14 @@ public class HomeFragment extends Fragment {
         Bundle bundle = new Bundle();
         // Fill bundle with Data
         bundle.putSerializable("petName", pet);
-        bundle.putSerializable("petId", pet.getId());
-        Log.i("petInfo", "PetName: " + bundle.getSerializable("petName").toString());
-        Log.i("petInfo", "PetId: " + bundle.getSerializable("petId").toString());
+        Log.i("petInfo", "pet - onPetClicked: " + bundle.getSerializable("petName").toString());
+
+        //Save SharedPreference on Pet, so it can be accessed all over the project! (HealthInspections) + Signalament
+        SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("petId", pet.getId());
+        editor.apply();
+
         // Navigate with the bundle attached
         NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_petSignalement, bundle);
     }

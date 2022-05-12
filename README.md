@@ -3,7 +3,7 @@
 ## AND app project
 
 
-**Desctiption:**
+**Description:**
 
 Når man har hund, får man en lille bog af dyrlægen til at holde styr på hundens sundhed såsom vækstskema, basisvaccinationer, sundhedseftersyn og andet relevant information om hunden. 
 Appen er ment som et alternativt så man i stedet for at skal skrive det alt sammen ned i en bog lettere kan holde styr på hundens sundhed i en app. 

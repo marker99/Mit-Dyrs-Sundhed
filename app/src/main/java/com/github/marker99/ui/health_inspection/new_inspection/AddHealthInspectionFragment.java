@@ -2,6 +2,8 @@ package com.github.marker99.ui.health_inspection.new_inspection;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -103,6 +105,8 @@ public class AddHealthInspectionFragment extends Fragment {
     }
 
     private void addNewHealthInspection(View view) {
+        SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        int petId = prefs.getInt("petId", 0);
         Double weightD = 0.0;
         try {
             weightD = Double.parseDouble(weight.getText().toString());
@@ -131,7 +135,8 @@ public class AddHealthInspectionFragment extends Fragment {
                 joint.isChecked(),
 
                 remarks.getText().toString(),
-                temper.getSelectedItem().toString()
+                temper.getSelectedItem().toString(),
+                petId
         );
         addHealthInspectionViewModelImpl.insert(newInspection);
 

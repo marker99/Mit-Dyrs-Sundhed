@@ -22,7 +22,7 @@ public class PetRepository {
         Database database = Database.getInstance(application);
         petDAO = database.petDAO();
         allPets = petDAO.getAllPets();
-        specificPet = petDAO.getSpecificPet();
+        specificPet = petDAO.getSpecificPet(1);
         executorService = Executors.newFixedThreadPool(2);
     }
 
