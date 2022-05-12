@@ -37,15 +37,14 @@ public class AllHealthInspectionsFragment extends Fragment {
 
         binding.rvHealthInspection.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
 
-        //Trying to make only specific petIds healthinspections
-        SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
-        int petId = prefs.getInt("petId", 2);
-        Log.i("PetInfo", "PetId - AllHealthInspectionsFragment: " + petId);
-        allHealthInspectionsViewModelImpl.findAllInspectionsWithPetId(petId);
 
         allHealthInspectionsViewModelImpl.getAllInspectionsWithPetId().observe(getViewLifecycleOwner(), this::onChanged);
 
-
+        //Trying to make only specific petIds healthinspections //FIXME: Noget galt med timing, man skal loade page 2 gange før man kan se det pet man har valgt!
+        SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        int petId = prefs.getInt("petId", 0);
+        Log.i("PetInfo", "PetId - AllHealthInspectionsFragment: " + petId);
+        allHealthInspectionsViewModelImpl.findAllInspectionsWithPetId(petId);
 
 
         return root;
