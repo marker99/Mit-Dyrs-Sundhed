@@ -1,9 +1,7 @@
 package com.github.marker99.ui.find_your_dog;
 
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -42,15 +40,6 @@ public class DogFragment extends Fragment {
 
         binding = FragmentFindYourNewDogBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-
-
-        /*
-        root.setFocusable(true);
-        root.setFocusableInTouchMode(true);
-        root.setClickable(true);
-
-         */
 
         bindings();
 
