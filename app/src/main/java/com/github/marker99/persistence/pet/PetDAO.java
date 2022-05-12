@@ -32,7 +32,7 @@ public interface PetDAO {
     LiveData<List<Pet>> getAllPets();
 
 
-    //TODO: rigtig grim løsning - ændre på et tidspunkt
+    //TODO: Fixet, dog skal det lige ordnes gennem hele system! (Har lavet petId = 1)  i repository!
     @Query("SELECT * FROM pet_table WHERE id = :petId")
     LiveData<Pet> getSpecificPet(int petId);
 

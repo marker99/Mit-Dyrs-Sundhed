@@ -40,11 +40,16 @@ public class AllHealthInspectionsFragment extends Fragment {
 
         allHealthInspectionsViewModelImpl.getAllInspectionsWithPetId().observe(getViewLifecycleOwner(), this::onChanged);
 
-        //Trying to make only specific petIds healthinspections //FIXME: Noget galt med timing, man skal loade page 2 gange før man kan se det pet man har valgt!
+        /*
+        //FIXME: Lavet i HomeFragment i stedet, skal det være der? (Det virker forresten der!)
+        //Prøvet at sætte data i HomeFragment i stedet
+        //Trying to make only specific petIds healthinspections //Noget galt med timing, man skal loade page 2 gange før man kan se det pet man har valgt!
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         int petId = prefs.getInt("petId", 0);
         Log.i("PetInfo", "PetId - AllHealthInspectionsFragment: " + petId);
         allHealthInspectionsViewModelImpl.findAllInspectionsWithPetId(petId);
+
+         */
 
 
         return root;

@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentHomeBinding;
 import com.github.marker99.persistence.pet.Pet;
+import com.github.marker99.ui.health_inspection.recylerview.AllHealthInspectionsViewModelImpl;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class HomeFragment extends Fragment {
 
     private Button button_addPet;
     private FragmentHomeBinding binding;
+    private int petId;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -70,14 +72,26 @@ public class HomeFragment extends Fragment {
         bundle.putSerializable("petName", pet);
         Log.i("petInfo", "pet - onPetClicked: " + bundle.getSerializable("petName").toString());
 
-        //Save SharedPreference on Pet, so it can be accessed all over the project! (HealthInspections) + Signalament
+        //Save SharedPreference on Pet, so it can be accessed all over the project! HealthInspections + Signalament
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("petId", pet.getId());
         editor.apply();
 
+        //FIXME: TEST ENVIRONMENT! - Er det fint dette gøres her?!
+        petId = prefs.getInt("petId", 0);
+        setDataViews();
+
         // Navigate with the bundle attached
         NavHostFragment.findNavController(this).navigate(R.id.action_nav_home_to_petSignalement, bundle);
+    }
+
+    private void setDataViews() {
+        //Showing health inspections from specific pet on AllHealthInspection recycle view!
+        AllHealthInspectionsViewModelImpl allHealthInspectionsViewModelImpl = new ViewModelProvider(this).get(AllHealthInspectionsViewModelImpl.class);
+        allHealthInspectionsViewModelImpl.findAllInspectionsWithPetId(petId);
+
+        //TODO: Growth Track, når vi får grafen til at virke
     }
 
     @Override
