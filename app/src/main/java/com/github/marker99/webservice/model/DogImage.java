@@ -1,4 +1,4 @@
-package com.github.marker99.webservice;
+package com.github.marker99.webservice.model;
 
 public class DogImage {
     private String url;

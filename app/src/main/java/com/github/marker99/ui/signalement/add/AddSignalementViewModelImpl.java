@@ -18,7 +18,7 @@ public class AddSignalementViewModelImpl extends AndroidViewModel implements Add
         repository = PetRepository.getInstance(application);
     }
 
-    public void insert(final Pet pet){
+    public void insert(Pet pet){
         repository.insert(pet);
     }
 

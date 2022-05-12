@@ -15,17 +15,10 @@ public class MainActivityViewModelImpl extends AndroidViewModel implements MainA
 
     public MainActivityViewModelImpl(@NonNull Application application) {
         super(application);
-
         userRepository = UserRepository.getInstance(application);
     }
 
     public LiveData<FirebaseUser> getCurrentUser() {
         return userRepository.getCurrentUser();
     }
-
-    public void signOut() {
-        userRepository.signOut();
-    }
-
-
 }

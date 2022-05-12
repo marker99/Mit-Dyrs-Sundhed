@@ -18,8 +18,7 @@ public interface PetDAO {
     @Update
     void update(Pet pet);
 
-
-    //TODO: FUTURE
+    //FUTURE - DELETE PET!
     @Delete
     void delete(Pet pet);
 
@@ -29,19 +28,4 @@ public interface PetDAO {
 
     @Query("SELECT * FROM pet_table WHERE id = :petId")
     LiveData<Pet> getSpecificPet(int petId);
-
-
-    /*
-     a method to the DAO class that returns all instances of the data class that pairs the parent entity
-     and the child entity. This method requires Room to run two queries,
-     so add the @Transaction annotation to this method to ensure that the whole operation is performed automatically
-
-     Dette er ikke nødvendigt, hvis vi ikke vil hive data op med både Pet og Pet Inspection på samme tid!
-
-     @Transaction
-     @Query("SELECT * FROM pet_table")
-     LiveData<List<PetWithHealthInspection>> getPetsAndHealthInspections();
-     */
-
-
-}
+    }

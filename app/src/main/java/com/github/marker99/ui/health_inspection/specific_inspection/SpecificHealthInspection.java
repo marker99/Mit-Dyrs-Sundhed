@@ -36,18 +36,10 @@ public class SpecificHealthInspection extends Fragment {
         //Binding of fields
         bindings();
 
-        //FIXME: What is this for?
-        if (getArguments() != null) {
-            System.out.println(getArguments().isEmpty());
-        } else {
-            System.out.println("There was nothing in the bundle");
-        }
-
         HealthInspection healthInspection = (HealthInspection) getArguments().getSerializable("inspectionDate");
         viewModel.setInspection(healthInspection);
 
         populate(healthInspection);
-
 
         return root;
     }

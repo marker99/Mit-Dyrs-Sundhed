@@ -5,6 +5,10 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.github.marker99.webservice.model.Breed;
+import com.github.marker99.webservice.model.Dog;
+import com.github.marker99.webservice.model.DogImage;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,11 +47,11 @@ public class DogRepositoryImpl implements DogRepository {
                         //Nullpointer, hvis breed ikke findes via API, derfor TRY CATCH!
                         try{
                             Breed breed = response.body()[0];
+
                             //Setting picture and converting to Dog!
                             setBreedPicture(breed);
                         }catch (Exception e)
                         {
-                            //FIXME: Måske display error message til bruger om at breed ikke findes?
                             Log.i("Retrofit", "FAILURE searchForBreed - Hvorfor crasher jeg? " + e.getMessage());
                         }
 

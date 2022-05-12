@@ -9,13 +9,10 @@ import com.github.marker99.persistence.health_inspection.HealthInspectionReposit
 
 public class SpecificHealthInspectionViewModelImpl extends AndroidViewModel implements SpecificHealthInspectionViewModel {
 
-    //FIXME: Repository bliver aldrig brugt?
-    private final HealthInspectionRepository repository;
     private HealthInspection inspection;
 
     public SpecificHealthInspectionViewModelImpl(Application application) {
         super(application);
-        repository = HealthInspectionRepository.getInstance(application);
     }
 
     public void setInspection(HealthInspection inspection){

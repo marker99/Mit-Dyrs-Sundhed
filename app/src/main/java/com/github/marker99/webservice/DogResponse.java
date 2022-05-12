@@ -1,5 +1,8 @@
 package com.github.marker99.webservice;
 
+import com.github.marker99.webservice.model.Breed;
+import com.github.marker99.webservice.model.Dog;
+
 public class DogResponse {
 
     private String id;
