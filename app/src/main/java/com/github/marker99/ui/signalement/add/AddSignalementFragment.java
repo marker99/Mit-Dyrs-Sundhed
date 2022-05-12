@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -21,7 +22,8 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 public class AddSignalementFragment extends Fragment {
 
     private Button addButton, button_birthday;
-    private EditText input_petName, input_birthday, input_race;
+    private TextView textView_bday;
+    private EditText input_petName, input_race;
     private EditText input_gender, input_color, input_Characteristics;
 
     private FragmentAddSignalementBinding binding;
@@ -59,7 +61,7 @@ public class AddSignalementFragment extends Fragment {
             //When accepting chosen date, display in view!
             materialDatePicker.addOnPositiveButtonClickListener(selection -> {
                 dateChosen = (Long) selection;
-                input_birthday.setText(DateHandler.fromLongToString((Long) selection));
+                textView_bday.setText(DateHandler.fromLongToString((Long) selection));
             });
         });
     }
@@ -81,7 +83,7 @@ public class AddSignalementFragment extends Fragment {
         button_birthday = binding.buttonBirthday;
         addButton = binding.addSignalement;
         input_petName = binding.editTextPetName;
-        input_birthday = binding.editTextBirthdate;
+        textView_bday = binding.textViewBirthdate;
         input_race = binding.editTextRace;
         input_gender = binding.editTextGender;
         input_color = binding.editTextColor;

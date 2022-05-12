@@ -42,14 +42,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint=""
         android:inputType="text"
         android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/petName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/petName"
-        app:layout_constraintTop_toBottomOf="@+id/signalement" />
+        app:layout_constraintStart_toEndOf="@+id/petName" />
 
     <Button
         android:id="@+id/button_birthday"
@@ -61,8 +60,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/petName" />
 
-    <EditText
-        android:id="@+id/editText_birthdate"
+    <TextView
+        android:id="@+id/textView_birthdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,9 +69,9 @@
         android:hint="dag / måned / år"
         android:inputType="date"
         android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_birthday"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_birthday"
-        app:layout_constraintTop_toBottomOf="@+id/editText_petName" />
+        app:layout_constraintStart_toEndOf="@+id/button_birthday" />
 
 
     <TextView
@@ -95,9 +94,9 @@
         android:hint=""
         android:inputType="text"
         android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/race"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/race"
-        app:layout_constraintTop_toBottomOf="@+id/editText_birthdate" />
+        app:layout_constraintStart_toEndOf="@+id/race" />
 
 
     <TextView
@@ -120,9 +119,9 @@
         android:hint=""
         android:inputType="text"
         android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/gender"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gender"
-        app:layout_constraintTop_toBottomOf="@+id/editText_race" />
+        app:layout_constraintStart_toEndOf="@+id/gender" />
 
 
     <TextView
@@ -145,9 +144,9 @@
         android:hint=""
         android:inputType="text"
         android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/color"
-        app:layout_constraintTop_toBottomOf="@+id/editText_gender" />
+        app:layout_constraintStart_toEndOf="@+id/color" />
 
 
     <TextView

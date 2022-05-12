@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +31,8 @@ public class AddHealthInspectionFragment extends Fragment {
     private FragmentAddHealthInspectionBinding binding;
 
     private Button addButton, datePicker;
-    private EditText input_date, weight, doctor;
+    private TextView textView_inspectionDate;
+    private EditText weight, doctor;
     private Spinner appetite, drinkingHabit, temper;
     private CheckBox eyes, outerEar, nose, oralCavity, navelGroin,
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
@@ -75,7 +77,7 @@ public class AddHealthInspectionFragment extends Fragment {
                 //When accepting chosen date, display in view!
                 materialDatePicker.addOnPositiveButtonClickListener(selection -> {
                     dateChosen = (Long) selection;
-                    input_date.setText(DateHandler.fromLongToString((Long) selection));
+                    textView_inspectionDate.setText(DateHandler.fromLongToString((Long) selection));
             });
         });
     }
@@ -143,7 +145,7 @@ public class AddHealthInspectionFragment extends Fragment {
     private void bindings() {
 
         addButton = binding.addHealthInspection;
-        input_date = binding.editTextInspectionDate;
+        textView_inspectionDate = binding.textViewInspectionDate;
 
         //Health Inspection Information
         doctor = binding.editTextDoctor;
