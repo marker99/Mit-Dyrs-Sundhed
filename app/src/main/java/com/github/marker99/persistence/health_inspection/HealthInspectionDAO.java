@@ -21,13 +21,8 @@ public interface HealthInspectionDAO {
     @Delete
     void delete(HealthInspection healthInspection);
 
-
     @Query("DELETE FROM healthInspection_table")
     void deleteAllInspections();
-
-    //Udskiftet med withPetId under
-    @Query("SELECT * FROM healthInspection_table ORDER BY inspectionDate DESC")
-    LiveData<List<HealthInspection>> getAllInspections();
 
     @Query("SELECT * FROM healthInspection_table where petId =:petId ORDER BY inspectionDate DESC")
     LiveData<List<HealthInspection>> getAllInspectionsWithPetId(int petId);

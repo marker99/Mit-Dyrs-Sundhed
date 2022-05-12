@@ -22,10 +22,6 @@ public class AllHealthInspectionsViewModelImpl extends AndroidViewModel implemen
 
     }
 
-    public LiveData<List<HealthInspection>> getAllInspections() {
-        return repository.getAllInspections();
-    }
-
     @Override
     public LiveData<List<HealthInspection>> getAllInspectionsWithPetId(int petId) {
         return repository.getAllInspectionsWithPetId(petId);
