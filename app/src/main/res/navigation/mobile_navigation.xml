@@ -37,7 +37,6 @@
             app:destination="@id/specificHealthInspection" />
     </fragment>
 
-    <!-- FIXME: tilføj signalement på englesk? String Resoruce-->
     <fragment
         android:id="@+id/addSignalementFragment"
         android:name="com.github.marker99.ui.signalement.add.AddSignalementFragment"
@@ -50,12 +49,11 @@
         android:label="@string/new_health_inspection"
         tools:layout="@layout/fragment_add_health_inspection" />
 
-    <!-- FIXME: OLD hvorfor? - Preview virker ikke-->
     <fragment
         android:id="@+id/specificHealthInspection"
         android:name="com.github.marker99.ui.health_inspection.specific_inspection.SpecificHealthInspection"
         android:label="@string/health_inspection"
-        tools:layout="@layout/fragment_health_inspection_OLD" />
+        tools:layout="@layout/fragment_health_inspection" />
 
     <fragment
         android:id="@+id/dogFragment"

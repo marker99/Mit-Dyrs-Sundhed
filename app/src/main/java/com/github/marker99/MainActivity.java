@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         //R.id.nav_signalement er fjernet fra listen!
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_allHealthInspections, R.id.dogFragment, R.id.settings_dest, R.id.growthTrackFragment
-        , R.id.nav_signalement)
+                , R.id.nav_signalement)
                 .setOpenableLayout(drawer)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -74,17 +74,15 @@ public class MainActivity extends AppCompatActivity {
         checkIfSignedIn();
 
         bindings();
-        textView_dogInfo.setText("dogInfo");
-        textView_dogNameDrawer.setText("dogNameDrawer");
-
-        //MaterialDatePicker.Builder.datePicker();
-        //MaterialDatePicker.Builder.datePicker().build().sh
     }
 
     private void bindings() {
         //Den skal være binding.navView, for at den ved det er fra navView
         textView_dogInfo = binding.navView.getHeaderView(0).findViewById(R.id.textView_dogInfo);
         textView_dogNameDrawer = binding.navView.getHeaderView(0).findViewById(R.id.textView_dogNameDrawer);
+
+        textView_dogInfo.setText("dogInfo");
+        textView_dogNameDrawer.setText("dogNameDrawer");
     }
 
     @Override
@@ -121,8 +119,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, SignInActivity.class));
         finish();
     }
-
-
 
 
 }
