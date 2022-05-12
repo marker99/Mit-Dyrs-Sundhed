@@ -3,7 +3,6 @@ package com.github.marker99.ui.health_inspection.new_inspection;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +25,6 @@ import com.github.marker99.persistence.health_inspection.HealthInspection;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointBackward;
 import com.google.android.material.datepicker.MaterialDatePicker;
-
-import java.util.Calendar;
 
 public class AddHealthInspectionFragment extends Fragment {
 

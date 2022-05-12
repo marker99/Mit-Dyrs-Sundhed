@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 
 import com.github.marker99.persistence.health_inspection.HealthInspection;
-import com.github.marker99.persistence.health_inspection.HealthInspectionRepository;
 
 public class SpecificHealthInspectionViewModelImpl extends AndroidViewModel implements SpecificHealthInspectionViewModel {
 

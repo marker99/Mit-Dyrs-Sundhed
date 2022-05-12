@@ -5,8 +5,6 @@ import androidx.room.TypeConverter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 //Hugget fra https://developer.android.com/training/data-storage/room/referencing-data
 

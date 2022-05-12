@@ -1,7 +1,5 @@
 package com.github.marker99.ui.settings;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.github.marker99.databinding.ActivityMainBinding;
 import com.github.marker99.databinding.SettingsFragmentBinding;
-import com.google.android.material.navigation.NavigationView;
 
 public class SettingsFragment extends Fragment {
 
