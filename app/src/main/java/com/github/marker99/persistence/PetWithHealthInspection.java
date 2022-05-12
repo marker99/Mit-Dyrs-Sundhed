@@ -11,7 +11,7 @@ import java.util.List;
 // https://developer.android.com/training/data-storage/room/relationships
 
 public class PetWithHealthInspection {
-    //TODO: Dette virker ikke endnu!
+    //TODO: Dette virker ikke endnu! - Dette er ikke nødvendigt længere --> Måske bare gemme klasse i docs + comments, for potentiel fremtidig brug?
     @Embedded
     public Pet pet;
     @Relation(

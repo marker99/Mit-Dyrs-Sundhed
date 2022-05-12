@@ -9,7 +9,7 @@ import com.github.marker99.persistence.health_inspection.HealthInspectionReposit
 
 public class SpecificHealthInspectionViewModelImpl extends AndroidViewModel implements SpecificHealthInspectionViewModel {
 
-    //FIXME: Repository bliver aldrig brugt!
+    //FIXME: Repository bliver aldrig brugt?
     private final HealthInspectionRepository repository;
     private HealthInspection inspection;
 
@@ -22,7 +22,6 @@ public class SpecificHealthInspectionViewModelImpl extends AndroidViewModel impl
         this.inspection = inspection;
     }
 
-    //FIXME: Bliver ikke brugt?
     public HealthInspection getInspection(){
         return inspection;
     }

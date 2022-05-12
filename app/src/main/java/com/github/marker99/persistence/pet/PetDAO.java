@@ -24,6 +24,7 @@ public interface PetDAO {
     @Delete
     void delete(Pet pet);
 
+    //TODO: Er denne relevant? - Måske bare brug delete ovenover?
     @Query("DELETE FROM pet_table")
     void deleteAllPets();
 
@@ -40,14 +41,14 @@ public interface PetDAO {
     /*
      a method to the DAO class that returns all instances of the data class that pairs the parent entity
      and the child entity. This method requires Room to run two queries,
-     so add the @Transaction annotation to this method to ensure that the whole operation is performed atomically
+     so add the @Transaction annotation to this method to ensure that the whole operation is performed automatically
+
+     Dette er ikke nødvendigt, hvis vi ikke vil hive data op med både Pet og Pet Inspection på samme tid!
+
+     @Transaction
+     @Query("SELECT * FROM pet_table")
+     LiveData<List<PetWithHealthInspection>> getPetsAndHealthInspections();
      */
-    //TODO: Spørg Kasper om dette, hvordan vil vi mappe pets og health inspections? (Man kunne have gemt det petid man har valgt,
-    // og bare lave health inspections på det, samt trække op fra health inspections på dette Pet)
-    // - Dette vil dog ikke rigtigt gøre brug af dette under?
-    @Transaction
-    @Query("SELECT * FROM pet_table")
-    LiveData<List<PetWithHealthInspection>> getPetsAndHealthInspections();
 
 
 }
