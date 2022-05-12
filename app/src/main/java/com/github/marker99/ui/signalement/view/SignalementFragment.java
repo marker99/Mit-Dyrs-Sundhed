@@ -1,5 +1,7 @@
 package com.github.marker99.ui.signalement.view;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,14 +28,10 @@ public class SignalementFragment extends Fragment {
         View root = binding.getRoot();
 
         bindings();
-        Bundle bundle = new Bundle();
 
-        //Log.i("pet", bundle.getSerializable("petName").toString());
-        //Filling all the textViews
-        //Integer.parseInt(bundle.getSerializable("petId").toString())
-
-
-        viewModel.getSpecificPet().observe(getViewLifecycleOwner(), pet -> {
+        SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        int petId = prefs.getInt("petId", -1);
+        viewModel.getSpecificPet(petId).observe(getViewLifecycleOwner(), pet -> {
             //Tjekker om der er et pet i databasen, hvis der er tilføj data fra det!
             if (pet != null) {
                 petName.setText(pet.getPetName());

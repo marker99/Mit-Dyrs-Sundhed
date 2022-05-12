@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -19,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentHomeBinding;
 import com.github.marker99.persistence.pet.Pet;
-import com.github.marker99.ui.health_inspection.recylerview.AllHealthInspectionsViewModelImpl;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -65,18 +66,15 @@ public class HomeFragment extends Fragment {
     }
 
     private void onPetClicked(Pet pet) {
-        // Create a Bundle to send data
-        Bundle bundle = new Bundle();
-        // Fill bundle with Data
-        bundle.putSerializable("petName", pet);
-        Log.i("petInfo", "pet - onPetClicked: " + bundle.getSerializable("petName").toString());
-
         //Save SharedPreference on Pet, so it can be accessed all over the project! HealthInspections + Signalament
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("petId", pet.getId());
         editor.apply();
-    }
+
+        //Snackbar to display which pet is selected!
+        Snackbar.make(getView(), pet.getPetName() + " selected", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();    }
 
     @Override
     public void onDestroyView() {

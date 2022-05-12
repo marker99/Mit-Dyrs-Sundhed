@@ -20,9 +20,9 @@ public class SignalementViewModelImpl extends AndroidViewModel implements Signal
         petRepository = PetRepository.getInstance(application);
     }
 
-    public LiveData<Pet> getSpecificPet(){
+    public LiveData<Pet> getSpecificPet(int petId){
         //FIXME: skal have sendt petId med ned!
-        return petRepository.getSpecificPet();
+        return petRepository.getSpecificPet(petId);
     }
 
 }

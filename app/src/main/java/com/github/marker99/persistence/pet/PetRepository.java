@@ -15,15 +15,12 @@ public class PetRepository {
     private static PetRepository instance;
     private final PetDAO petDAO;
     private final LiveData<List<Pet>> allPets;
-    private final LiveData<Pet> specificPet;
     private final ExecutorService executorService;
 
     private PetRepository(Application application) {
         Database database = Database.getInstance(application);
         petDAO = database.petDAO();
         allPets = petDAO.getAllPets();
-        //TODO: Hvordan initializerer vi, når vi skal bruge et specifikt petId?
-        specificPet = petDAO.getSpecificPet(1);
         executorService = Executors.newFixedThreadPool(2);
     }
 
@@ -38,8 +35,8 @@ public class PetRepository {
         return allPets;
     }
 
-    public LiveData<Pet> getSpecificPet() {
-        return specificPet;
+    public LiveData<Pet> getSpecificPet(int petId) {
+        return petDAO.getSpecificPet(petId);
     }
 
     public void insert(Pet pet) {
