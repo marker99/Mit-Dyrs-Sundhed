@@ -3,6 +3,7 @@ package com.github.marker99.ui.health_inspection.new_inspection;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,13 @@ public class AddHealthInspectionFragment extends Fragment {
          */
 
 
-        //FIXME: MaterialDatePicker - Jeg virker ikke i fragment
+        setUpDatePicker();
+
+            // Respond to positive button cli
+        //datePicker.getSelection();
+
+
+        /*
         MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
         builder.setTitleText("Select a date");
         builder.setSelection(MaterialDatePicker.todayInUtcMilliseconds());
@@ -79,8 +86,27 @@ public class AddHealthInspectionFragment extends Fragment {
             }
         });
 
+ */
+
 
         return root;
+    }
+
+    private void setUpDatePicker() {
+        //TODO: DATEPICKER - MAKE IT WORK
+        //https://material.io/components/date-pickers/android#using-date-pickers
+
+        MaterialDatePicker datePicker =
+                MaterialDatePicker.Builder.datePicker()
+                        .setTitleText("Select date")
+                        .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                        .setInputMode(MaterialDatePicker.INPUT_MODE_TEXT)
+                        .build();
+        datePicker.show(getActivity().getSupportFragmentManager(), "test");
+
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            Log.i("DateChosen", selection.toString());
+        });
     }
 
     private void spinnerAdapter() {
