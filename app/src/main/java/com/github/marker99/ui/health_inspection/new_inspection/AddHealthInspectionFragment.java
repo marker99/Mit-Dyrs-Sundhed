@@ -21,8 +21,13 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.github.marker99.R;
 import com.github.marker99.databinding.FragmentAddHealthInspectionBinding;
+import com.github.marker99.persistence.DateConverter;
 import com.github.marker99.persistence.health_inspection.HealthInspection;
+import com.google.android.material.datepicker.CalendarConstraints;
+import com.google.android.material.datepicker.DateValidatorPointBackward;
 import com.google.android.material.datepicker.MaterialDatePicker;
+
+import java.util.Calendar;
 
 public class AddHealthInspectionFragment extends Fragment {
 
@@ -36,6 +41,9 @@ public class AddHealthInspectionFragment extends Fragment {
             skin_hairLayer, lymphNodes, pawClaws, heartLungs, sexualOrgans,
             milkLumps, joint;
     private EditText remarks;
+
+    //DATEPICKER
+    MaterialDatePicker materialDatePicker;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -53,60 +61,51 @@ public class AddHealthInspectionFragment extends Fragment {
 
         addButton.setOnClickListener(this::addNewHealthInspection);
 
-
-        //Date picker! -- getView(), da vi er i fragment og ikke Activity.
-        datePicker = binding.datePicker; //FIXME: Skal i bindings, når den virker!
-/*
-
-        DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(AddHealthInspectionFragment.this,  //Your Fragment Class Name should be here, not getActivity(), or getContex().
-                now.get(Calendar.YEAR),
-                now.get(Calendar.MONTH),
-                now.get(Calendar.DAY_OF_MONTH));
-        datePickerDialog.show(getActivity().getFragmentManager(), "DatePicker");
-
-         */
-
-
+        //SetUpMaterialDatePicker
         setUpDatePicker();
 
-            // Respond to positive button cli
-        //datePicker.getSelection();
-
-
-        /*
-        MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
-        builder.setTitleText("Select a date");
-        builder.setSelection(MaterialDatePicker.todayInUtcMilliseconds());
-        datePicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Virker kun i Activities.. Skal lige have fundet en løsning
-                //builder.build().show();
-                //
-            }
-        });
-
- */
-
+        //SetUpClickListener to MaterialDatePicker!
+        setOnClickListeners();
 
         return root;
     }
 
+    private void setOnClickListeners() {
+        //OnClicker, so MaterialDatePicker pops up!
+        datePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //When clicked, the MaterialDatePicker shows up!
+                materialDatePicker.show(getActivity().getSupportFragmentManager(), "test");
+
+                //When accepting chosen date, display in view!
+                materialDatePicker.addOnPositiveButtonClickListener(selection -> {
+                    input_date.setText(DateConverter.fromLongToString((Long) selection));
+                });
+            }
+        });
+    }
+
     private void setUpDatePicker() {
-        //TODO: DATEPICKER - MAKE IT WORK
+        //Material Design
         //https://material.io/components/date-pickers/android#using-date-pickers
 
-        MaterialDatePicker datePicker =
+        //Setting calenderConstraints, so you can scroll to month after current!
+        CalendarConstraints.Builder calenderConstraint = new CalendarConstraints.Builder();
+        calenderConstraint.setEnd(MaterialDatePicker.todayInUtcMilliseconds());
+
+        //Setting calenderConstraint validator, so a date beyond current date cannot be chosen!
+        CalendarConstraints.DateValidator dateValidatorMax = DateValidatorPointBackward.before(MaterialDatePicker.todayInUtcMilliseconds());
+        calenderConstraint.setValidator(dateValidatorMax);
+
+        //Creating materialDatePicker
+        materialDatePicker =
                 MaterialDatePicker.Builder.datePicker()
                         .setTitleText("Select date")
+                        .setCalendarConstraints(calenderConstraint.build())
                         .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
                         .setInputMode(MaterialDatePicker.INPUT_MODE_TEXT)
                         .build();
-        datePicker.show(getActivity().getSupportFragmentManager(), "test");
-
-        datePicker.addOnPositiveButtonClickListener(selection -> {
-            Log.i("DateChosen", selection.toString());
-        });
     }
 
     private void spinnerAdapter() {
@@ -171,6 +170,8 @@ public class AddHealthInspectionFragment extends Fragment {
 
         addButton = binding.addHealthInspection;
         input_date = binding.editTextInspectionDate;
+
+        //Health Inspection Information
         doctor = binding.editTextDoctor;
         weight = binding.editTextWeight;
 
@@ -192,6 +193,9 @@ public class AddHealthInspectionFragment extends Fragment {
 
         remarks = binding.editTextRemarks;
         temper = binding.spinnerTemper;
+
+        //DatePicker
+        datePicker = binding.datePicker;
     }
 
 }
