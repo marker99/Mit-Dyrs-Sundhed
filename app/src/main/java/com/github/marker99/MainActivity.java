@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
              */
 
             View v = getCurrentFocus();
-            if ( v instanceof EditText) {
+            if (v instanceof EditText) {
 
                 /**
                  * Now, it gets into the above IF-BLOCK if an EditText is already in focus, and you tap somewhere else
@@ -105,14 +105,14 @@ public class MainActivity extends AppCompatActivity {
 
                 Rect outRect = new Rect();
                 v.getGlobalVisibleRect(outRect);
-                if (!outRect.contains((int)event.getRawX(), (int)event.getRawY())) {
+                if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
                     v.clearFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
             }
         }
-        return super.dispatchTouchEvent( event );
+        return super.dispatchTouchEvent(event);
     }
 
     private void bindings() {
@@ -124,11 +124,16 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         String petName = preferences.getString("petName", "No Pet Selected");
 
-        viewModel.getCurrentUser().observe(this, user->{
+        viewModel.getCurrentUser().observe(this, user -> {
             textView_dogNameDrawer.setText(user.getDisplayName());
         });
 
-        textView_dogInfo.setText(petName);
+        /*
+        viewModel.getCurrentPet().observe(this, pet -> {
+                textView_dogInfo.setText(pet.getPetName());
+        });
+
+         */
     }
 
     @Override

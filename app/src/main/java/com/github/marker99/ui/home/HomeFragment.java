@@ -3,6 +3,7 @@ package com.github.marker99.ui.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,11 @@ public class HomeFragment extends Fragment {
 
     private Button button_addPet;
     private FragmentHomeBinding binding;
+    HomeViewModelImpl viewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModelImpl homeViewModelImpl =
+        viewModel =
                 new ViewModelProvider(this).get(HomeViewModelImpl.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
@@ -38,7 +40,12 @@ public class HomeFragment extends Fragment {
         onClickListeners();
 
         binding.rvAllPets.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
-        homeViewModelImpl.getAllPets().observe(getViewLifecycleOwner(), this::onChanged);
+        viewModel.getAllPets().observe(getViewLifecycleOwner(), this::onChanged);
+
+        //FIXME: Skal lige ændres senere
+        viewModel.getUserSettings().observe(getViewLifecycleOwner(), userSettings -> {
+
+        });
 
 
         return root;
@@ -72,12 +79,14 @@ public class HomeFragment extends Fragment {
 
         //Snackbar to display which pet is selected!
         Snackbar.make(getView(), pet.getPetName() + " selected", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();    }
+                .setAction("Action", null).show();
+
+        viewModel.updateSettings(pet.getId());
+    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
-
 }

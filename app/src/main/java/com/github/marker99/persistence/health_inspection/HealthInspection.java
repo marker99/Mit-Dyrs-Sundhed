@@ -12,7 +12,7 @@ public class HealthInspection implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private long inspectionDate; //Date objects i stedet?
+    private long inspectionDate;
     private double weight;
     private String doctor, drinkingHabits, appetite;
     private String remarks, temper;
