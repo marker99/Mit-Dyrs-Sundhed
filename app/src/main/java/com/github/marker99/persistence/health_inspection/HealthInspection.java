@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Entity(tableName = "healthInspection_table")
 public class HealthInspection implements Serializable {
 
-    asfasfasfasfasfasf
     @PrimaryKey(autoGenerate = true)
     private int id;
     private long inspectionDate; //Date objects i stedet?
